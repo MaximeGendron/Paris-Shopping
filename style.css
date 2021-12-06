@@ -55,8 +55,8 @@ body {
  line-height: 1.5;
 }
 .description button {
- border:1px solid #6ab446;
- background-color: #6ab446;
+ border:1px solid blue;
+ background-color: gold;
  border-radius: 0;
  color: #fff;
 }
@@ -65,3 +65,13 @@ body {
  background-color: #fff;
  color: #000;
 }
+h1 {
+    text-align: center;
+}
+
+.jack
+{
+
+    margin-left: 80px;
+}
+
