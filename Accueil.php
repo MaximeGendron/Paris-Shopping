@@ -46,6 +46,8 @@
                 <li> Par négociation (il y a une discussion entre le vendeur et le client afin qu'ils se mettent d'accord sur un prix) </li>
                 <li> Par meilleure offre (aux enchères) </li>
             </ul>
+        </p>
+        <button class="btn btn-outline-secondary btn-lg">Dites m'en plus!</button>
 </header>
 </body>
 </html>
