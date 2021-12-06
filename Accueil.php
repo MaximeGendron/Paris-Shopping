@@ -9,7 +9,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
 <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="style.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <nav class="navbar navbar-expand-md">
@@ -48,6 +48,9 @@
             </ul>
         </p>
         <button class="btn btn-outline-secondary btn-lg">Dites m'en plus!</button>
+
 </header>
 </body>
 </html>
+
+<?php require 'Footer.php'; ?>
