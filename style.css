@@ -5,7 +5,7 @@ body {
 }
 /*--- navigation bar ---*/
 .navbar {
- background:#0f056b;
+ background:#936a4f;
 }
 .nav-link, .navbar-brand {
  color: #fff;
@@ -21,7 +21,7 @@ body {
  justify-content: flex-end;
 }
 .header {
- background-image: url('Image/banniere.jpg');
+ background-image: url('Image/fond.jpg');
  background-size: cover;
  background-position: center;
  position: relative;
@@ -39,7 +39,7 @@ body {
  position: absolute;
  top: 45%;
  transform: translate(-50%, -55%);
- text-align: center;
+ 
 }
 .description h1 {
  color: #FFFFFF;
