@@ -38,14 +38,16 @@
  <div class="overlay"></div>
  <div class="description">
         <h1>Bienvenue sur Paris Shopping !</h1>
-        <p> ParisShopping est un site pour le magasinage en ligne pour le grand public. Ce site vous permet d'acheter des articles en vente sur le site.<br>
+        <p> ParisShopping est un site pour le magasinage en ligne pour le grand public. Ce site vous permet d'acheter des vêtements en vente sur le site.<br>
             <br>
-            ParisShopping est ouvert à tous les Parisiens. Si vous avez un compte vendeur sur le site, vous pouvez mettre des articles en vente sur le site. Chaque article peut être vendu de différente manière :
+            ParisShopping est ouvert à tous les Parisiens. Si vous avez un compte vendeur sur le site, vous pouvez mettre des vêtements en vente sur le site. Chaque article peut être vendu de différente manière :
             <ul> 
-                <li> par vente immédiate (pas de négociation, l'article est acheté au prix indiqué) </li>
-                <li> par négociation (il y a une discussion entre le vendeur et le client afin qu'ils se mettent d'accord sur un prix) </li>
-                <li> par meilleure offre (aux enchères) </li>
+                <li> Par vente immédiate (pas de négociation, l'article est acheté au prix indiqué) </li>
+                <li> Par négociation (il y a une discussion entre le vendeur et le client afin qu'ils se mettent d'accord sur un prix) </li>
+                <li> Par meilleure offre (aux enchères) </li>
             </ul>
+        </p>
+        <button class="btn btn-outline-secondary btn-lg">Dites m'en plus!</button>
 </header>
 </body>
 </html>

@@ -5,7 +5,7 @@ body {
 }
 /*--- navigation bar ---*/
 .navbar {
- background:#0f056b;
+ background:#936a4f;
 }
 .nav-link, .navbar-brand {
  color: #fff;
@@ -21,7 +21,7 @@ body {
  justify-content: flex-end;
 }
 .header {
- background-image: url('Image/banniere.jpg');
+ background-image: url('Image/fond.jpg');
  background-size: cover;
  background-position: center;
  position: relative;
@@ -39,7 +39,7 @@ body {
  position: absolute;
  top: 45%;
  transform: translate(-50%, -55%);
- text-align: center;
+ 
 }
 .description h1 {
  color: #FFFFFF;
@@ -53,4 +53,15 @@ body {
  color: #fff;
  font-size: 0.8rem;
  line-height: 1.5;
+}
+.description button {
+ border:1px solid #6ab446;
+ background-color: #6ab446;
+ border-radius: 0;
+ color: #fff;
+}
+.description button:hover {
+ border:1px solid #fff;
+ background-color: #fff;
+ color: #000;
 }
