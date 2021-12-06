@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="main-navigation">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="Accueil.html">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="Parcourir.php">Parcourir</a></li>
+                <li class="nav-item"><a class="nav-link" href="ToutParcourir.html">Tout Parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Notifications.php">Notifications</a></li>
                 <li class="nav-item"><a class="nav-link" href="ChoixConnectionCompte.php">Mon compte</a></li>
                 <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Img/panier.jpg" alt="Panier" width="30 px"></a></li>
