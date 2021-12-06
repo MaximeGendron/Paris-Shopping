@@ -1,0 +1,56 @@
+body {
+ padding: 0px;
+ margin: 0px;
+ background: #f2f6e9;
+}
+/*--- navigation bar ---*/
+.navbar {
+ background:#0f056b;
+}
+.nav-link, .navbar-brand {
+ color: #fff;
+ cursor: pointer;
+}
+.nav-link {
+ margin-right: 1em !important;
+}
+.nav-link:hover {
+ color: #000;
+}
+.navbar-collapse {
+ justify-content: flex-end;
+}
+.header {
+ background-image: url('Image/banniere.jpg');
+ background-size: cover;
+ background-position: center;
+ position: relative;
+}
+.overlay {
+ position: absolute;
+ min-height: 100%;
+ min-width: 100%;
+ left: 0px;
+ top: 0px;
+ background-color: rgba(0, 0, 0, 0.4);
+}
+.description {
+ left: 50%;
+ position: absolute;
+ top: 45%;
+ transform: translate(-50%, -55%);
+ text-align: center;
+}
+.description h1 {
+ color: #FFFFFF;
+}
+.description p {
+ color: #fff;
+ font-size: 0.9rem;
+ line-height: 1.5;
+}
+.description li {
+ color: #fff;
+ font-size: 0.8rem;
+ line-height: 1.5;
+}
