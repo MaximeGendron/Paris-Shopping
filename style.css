@@ -54,6 +54,7 @@ body {
  font-size: 0.8rem;
  line-height: 1.5;
 }
+
 .description button {
  border:1px solid #936a4f;
  background-color: #936a4f;
@@ -107,3 +108,68 @@ body {
  color: #666;
  padding: 40px 0;
 }
+
+.typedevente h3 {
+     text-align: center;
+     color: #2c1a0b;
+     font-size: 1.25rem;
+     line-height: 1.5;
+}
+
+.typedevente {
+          text-align: center;
+          border: #fff;
+          border : solid #fff;
+          border-radius: 10px 10px 10px 10px;
+          padding: 30px 20px 30px 20px;
+          background-color: #edddc6;
+          box-shadow: 0 0 0.5em #000;   
+          width: 400px;
+          margin: 0 auto;
+          opacity: 0.95;
+     }
+
+.typedevente button {
+     text-align: center;
+     background-color : #936a4f;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 0 0 0.5em #000;
+     color: beige;
+     font-size: 0.9rem;
+}
+
+.typedevente button:hover {
+ border:1px solid #fff;
+ background-color: #fff;
+ color: #000;
+}
+
+.TypeArticle h3 {
+     color: #2c1a0b;
+     font-size: 1.25rem;
+     line-height: 1.5;
+}
+
+.TypeArticle {
+          text-align: center;
+          border: #fff;
+          border : solid #fff;
+          border-radius: 10px 10px 10px 10px;
+          padding: 30px 20px 30px 20px;
+          background-color: #edddc6;
+          box-shadow: 0 0 0.5em #000;   
+          width: 400px;
+          margin: 0 auto;
+          opacity: 0.95;
+     }
+
+.TypeArticle button {
+     text-align: center;
+     background-color : #936a4f;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 0 0 0.5em #000;
+     color: beige;
+     font-size: 0.9rem;
+}
+
+
