@@ -54,17 +54,7 @@ body {
  font-size: 0.8rem;
  line-height: 1.5;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-.typedevente h1 {
-     color: #fff;
-     font-size: 0.8rem;
-     line-height: 1.5;
-}
-=======
-=======
->>>>>>> main
 .description button {
  border:1px solid #6ab446;
  background-color: #6ab446;
@@ -76,7 +66,42 @@ body {
  background-color: #fff;
  color: #000;
 }
-<<<<<<< HEAD
->>>>>>> main
-=======
->>>>>>> main
+
+.typedevente h3 {
+     color: #2c1a0b;
+     font-size: 1.25rem;
+     line-height: 1.5;
+}
+
+.typedevente {
+          text-align: left;
+          border: #fff;
+          border : solid #fff;
+          border-radius: 10px 10px 10px 10px;
+          padding: 30px 20px 30px 20px;
+          background-color: #edddc6;
+          box-shadow: 0 0 0.5em #000;   
+          width: 400px;
+          margin: 0 auto;
+          opacity: 0.95;
+     }
+
+.TypeArticle h3 {
+     color: #2c1a0b;
+     font-size: 1.25rem;
+     line-height: 1.5;
+}
+
+.TypeArticle {
+          text-align: left;
+          border: #fff;
+          border : solid #fff;
+          border-radius: 10px 10px 10px 10px;
+          padding: 30px 20px 30px 20px;
+          background-color: #edddc6;
+          box-shadow: 0 0 0.5em #000;   
+          width: 400px;
+          margin: 0 auto;
+          opacity: 0.95;
+     }
+
