@@ -11,7 +11,10 @@
     </head>
     <body>
         
+<<<<<<< HEAD
+
         <h1>Yoyo</h1>
+>>>>>>> Maud
         
         <script src="" async defer></script>
     </body>
