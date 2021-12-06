@@ -45,19 +45,19 @@
     <div class="typedevente">
         <h3><strong>Type de ventes : </strong></h3>
         <div id="liste1">
-            <li><a href="AchatImmediat.php">Achat immédiat</a></li>
-            <li><a href="Transaction.php">Transaction vendeur client</a></li>
-            <li><a href="MeilleureOffre.php">Meilleure offre</a></li>
-        </div>
+            <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat immédiat</button></a><br><br>
+            <a href="Transaction.php"><button class="btn btn-outline-secondary btn-lg">Transaction vendeur client</button></a> <br><br>
+            <a href="MeilleureOffre.php"><button class="btn btn-outline-secondary btn-lg">Meilleure offre</button>
+        </div></a>
     </div>
 
     <br>
     <div class="TypeArticle">
         <h3>Types de vêtements : </h3>
         <div id="liste2">
-            <li><a href="Régulier.php">Régulier</a></li>
-            <li><a href="Friperie.php">Friperie</a></li>
-            <li><a href="Luxe.php">Luxe</a></li>
+            <a href="Regulier.php"><button class="btn btn-outline-secondary btn-lg">Régulier</button></a><br><br>
+            <a href="Friperie.php"><button class="btn btn-outline-secondary btn-lg">Friperie</button></a><br><br>
+            <a href="Luxe.php"><button class="btn btn-outline-secondary btn-lg">Luxe</button></a>
         </div>
     </div>
 
