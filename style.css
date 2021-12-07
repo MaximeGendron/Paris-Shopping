@@ -151,26 +151,27 @@ body {
 }
 
 .TypeArticle {
-          text-align: center;
-          border: #fff;
-          border : solid #fff;
-          border-radius: 10px 10px 10px 10px;
-          padding: 30px 20px 30px 20px;
-          background-color: #edddc6;
-          box-shadow: 0 0 0.5em #000;   
-          width: 400px;
-          margin: 0 auto;
-          opacity: 0.95;
+ text-align: center;
+ border: #fff;
+ border : solid #fff;
+ border-radius: 10px 10px 10px 10px;
+ padding: 30px 20px 30px 20px;
+ background-color: #edddc6;
+ box-shadow: 0 0 0.5em #000;   
+ width: 400px;
+ margin: 0 auto;
+ opacity: 0.95;
      }
 
 .TypeArticle button {
-     text-align: center;
-     background-color : #936a4f;
-     border-radius: 10px 10px 10px 10px;
-     box-shadow: 0 0 0.5em #000;
-     color: #edddc6;
-     font-size: 0.9rem;
+ text-align: center;
+ background-color : #936a4f;
+ border-radius: 10px 10px 10px 10px;
+ box-shadow: 0 0 0.5em #000;
+ color: #edddc6;
+ font-size: 0.9rem;
 }
+
 
 
  .Titre {
@@ -186,6 +187,29 @@ body {
      margin: 0 auto;
      margin-top : 12%;
      opacity: 0.95: ;
+   }
+
+h1 {
+text-align: center;
+}
+
+.jack
+{
+ margin-left: 80px;
+}
+
+ .Titre {
+ text-align: center;
+ border: #fff;
+ background-color : #edddc6;
+ padding: 10px 10px 10px 10px;
+ border-radius: 10px 10px 10px 10px;
+ box-shadow: 0 0 0.5em #000;
+ color:#2c1a0b;
+ font-size: 0.9rem;
+ width: 400px;
+ margin: 0 auto;
+ opacity: 0.95: ;
  }
 
 
@@ -212,12 +236,15 @@ body {
  transform: none;
  text-align: center;
  }
+ 
  .description h1 {
  font-size: 2em;
  }
+ 
  .description p {
  font-size: 1.2rem;
  }
+ 
  .features {
  margin: 0;
  }
@@ -229,6 +256,7 @@ body {
   width: 60px;
   height: 34px;
 }
+
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
@@ -299,5 +327,64 @@ input:checked + .slider:before {
  margin: 0 auto;
  opacity: 0.95;
 }
+.Panier {
+ right: 30%;
+ position: absolute;
+ top: 30%;
+ text-align: center;
+ border: #fff;
+ border : solid #fff;
+ border-radius: 10px 10px 10px 10px;
+ padding: 30px 20px 30px 20px;
+ background-color: #edddc6;
+ box-shadow: 0 0 0.5em #000;   
+ width: 550px;
+ margin: 0 auto;
+ opacity: 0.95;
+}
+.Panier button {
+ border:1px solid #936a4f;
+ background-color: #936a4f;
+ border-radius: 0;
+ color: #fff;
+ font-size: 0.9rem;
+}
+.Panier button:hover {
+ border:1px solid #fff;
+ background-color: #fff;
+ color: #000;
+}
+:required
+{
+    background-color: white;
+}
+.InfoLivraison .form-control,
+.features input {
+ border-radius: 0;
+}
+.InfoLivraison .btn {
+ background-color: #936a4f;
+ border: 1px solid #936a4f;
+ color: #fff;
+ margin-top: 20px;
+}
+.InfoLivraison .btn:hover {
+ background-color: #333;
+ border: 1px solid #333;
+}
+.InfoLivraison {
+ left: 50%;
+ position: absolute;
+ top: 50%;
+ transform: translate(-50%, -55%);
+ text-align: center;
+}
+.InfoLivraison h3 {
+ color: #fff;
+}
+.InfoLivraison p {
+ color: #fff;
+ font-size: 1.0rem;
+ line-height: 1.0;
+}
 
-.
