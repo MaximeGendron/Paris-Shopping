@@ -16,7 +16,7 @@
  </p>
 </div>
 <div class="col-lg-4 col-md-4 col-sm-12">
- <h3 class="feature-title">Entrer en contact!</h3>
+ <h3 class="feature-title">Entrez en contact!</h3>
  <div class="form-group">
  <input type="text" class="form-control" placeholder="Votre nom:" name="">
  </div>
@@ -39,7 +39,6 @@
  <div class="col-lg-8 col-md-8 col-sm-12">
  <h6 class="text-uppercase font-weight-bold">Information additionnelle</h6>
  <p>
- Nous acceptons les retours sous certaines conditions.<br>
  Merci d'avoir visité notre site, à bientôt !
  </p>
  </div>
@@ -47,7 +46,7 @@
  <h6 class="text-uppercase font-weight-bold">Contact</h6>
  <p>
  37, quai de Grenelle, 75015 Paris, France <br>
- <a href="info@paris.shopping.com ">Envoyez-nous un mail</a><br>
+ <a href="info@paris.shopping.com ">Contactez nous par email</a><br>
  <p>Si vous souhaitez nous appeler : </p>
  +33 01 02 03 04 05 <br>
  +33 01 03 02 05 04
