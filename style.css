@@ -182,12 +182,6 @@ text-align: center;
  margin-left: 80px;
 }
 
-body{
- background-image: url('Image/fonda2.jpg');
- background-size: cover;
- position: relative;
- }
-
  .Titre {
  text-align: center;
  border: #fff;
@@ -215,6 +209,7 @@ body{
  color: white;
  font-size: 1rem;
  line-height: 1.5;
+}
 
 @media (max-width: 575.98px) {
  .description {
@@ -316,4 +311,64 @@ input:checked + .slider:before {
  width: 550px;
  margin: 0 auto;
  opacity: 0.95;
+}
+.Panier {
+ right: 30%;
+ position: absolute;
+ top: 30%;
+ text-align: center;
+ border: #fff;
+ border : solid #fff;
+ border-radius: 10px 10px 10px 10px;
+ padding: 30px 20px 30px 20px;
+ background-color: #edddc6;
+ box-shadow: 0 0 0.5em #000;   
+ width: 550px;
+ margin: 0 auto;
+ opacity: 0.95;
+}
+.Panier button {
+ border:1px solid #936a4f;
+ background-color: #936a4f;
+ border-radius: 0;
+ color: #fff;
+ font-size: 0.9rem;
+}
+.Panier button:hover {
+ border:1px solid #fff;
+ background-color: #fff;
+ color: #000;
+}
+:required
+{
+    background-color: white;
+}
+.InfoLivraison .form-control,
+.features input {
+ border-radius: 0;
+}
+.InfoLivraison .btn {
+ background-color: #936a4f;
+ border: 1px solid #936a4f;
+ color: #fff;
+ margin-top: 20px;
+}
+.InfoLivraison .btn:hover {
+ background-color: #333;
+ border: 1px solid #333;
+}
+.InfoLivraison {
+ left: 50%;
+ position: absolute;
+ top: 50%;
+ transform: translate(-50%, -55%);
+ text-align: center;
+}
+.InfoLivraison h3 {
+ color: #fff;
+}
+.InfoLivraison p {
+ color: #fff;
+ font-size: 1.0rem;
+ line-height: 1.0;
 }
