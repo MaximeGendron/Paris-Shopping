@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 06 déc. 2021 à 23:21
+-- Généré le : mar. 07 déc. 2021 à 19:38
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -43,10 +43,10 @@ CREATE TABLE IF NOT EXISTS `article` (
 --
 
 INSERT INTO `article` (`Nom`, `Description`, `Prix`, `Categorie`, `TypeVente`, `Image`) VALUES
-('Manteau Prada', 'Manteau de luxe en fausse fourrure, taille en 36, couleur noire, logo prada blanc. ', 4800, 'Luxe', 'Enchere', 'Image/manteau prada.png'),
-('Robe Versace', 'Robe zipee Versace, couleur noire, taille 40, fermeture doree', 2200, 'Luxe', 'Meilleure offre ', 'Image/robe.png'),
-('Sac Chanel ', 'Classique sac à main Chanel, en cuir matelasse blanc, garniture en métal dore, anse-chaine en metal dore entrelacee de cuir blanc permettant un porte main ou epaule. Doublure interieure en cuir blanc, double. ', 4980, 'Luxe', 'Enchere', 'Image/sac chanel.png'),
-('Sac Lady Dior', 'Sac porte à la main. Matiere : cuir noir, coutures cannage, texture matelassee, charms en metal dore pale, fine bandouliere amovible en cuir. ', 3900, 'Luxe', 'Vente immediate', 'Image/sac dior.png'),
+('Manteau Prada', 'Manteau de luxe en fausse fourrure, taille en 36, couleur noire, logo prada blanc. ', 4800, 'Luxe', 'Enchere', 'Image/manteauprada.png'),
+('Robe Versace', 'Robe zipee Versace, couleur noire, taille 40, fermeture doree', 2200, 'Luxe', 'Enchere', 'Image/robe.png'),
+('Sac Chanel ', 'Classique sac a main Chanel, en cuir matelasse blanc, garniture en metal dore, anse-chaine en metal dore entrelacee de cuir blanc permettant un porte main ou epaule. Doublure interieure en cuir blanc, double. ', 4980, 'Luxe', 'Enchere', 'Image/sacchanel.png'),
+('Sac Lady Dior', 'Sac porte a la main. Matiere : cuir noir, coutures cannage, texture matelassee, charms en metal dore pale, fine bandouliere amovible en cuir. ', 3900, 'Luxe', 'Vente immediate', 'Image/sacdior.png'),
 ('OPYUM Sandales Yves-Saint-Laurent', 'Talon en metal dore, 100% en cuir, hauteur de 11 cm, semelle en cuir, made in Italy. ', 975, 'Luxe', 'Transaction Vendeur-Client', 'Image/talon.png'),
 ('Bonnet noir ', 'Bonnet noir en cachemire. Tient chaud', 20, 'Regulier', 'Vente immediate', 'Image/bonnet.png'),
 ('3 paires de chaussettes', '6 chaussettes en coton noires. Taille 37', 15, 'Regulier', 'Transaction Vendeur-Client', 'Image/chaussette.png'),
@@ -69,11 +69,11 @@ DROP TABLE IF EXISTS `client`;
 CREATE TABLE IF NOT EXISTS `client` (
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
-  `pseudo` varchar(255) NOT NULL,
-  `mail` varchar(255) NOT NULL,
+  `adresse` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `mdp` varchar(255) NOT NULL,
-  UNIQUE KEY `pseudo` (`pseudo`),
-  UNIQUE KEY `mail` (`mail`)
+  UNIQUE KEY `pseudo` (`adresse`),
+  UNIQUE KEY `mail` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
