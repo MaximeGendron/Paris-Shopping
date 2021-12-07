@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>ParisShopping</title>
+<title>Notifications</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -12,10 +11,8 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-
 <body>
     <nav class="navbar navbar-expand-md">
-
  <a class="navbar-brand" href="Accueil.html">ParisShopping</a>
  <a class="navbar-brand" href="Image/logo.png"></a><img src="Image/logo.png" alt="Logo" width="50 px"></a></li>
  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
@@ -33,32 +30,33 @@
  </div>
 </nav>
 <header class="page-header header container-fluid">
-    <script type="text/javascript">
+      <script type="text/javascript">
  $(document).ready(function(){
  $('.header').height($(window).height());
  });
 </script>
-
-        <div class="overlay"></div>
-        <div class="description">
-            <h1>Bienvenue sur Paris Shopping !</h1>
-            <p> ParisShopping est un site pour le magasinage en ligne pour le grand public. Ce site vous permet
-                d'acheter des vêtements en vente sur le site.<br>
-                <br>
-                ParisShopping est ouvert à tous les Parisiens. Si vous avez un compte vendeur sur le site, vous pouvez
-                mettre des vêtements en vente sur le site. Chaque article peut être vendu de différente manière :
-            <ul>
-                <li> Par vente immédiate (pas de négociation, l'article est acheté au prix indiqué) </li>
-                <li> Par négociation (il y a une discussion entre le vendeur et le client afin qu'ils se mettent
-                    d'accord sur un prix) </li>
-                <li> Par meilleure offre (aux enchères) </li>
-            </ul>
-
-        </p>
-        <button class="btn btn-outline-secondary btn-lg">Devenir membre !</button>
+    
+ <div class="overlay"></div>
+ <div class="Notifications">
+     <form role="search">
+ <div>
+    <input type="search" id="maRecherche" name="q"
+     placeholder="Rechercher sur le site…"
+     aria-label="Rechercher parmi le contenu du site">
+    <button>Rechercher</button>
+ </div>
+</form>
+<br>
+        <h3> Activez les alertes :<h3>
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>    
+        <h3>Dès qu'un article correspondra à vos critères, vous en serez alerter.</h3>    
 </div>
 </header>
-
 </body>
-
 </html>
+
+<?php require 'Footer.php'; ?>
+
