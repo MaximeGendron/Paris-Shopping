@@ -175,22 +175,6 @@ body {
  font-size: 0.9rem;
 }
 
-
-
-
- .Titre {
-     text-align: center;
-     border: #fff;
-     background-color : #edddc6;
-     border-radius: 10px 10px 10px 10px;
-     box-shadow: 0 0 0.5em #000;
-     color:#2c1a0b;
-     font-size: 0.9rem;
-     width: 400px;
-     margin-top : 12%;
-     opacity: 0.95 ;
-   }
-
 h1 {
 text-align: center;
 }
@@ -202,9 +186,7 @@ text-align: center;
 
  .Titre {
  text-align: center;
- border: #fff;
  background-color : #edddc6;
- padding: 10px 10px 10px 10px;
  border-radius: 10px 10px 10px 10px;
  box-shadow: 0 0 0.5em #000;
  color:#2c1a0b;
