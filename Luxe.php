@@ -39,18 +39,16 @@
         });
     </script>
 
-    <br>
+    <br><br>
     <div class="Titre">
     <h2>Luxe</h2></div>
 
     <div class="description2">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <p><strong>Voici les vêtements de Luxe ! Vous trouverez dans cette section des articles rares et hauts-de-gammes par centaine. Parmi sacs, chaussures et robes, cette section est synonyme d'élégance et de classe. Ne vous limitez pas aux friperies, Paris-Shopping pense à vous ! <br><br>
         Vous trouverez ci-dessous les articles triés en fonction de leur type de vente (achat immédiat, transaction vendeur-client ou par enchère. <br><br>
         Bon shopping ! <br><br>
     </strong></p> 
-    </div>
-    </header>
+</div>
 
     <br>
 
@@ -87,7 +85,7 @@
     </div>
     <br><br>
 
-    <div class="typedevente">
+    <div class="article2">
         <div id="liste1">
             <a href="Transaction.php"><button class="btn btn-outline-secondary btn-lg">Transaction vendeur client</button></a> <br><br>
     </div>
@@ -148,7 +146,7 @@
         ?>
     </div></div>
     <br><br>
-
+</header>
 </body>
 </html>
 

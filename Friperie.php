@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="main-navigation">
             <ul class="navbar-nav">
                 <li class ="nav-item"><a class="nav-link" href="Accueil.php">Accueil</a></li>
-                <li class ="nav-item"><a class="nav-link" href="TourParcourir.php">Tout Parcourir</a></li>
+                <li class ="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
                 <li class ="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
                 <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
                 <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png" alt="Panier" width="30 px"></a></li>
@@ -39,12 +39,11 @@
         });
     </script>
 
-    <br>
+    <br><br>
     <div class="Titre">
     <h2>Friperie</h2></div>
 
     <div class="description2">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <p><strong>Les vêtements de friperie sont des vêtements d'occasion. Quoi de mieux que Paris-shopping pour leur donner une nouvelle vie ! Entre marques anciennes et vêtements vintage, le toux à un prix unique, cette catégorie a plus d'une merveille à vous offrir. <br><br>
 
         Vous trouverez ci-dessous les articles triés en fonction de leur type de vente (achat immédiat, transaction vendeur-client ou par enchère. <br><br>

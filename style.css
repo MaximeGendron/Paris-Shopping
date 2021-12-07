@@ -187,7 +187,9 @@ text-align: center;
  .Titre {
  text-align: center;
  background-color : #edddc6;
+ border : #fff;
  border-radius: 10px 10px 10px 10px;
+ padding: 30px 20px 30px 20px;
  box-shadow: 0 0 0.5em #000;
  color:#2c1a0b;
  font-size: 0.9rem;
@@ -199,7 +201,7 @@ text-align: center;
 .description2 {
      left: 50%;
      position: absolute;
-     top: 30%;
+     top: 50%;
      transform: translate(-50%, -50%);
      text-align : center
 }
@@ -443,4 +445,33 @@ input:checked + .slider:before {
      font-size: 0.9rem;
      margin-left: auto;
      float: left;
+}
+
+.article2 {
+          text-align: center;
+          border: #fff;
+          border : solid #fff;
+          border-radius: 10px 10px 10px 10px;
+          padding: 30px 20px 30px 20px;
+          background-color: #edddc6;
+          box-shadow: 0 0 0.5em #000;   
+          width: 400px;
+          margin: 0 auto;
+          opacity: 0.95;
+     }
+
+     
+.article2 button {
+     text-align: center;
+     background-color : #936a4f;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 0 0 0.5em #000;
+     color: beige;
+     font-size: 0.9rem;
+}
+
+.article2 button:hover {
+ border:1px solid #fff;
+ background-color: #fff;
+ color: #000;
 }

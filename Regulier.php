@@ -39,13 +39,11 @@
         });
     </script>
 
-    <br>
-    <br><br><br><br><br>
+    <br><br>
     <div class="Titre">
     <h2>Vêtements réguliers</h2></div>
 
     <div class="description2">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <p><strong>Les vêtements réguliers sont des vêtements de toutes marques, à prix abordables, et que l'on trouve régulièrement dans les sites de magasinages concurrents. Paris-shopping vous offre l'opportunité faire une affaire en fonction de leur type de vente. <br><br>
         Vous trouverez ci-dessous les articles triés en fonction de leur type de vente (achat immédiat, transaction vendeur-client ou par enchère. <br><br>
         Bon shopping ! <br><br>
