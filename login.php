@@ -99,6 +99,7 @@ if(isset($_POST['button1']))
                              }
                     }
                     $result = mysqli_query($db_handle, $sql);
+
                     if (mysqli_num_rows($result) == 0) 
                     {
                         ///Si mdp ou email faux
@@ -111,17 +112,41 @@ if(isset($_POST['button1']))
         
                     } 
                     
-                    else 
+                    else //si ok pour nom mail et prénom
                     {
-
-                        $_SESSION['email'] = $Email;
-                    echo "Vous êtes bien connecté en tant que :" . "$Email";
-                        ?>
-                        <?php
-                        header('Location: ToutParcourir.php');
-                        ?>
-                        <?php
-        
+                            //on supprime cet item
+                            while ($data = mysqli_fetch_assoc($result)) {
+                            $id = $data['ID'];
+                            }
+                            //on supprime cet item par son ID
+                            $sql = "DELETE FROM book WHERE ID = $id";
+                            $result =mysqli_query($db_handle, $sql);
+                            echo "<p>Delete successful.</p>";
+                            //on affiche le reste des livres dans notre BDD
+                            $sql = "SELECT * FROM book";
+                            $result = mysqli_query($db_handle, $sql);
+                            echo "<h2>" . "Les livres restant dans la bibliothèque:" . "</h2>";
+                            echo "<table border='1'>";
+                            echo "<tr>";
+                            echo "<th>" . "ID" . "</th>";
+                            echo "<th>" . "Titre" . "</th>";
+                            echo "<th>" . "Auteur" . "</th>";
+                            echo "<th>" . "Annee" . "</th>";
+                            echo "<th>" . "Editeur" . "</th>";
+                            echo "<th>" . "Couverture" . "</th>";
+                            //afficher le resultat
+                            while ($data = mysqli_fetch_assoc($result)) {
+                            echo "<tr>";
+                            echo "<td>" . $data['ID'] . "</td>";
+                            echo "<td>" . $data['Titre'] . "</td>";
+                            echo "<td>" . $data['Auteur'] . "</td>";
+                            echo "<td>" . $data['Annee'] . "</td>";
+                            echo "<td>" . $data['Editeur'] . "</td>";
+                            $image = $data['Couverture'];
+                            echo "<td>" . "<img src='$image' height='120' width='100'>" . "</td>";
+                            echo "</tr>";
+                            }
+                            echo "</table>";
                     }
     
                 }
