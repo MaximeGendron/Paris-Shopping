@@ -40,6 +40,7 @@
             $('.header').height($(window).height());
         });
     </script>
+     <br><br><br><br><br>
 
     <br>
     <div class="TypeArticle">
@@ -51,7 +52,7 @@
         </div>
     </div>
 
-    <br>
+    <br><br><br><br><br><br>
     
 
 

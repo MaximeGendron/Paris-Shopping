@@ -76,7 +76,7 @@
                 $image = $data['Image'];
                 echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                 echo $data['Description'] . "<br>";
-                echo $data['Prix'] . "<br>";
+                echo $data['Prix'] . "€ <br>";
                 echo $data['Categorie'] . "<br>";
                 echo $data['TypeVente'] . "<br><br>";
                 } 
@@ -108,7 +108,7 @@
                 $image = $data['Image'];
                 echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                 echo $data['Description'] . "<br>";
-                echo $data['Prix'] . "<br>";
+                echo $data['Prix'] . "€ <br>";
                 echo $data['Categorie'] . "<br>";
                 echo $data['TypeVente'] . "<br><br>";
                 } 
@@ -142,7 +142,7 @@
                 $image = $data['Image'];
                 echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                 echo $data['Description'] . "<br>";
-                echo $data['Prix'] . "<br>";
+                echo $data['Prix'] . "€<br>";
                 echo $data['Categorie'] . "<br>";
                 echo $data['TypeVente'] . "<br><br>";
                 } 
