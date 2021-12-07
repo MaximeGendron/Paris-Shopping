@@ -1,5 +1,5 @@
-<link href="style.css" rel="stylesheet" type="text/css" />
-<div class="container features">
+ <link href="style.css" rel="stylesheet" type="text/css" />
+ <div class="container features">
  <div class="row">
  <div class="col-lg-4 col-md-4 col-sm-12">
  <h3 class="feature-title">Sélection du jour</h3>

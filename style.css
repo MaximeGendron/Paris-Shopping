@@ -151,56 +151,55 @@ body {
 }
 
 .TypeArticle {
-          text-align: center;
-          border: #fff;
-          border : solid #fff;
-          border-radius: 10px 10px 10px 10px;
-          padding: 30px 20px 30px 20px;
-          background-color: #edddc6;
-          box-shadow: 0 0 0.5em #000;   
-          width: 400px;
-          margin: 0 auto;
-          opacity: 0.95;
+ text-align: center;
+ border: #fff;
+ border : solid #fff;
+ border-radius: 10px 10px 10px 10px;
+ padding: 30px 20px 30px 20px;
+ background-color: #edddc6;
+ box-shadow: 0 0 0.5em #000;   
+ width: 400px;
+ margin: 0 auto;
+ opacity: 0.95;
      }
 
 .TypeArticle button {
-     text-align: center;
-     background-color : #936a4f;
-     border-radius: 10px 10px 10px 10px;
-     box-shadow: 0 0 0.5em #000;
-     color: #edddc6;
-     font-size: 0.9rem;
+ text-align: center;
+ background-color : #936a4f;
+ border-radius: 10px 10px 10px 10px;
+ box-shadow: 0 0 0.5em #000;
+ color: #edddc6;
+ font-size: 0.9rem;
 }
 
 
 h1 {
-    text-align: center;
+text-align: center;
 }
 
 .jack
 {
-
-    margin-left: 80px;
+ margin-left: 80px;
 }
 
 body{
-      background-image: url('Image/fonda2.jpg');
-      background-size: cover;
-      position: relative;
+ background-image: url('Image/fonda2.jpg');
+ background-size: cover;
+ position: relative;
  }
 
  .Titre {
-     text-align: center;
-     border: #fff;
-     background-color : #edddc6;
-     padding: 10px 10px 10px 10px;
-     border-radius: 10px 10px 10px 10px;
-     box-shadow: 0 0 0.5em #000;
-     color:#2c1a0b;
-     font-size: 0.9rem;
-     width: 400px;
-     margin: 0 auto;
-     opacity: 0.95: ;
+ text-align: center;
+ border: #fff;
+ background-color : #edddc6;
+ padding: 10px 10px 10px 10px;
+ border-radius: 10px 10px 10px 10px;
+ box-shadow: 0 0 0.5em #000;
+ color:#2c1a0b;
+ font-size: 0.9rem;
+ width: 400px;
+ margin: 0 auto;
+ opacity: 0.95: ;
  }
 
 
@@ -226,16 +225,20 @@ body{
  transform: none;
  text-align: center;
  }
+ 
  .description h1 {
  font-size: 2em;
  }
+ 
  .description p {
  font-size: 1.2rem;
  }
+ 
  .features {
  margin: 0;
  }
 }
+
 /* Bouton notif */
 .switch {
   position: relative;
@@ -243,6 +246,7 @@ body{
   width: 60px;
   height: 34px;
 }
+
 /* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
