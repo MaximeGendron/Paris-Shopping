@@ -40,10 +40,7 @@
             $('.header').height($(window).height());
         });
     </script>
-     <br><br><br><br><br>
-     <br><br><br><br><br>
-     
-    <br>
+    <br><br><br><br><br><br>
     <div class="TypeArticle">
         <h3>Types de vêtements : </h3>
         <div id="liste2">
@@ -52,13 +49,7 @@
             <a href="Luxe.php"><button class="btn btn-outline-secondary btn-lg">Luxe</button></a>
         </div>
     </div>
-
-    <br><br><br><br><br><br>
-    <br><br><br><br><br>
-    <br><br><br><br><br>
-    
-
-
+    <br><br><br><br><br><br><br><br><br>
 </body>
 </html>
 

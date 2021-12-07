@@ -44,7 +44,7 @@
     <h2>Friperie</h2></div>
 
     <div class="description2">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <p><strong>Les vêtements de friperie sont des vêtements d'occasion. Quoi de mieux que Paris-shopping pour leur donner une nouvelle vie ! Entre marques anciennes et vêtements vintage, le toux à un prix unique, cette catégorie a plus d'une merveille à vous offrir. <br><br>
 
         Vous trouverez ci-dessous les articles triés en fonction de leur type de vente (achat immédiat, transaction vendeur-client ou par enchère. <br><br>
