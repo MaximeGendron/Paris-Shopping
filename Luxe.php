@@ -56,7 +56,7 @@
 
     <div class="typedevente">
         <div id="liste1">
-            <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Luxe</button></a><br><br>
+            <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat Immédiat</button></a><br><br>
     </div>
     
     <?php
@@ -123,8 +123,6 @@
         <div id="liste1">
            <a href="MeilleureOffre.php"><button class="btn btn-outline-secondary btn-lg">Meilleure offre</button>
         </a></div>
-        <br> Articles réguliers en vente immédiate indisponibles pour le moment. <br>
-    </div>
     
     <?php 
     //identifier votre BDD
@@ -132,10 +130,9 @@
     //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $database);
-    ?>
 
-    <?php if ($db_found) {
-        $sql = 'SELECT * FROM article WHERE Categorie = "Luxe" AND  TypeVente ="Enchère"';
+    if ($db_found) {
+        $sql = 'SELECT * FROM article WHERE Categorie = "Luxe" AND  TypeVente ="Enchere"';
         $result = mysqli_query($db_handle, $sql);
 
             while ($data = mysqli_fetch_assoc($result)) {
@@ -149,7 +146,7 @@
                 } 
         }mysqli_close($db_handle);
         ?>
-    </div>
+    </div></div>
     <br><br>
 
 </body>
