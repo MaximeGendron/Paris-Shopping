@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Regulier</title>
+	<title>Luxe</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
@@ -41,11 +41,11 @@
 
     <br>
     <div class="Titre">
-    <h2>Vêtements réguliers</h2></div>
+    <h2>Luxe</h2></div>
 
     <div class="description2">
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <p><strong>Les vêtements réguliers sont des vêtements de toutes marques, à prix abordables, et que l'on trouve régulièrement dans les sites de magasinages concurrents. Paris-shopping vous offre l'opportunité faire une affaire en fonction de leur type de vente. <br><br>
+        <p><strong>Voici les vêtements de Luxe ! Vous trouverez dans cette section des articles rares et hauts-de-gammes par centaine. Parmi sacs, chaussures et robes, cette section est synonyme d'élégance et de classe. Ne vous limitez pas aux friperies, Paris-Shopping pense à vous ! <br><br>
         Vous trouverez ci-dessous les articles triés en fonction de leur type de vente (achat immédiat, transaction vendeur-client ou par enchère. <br><br>
         Bon shopping ! <br><br>
     </strong></p> 
@@ -56,11 +56,12 @@
 
     <div class="typedevente">
         <div id="liste1">
-            <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat immédiat</button></a><br><br>
+            <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Luxe</button></a><br><br>
     </div>
     
-    <?php 
-    //identifier votre BDD
+    <?php
+
+    //identifier votre BDD 
     $database = "parisshopping";
     //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
     $db_handle = mysqli_connect('localhost', 'root', '');
@@ -68,7 +69,7 @@
     ?>
 
     <?php if ($db_found) {
-    	$sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Vente immediate"';
+    	$sql = 'SELECT * FROM article WHERE Categorie = "Luxe" AND  TypeVente ="Vente immediate"';
     	$result = mysqli_query($db_handle, $sql);
 
             while ($data = mysqli_fetch_assoc($result)) {
@@ -100,7 +101,7 @@
     ?>
 
     <?php if ($db_found) {
-        $sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Transaction Vendeur-Client"';
+        $sql = 'SELECT * FROM article WHERE Categorie = "Luxe" AND  TypeVente ="Transaction Vendeur-Client"';
         $result = mysqli_query($db_handle, $sql);
 
             while ($data = mysqli_fetch_assoc($result)) {
@@ -134,7 +135,7 @@
     ?>
 
     <?php if ($db_found) {
-        $sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Enchère"';
+        $sql = 'SELECT * FROM article WHERE Categorie = "Luxe" AND  TypeVente ="Enchère"';
         $result = mysqli_query($db_handle, $sql);
 
             while ($data = mysqli_fetch_assoc($result)) {
