@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Regulier</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Régulier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<!--Barre de navigation // A copier sur chaque page<-->
+    <!--Barre de navigation // A copier sur chaque page<-->
     <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="Accueil.html">ParisShopping</a>
         <a class="navbar-brand" href="Image/logo.png"></a><img src="Image/logo.png" alt="Logo" width="50 px"></a></li>
@@ -38,118 +38,124 @@
             $('.header').height($(window).height());
         });
     </script>
-
     <br><br>
     <div class="Titre">
-    <h2>Vêtements réguliers</h2></div>
+        <h2>Régulier</h2>
+    </div>
 
-    <div class="description2">
-        <p><strong>Les vêtements réguliers sont des vêtements de toutes marques, à prix abordables, et que l'on trouve régulièrement dans les sites de magasinages concurrents. Paris-shopping vous offre l'opportunité faire une affaire en fonction de leur type de vente. <br><br>
-        Vous trouverez ci-dessous les articles triés en fonction de leur type de vente (achat immédiat, transaction vendeur-client ou par enchère. <br><br>
-        Bon shopping ! <br><br>
-    </strong></p> 
+    <div class="container description2">
+        <p><strong>
+            Voici les vêtements de Régulier ! Vous trouverez dans cette section des articles rares et hauts-de-gammes par centaine. Parmi sacs, chaussures et robes, cette section est synonyme d'élégance et de classe. Ne vous limitez pas aux friperies, Paris-Shopping pense à vous ! <br><br>
+            Vous trouverez ci-dessous les articles triés en fonction de leur type de vente (achat immédiat, transaction vendeur-client ou par enchère. <br><br>
+            Bon shopping ! <br><br>
+        </strong></p> 
     </div>
     </header>
 
-    <br>
+    <div class="article2">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div id="liste1">
+                    <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat Immédiat</button></a><br><br>
+                </div>
 
-    <div class="typedevente">
-        <div id="liste1">
-            <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat immédiat</button></a><br><br>
+                <div class="php">
+                    <?php
+                    //identifier votre BDD 
+                    $database = "parisshopping";
+                    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+                    $db_handle = mysqli_connect('localhost', 'root', '');
+                    $db_found = mysqli_select_db($db_handle, $database);
+                    if ($db_found) {
+                        $sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Vente immediate"';
+                        $result = mysqli_query($db_handle, $sql);
+
+                        while ($data = mysqli_fetch_assoc($result)) {
+                            echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                            $image = $data['Image'];
+                            echo "<img src='$image' height='120' width='100'>" . "<br>"; 
+                            echo $data['Description'] . "<br>";
+                            echo $data['Prix'] . " € <br>";
+                            echo $data['Categorie'] . "<br>";
+                            echo $data['TypeVente'] . "<br><br>";
+                        }
+                    }else{
+                        echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";
+                    }
+                    mysqli_close($db_handle);
+                    ?>
+                        
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div id="liste1">
+                    <a href="Transaction.php"><button class="btn btn-outline-secondary btn-lg">Transaction vendeur client</button></a> <br><br>
+                </div>
+
+                <div class="php">
+                    <?php 
+
+                    //identifier votre BDD
+                    $database = "parisshopping";
+                    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+                    $db_handle = mysqli_connect('localhost', 'root', '');
+                    $db_found = mysqli_select_db($db_handle, $database);
+
+                    if ($db_found) {
+                        $sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Transaction Vendeur-Client"';
+                        $result = mysqli_query($db_handle, $sql);
+
+                        while ($data = mysqli_fetch_assoc($result)) {
+                            echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                            $image = $data['Image'];
+                            echo "<img src='$image' height='120' width='100'>" . "<br>"; 
+                            echo $data['Description'] . "<br>";
+                            echo $data['Prix'] . "€ <br>";
+                            echo $data['Categorie'] . "<br>";
+                            echo $data['TypeVente'] . "<br><br>";
+                        }
+                    }else{
+                        echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";
+                    }
+                    mysqli_close($db_handle);
+                    ?>
+                        
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div id="liste1">
+                    <a href="MeilleureOffre.php"><button class="btn btn-outline-secondary btn-lg">Meilleure offre</button></a><br><br>
+                </div>
+        <div class="php">
+            <?php 
+            
+            //identifier votre BDD
+            $database = "parisshopping";
+            
+            //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+            $db_handle = mysqli_connect('localhost', 'root', '');
+            $db_found = mysqli_select_db($db_handle, $database);
+
+            if ($db_found) {
+                $sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Enchere"';
+                $result = mysqli_query($db_handle, $sql);
+
+                while ($data = mysqli_fetch_assoc($result)) {
+                    echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                    $image = $data['Image'];
+                    echo "<img src='$image' height='120' width='100'>" . "<br>"; 
+                    echo $data['Description'] . "<br>";
+                    echo $data['Prix'] . "€ <br>";
+                    echo $data['Categorie'] . "<br>";
+                    echo $data['TypeVente'] . "<br><br>";
+                }
+            }mysqli_close($db_handle);
+            ?>
+        </div>
     </div>
-    
-    <?php 
-    //identifier votre BDD
-    $database = "parisshopping";
-    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
-    $db_handle = mysqli_connect('localhost', 'root', '');
-    $db_found = mysqli_select_db($db_handle, $database);
-    ?>
-
-    <?php if ($db_found) {
-    	$sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Vente immediate"';
-    	$result = mysqli_query($db_handle, $sql);
-
-            while ($data = mysqli_fetch_assoc($result)) {
-                echo "<strong>" . $data['Nom'] . "</strong><br>"; 
-                $image = $data['Image'];
-                echo "<img src='$image' height='120' width='100'>" . "<br>"; 
-                echo $data['Description'] . "<br>";
-                echo $data['Prix'] . "€ <br>";
-                echo $data['Categorie'] . "<br>";
-                echo $data['TypeVente'] . "<br><br>";
-                } 
-            }else{echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";}
-    	mysqli_close($db_handle);
-        ?>
-    </div>
-    <br><br>
-
-    <div class="typedevente">
-        <div id="liste1">
-            <a href="Transaction.php"><button class="btn btn-outline-secondary btn-lg">Transaction vendeur client</button></a> <br><br>
-    </div>
-    
-    <?php 
-    //identifier votre BDD
-    $database = "parisshopping";
-    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
-    $db_handle = mysqli_connect('localhost', 'root', '');
-    $db_found = mysqli_select_db($db_handle, $database);
-    ?>
-
-    <?php if ($db_found) {
-        $sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Transaction Vendeur-Client"';
-        $result = mysqli_query($db_handle, $sql);
-
-            while ($data = mysqli_fetch_assoc($result)) {
-                echo "<strong>" . $data['Nom'] . "</strong><br>"; 
-                $image = $data['Image'];
-                echo "<img src='$image' height='120' width='100'>" . "<br>"; 
-                echo $data['Description'] . "<br>";
-                echo $data['Prix'] . "€ <br>";
-                echo $data['Categorie'] . "<br>";
-                echo $data['TypeVente'] . "<br><br>";
-                } 
-            }else{echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";}
-        mysqli_close($db_handle);
-        ?>
-    </div>
-
-    <br><br>
-    <div class="typedevente">
-        <div id="liste1">
-           <a href="MeilleureOffre.php"><button class="btn btn-outline-secondary btn-lg">Meilleure offre</button>
-        </a></div>
-        <br> Articles réguliers en vente immédiate indisponibles pour le moment. <br>
-    </div>
-    
-    <?php 
-    //identifier votre BDD
-    $database = "parisshopping";
-    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
-    $db_handle = mysqli_connect('localhost', 'root', '');
-    $db_found = mysqli_select_db($db_handle, $database);
-    ?>
-
-    <?php if ($db_found) {
-        $sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Enchère"';
-        $result = mysqli_query($db_handle, $sql);
-
-            while ($data = mysqli_fetch_assoc($result)) {
-                echo "<strong>" . $data['Nom'] . "</strong><br>"; 
-                $image = $data['Image'];
-                echo "<img src='$image' height='120' width='100'>" . "<br>"; 
-                echo $data['Description'] . "<br>";
-                echo $data['Prix'] . "€<br>";
-                echo $data['Categorie'] . "<br>";
-                echo $data['TypeVente'] . "<br><br>";
-                } 
-        }mysqli_close($db_handle);
-        ?>
-    </div>
-    <br><br>
-
+</div>
 </body>
 </html>
 
