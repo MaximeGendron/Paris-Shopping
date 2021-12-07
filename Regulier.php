@@ -33,10 +33,11 @@
     </nav>
 
     <!--Rend la page dynamique, et le fond en plein encran<-->
+    <header class="page-header header container-fluid">
     <script type="text/javascript">
-    	$(document).ready(function(){
-    		$('body').height($(window).height());
-    	});
+        $(document).ready(function(){
+            $('.header').height($(window).height());
+        });
     </script>
 
     <br>
@@ -77,7 +78,7 @@
         </div>
 
     	//fermer la connexion
-    	mysqli_close($db_handle);
+    	<?php mysqli_close($db_handle); ?>
 
 </body>
 </html>

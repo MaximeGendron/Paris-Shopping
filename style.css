@@ -173,22 +173,6 @@ body {
 }
 
 
-h1 {
-    text-align: center;
-}
-
-.jack
-{
-
-    margin-left: 80px;
-}
-
-body{
-      background-image: url('Image/fonda2.jpg');
-      background-size: cover;
-      position: relative;
- }
-
  .Titre {
      text-align: center;
      border: #fff;
@@ -216,6 +200,7 @@ body{
  color: white;
  font-size: 1rem;
  line-height: 1.5;
+}
 
 @media (max-width: 575.98px) {
  .description {
@@ -235,7 +220,7 @@ body{
  .features {
  margin: 0;
  }
-}
+
 /* Bouton notif */
 .switch {
   position: relative;
