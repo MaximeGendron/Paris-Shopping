@@ -119,34 +119,13 @@ if(isset($_POST['button1']))
                             $id = $data['ID'];
                             }
                             //on supprime cet item par son ID
-                            $sql = "DELETE FROM book WHERE ID = $id";
+                            $sql = "DELETE FROM client WHERE ID = $id";
                             $result =mysqli_query($db_handle, $sql);
                             echo "<p>Delete successful.</p>";
                             //on affiche le reste des livres dans notre BDD
-                            $sql = "SELECT * FROM book";
+                            $sql = "SELECT * FROM client";
                             $result = mysqli_query($db_handle, $sql);
-                            echo "<h2>" . "Les livres restant dans la bibliothèque:" . "</h2>";
-                            echo "<table border='1'>";
-                            echo "<tr>";
-                            echo "<th>" . "ID" . "</th>";
-                            echo "<th>" . "Titre" . "</th>";
-                            echo "<th>" . "Auteur" . "</th>";
-                            echo "<th>" . "Annee" . "</th>";
-                            echo "<th>" . "Editeur" . "</th>";
-                            echo "<th>" . "Couverture" . "</th>";
-                            //afficher le resultat
-                            while ($data = mysqli_fetch_assoc($result)) {
-                            echo "<tr>";
-                            echo "<td>" . $data['ID'] . "</td>";
-                            echo "<td>" . $data['Titre'] . "</td>";
-                            echo "<td>" . $data['Auteur'] . "</td>";
-                            echo "<td>" . $data['Annee'] . "</td>";
-                            echo "<td>" . $data['Editeur'] . "</td>";
-                            $image = $data['Couverture'];
-                            echo "<td>" . "<img src='$image' height='120' width='100'>" . "</td>";
-                            echo "</tr>";
-                            }
-                            echo "</table>";
+
                     }
     
                 }

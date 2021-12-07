@@ -131,6 +131,7 @@ body {
           opacity: 0.95;
      }
 
+     
 .typedevente button {
      text-align: center;
      background-color : #936a4f;
@@ -173,6 +174,7 @@ body {
  color: #edddc6;
  font-size: 0.9rem;
 }
+
 
 
 
@@ -237,6 +239,7 @@ text-align: center;
  transform: none;
  text-align: center;
  }
+}
  
  .description h1 {
  font-size: 2em;
@@ -390,7 +393,6 @@ input:checked + .slider:before {
 }
 
 .ChoixUtilisateur
-
 {
           text-align: center;
           border: #fff;
@@ -461,5 +463,4 @@ input:checked + .slider:before {
      font-size: 0.9rem;
      margin-left: auto;
      float: left;
-}
 }

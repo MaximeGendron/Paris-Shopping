@@ -30,4 +30,5 @@
         $req->execute($data); //on l'execute
         return $req->fetchAll(PDO::FETCH_OBJ); //on retourne le res sous forme d'objet
     }
-}
+}*/
+?>

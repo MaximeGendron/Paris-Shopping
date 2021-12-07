@@ -25,7 +25,7 @@
  <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
  <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
  <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png" alt="Panier" width="30 px"></a></li>
- <li class="nav-item"><a class="nav-link" href="MonCompte.html">Mon Compte</a></li>
+ <li class="nav-item"><a class="nav-link" href="VotreCompte.php">Mon Compte</a></li>
  </ul>
  </div>
 </nav>
@@ -36,7 +36,7 @@
  });
 </script>
     
- <div class="overlay"></div>
+ <div class="overlay">
  <div class="Notifications">
      <form role="search">
  <div>
@@ -54,6 +54,8 @@
         </label>    
         <h3>Dès qu'un article correspondra à vos critères, vous en serez alerter.</h3>    
 </div>
+</div>
+
 </header>
 </body>
 </html>

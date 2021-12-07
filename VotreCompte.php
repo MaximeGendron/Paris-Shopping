@@ -9,6 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    
 </head>
 
 <body>
@@ -22,14 +23,14 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
-                <li class="nav-item"><a class="nav-link" href="Notification.html">Notifications</a></li>
-                <li class="nav-item"><a class="nav-link" href="Image/panier.png"><img src="Image/panier.png"
+                <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
+                <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png"
                             alt="Panier" width="30 px"></a></li>
                 <li class="nav-item"><a class="nav-link" href="VotreCompte.php">Mon Compte</a></li>
             </ul>
         </div>
     </nav>
-    <header class="page-header header container-fluid">
+   <header class="page-header header container-fluid">
     <script type="text/javascript">
         $(document).ready(function(){
             $('.header').height($(window).height());
