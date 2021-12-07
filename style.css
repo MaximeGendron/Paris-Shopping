@@ -109,6 +109,7 @@ body {
  padding: 40px 0;
 }
 
+
 .typedevente h3 {
      text-align: center;
      color: #2c1a0b;
@@ -168,7 +169,7 @@ body {
      background-color : #936a4f;
      border-radius: 10px 10px 10px 10px;
      box-shadow: 0 0 0.5em #000;
-     color: beige;
+     color: #edddc6;
      font-size: 0.9rem;
 }
 
@@ -183,3 +184,37 @@ h1 {
     margin-left: 80px;
 }
 
+body{
+      background-image: url('Image/fonda2.jpg');
+      background-size: cover;
+      position: relative;
+ }
+
+ .Titre {
+     text-align: center;
+     border: #fff;
+     background-color : #edddc6;
+     padding: 10px 10px 10px 10px;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 0 0 0.5em #000;
+     color:#2c1a0b;
+     font-size: 0.9rem;
+     width: 400px;
+     margin: 0 auto;
+     opacity: 0.95: ;
+ }
+
+
+.description2 {
+     left: 50%;
+     position: absolute;
+     top: 130%;
+     transform: translate(-50%, -50%);
+     text-align : center
+}
+
+ .description2 p {
+ color: white;
+ font-size: 1rem;
+ line-height: 1.5;
+}
