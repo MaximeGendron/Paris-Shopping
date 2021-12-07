@@ -1,3 +1,5 @@
+<?php
+session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +14,23 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md">
+
+    <?php
+    if(isset($_SESSION['email']))
+    {
+        //echo "Vous êtes connecté en tant que :" . $_SESSION['email'];
+        ?>
+                <?php
+                header('Location: Dejaconnecte.php');
+                ?>
+                <?php
+        
+    }
+    else
+    {
+        ?>
+
+        <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="Accueil.php">ParisShopping</a>
         <a class="navbar-brand" href="Panier.php"></a><img src="Image/logo.png" alt="Logo" width="50 px"></a></li>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
@@ -30,28 +48,40 @@
         </div>
     </nav>
     <header class="page-header header container-fluid">
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.header').height($(window).height());
-        });
+
+    <script type="text/javascript">$(document).ready(function()
+    { 
+        $('.header').height($(window).height());
+    });
     </script>
 
         <div class="overlay">
 
             <div class="ChoixUtilisateur">
-            <h2>Connexion</h2>
-                    
-                <br><br>
-                    <a href="VendeurConnexion.php"><button class="btn btn-outline-secondary btn-lg">Vendeur</button></a>
-                 
-                    <a href="AdminConnexion.php"><button class="btn btn-outline-secondary btn-lg">Admin</button></a>
+                <form action="login.php" method="post">
+                    <table border="2">
+                        <h2>Content de vous revoir !</h2>
+						<tr>Email<br>
+						<input type="text" name="email" placeholder="" size="30"></tr><br><br>
+						<tr>Mot de Passe<br>
+						<input type="password" name="mdp" placeholder="" size="30"></tr><br><br>
+                        
+                
+                    <div class="Accès">
+                    <input type="submit"name="button1" value="Se connecter" size="30"></div><br>
+                    <br><div><a href="PageEnvoidemail.php" class="txt">Mot de passe oublié ?</a></div><br>
 
-                    <a href="AcheteurConnexion.php"><button class="btn btn-outline-secondary btn-lg">Client</button></a>
 
+                    </table>
+                </form>
+	
             </div>
-        </div>
-        
-    </form>
-    
+         </div>
+
+        <?php
+    }
+
+    ?>  
+
     </body>
 </html>

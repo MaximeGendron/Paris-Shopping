@@ -41,6 +41,16 @@
         });
     </script>
      <br><br><br><br><br>
+    
+    <br>
+    <div class="typedevente">
+        <h3><strong>Type de ventes : </strong></h3>
+        <div id="liste1">
+            <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat immédiat</button></a><br><br>
+            <a href="Transaction.php"><button class="btn btn-outline-secondary btn-lg">Transaction vendeur client</button></a> <br><br>
+            <a href="MeilleureOffre.php"><button class="btn btn-outline-secondary btn-lg">Meilleure offre</button></a>
+        </div>
+    </div>
 
     <br>
     <div class="TypeArticle">

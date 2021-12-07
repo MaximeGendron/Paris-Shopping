@@ -30,28 +30,44 @@
         </div>
     </nav>
     <header class="page-header header container-fluid">
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.header').height($(window).height());
-        });
+
+    <script type="text/javascript">$(document).ready(function()
+    { 
+        $('.header').height($(window).height());
+    });
     </script>
 
         <div class="overlay">
 
             <div class="ChoixUtilisateur">
-            <h2>Connexion</h2>
-                    
-                <br><br>
-                    <a href="VendeurConnexion.php"><button class="btn btn-outline-secondary btn-lg">Vendeur</button></a>
-                 
-                    <a href="AdminConnexion.php"><button class="btn btn-outline-secondary btn-lg">Admin</button></a>
+                <form action="loginnew.php" method="post">
+                    <table border="2">
+                        <h2>Nouvel Acheteur chez Paris shopping ?</h2>
+						<tr>Nom<br>
+						<input type="text" name="nom" placeholder="" size="30"></tr><br>
+						<tr>Prénom<br>
+						<input type="text" name="prenom" placeholder="" size="30"></tr><br>
+                        <tr>Adresse<br>
+						<input type="text" name="adresse" placeholder="" size="30"></tr><br>
+						<tr>Email<br>
+						<input type="text" name="email" placeholder="" size="30"></tr><br><br>
+                        <tr>Mot de passe<br>
+						<input type="password" name="mdp" placeholder="" size="30"></tr><br><br>
+                        
+                
+                    <!--<br><div><a href="PageEnvoidemail.php" class="txt">Mot de passe oublié ?</a></div><br>-->
+                    <div class="Accès">
+                    <input type="submit" name="button2" value="Se créer un compte" size="30"></div><br><br>
 
-                    <a href="AcheteurConnexion.php"><button class="btn btn-outline-secondary btn-lg">Client</button></a>
+                    <div><a href="DejacompteAcheteur.php" class="txt">Déjà un compte ?</a></div><br>
 
+                    </table>
+                </form>
+	
             </div>
-        </div>
+         </div>
         
-    </form>
+  
     
     </body>
 </html>
