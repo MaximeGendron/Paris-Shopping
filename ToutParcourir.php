@@ -27,8 +27,8 @@
                 <li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Notification.php">Notifications</a></li>
-                <li class="nav-item"><a class="nav-link" href="Image/panier.png"><img src="Image/panier.png" alt="Panier" width="30 px"></a></li>
-                <li class="nav-item"><a class="nav-link" href="MonCompte.html">Mon Compte</a></li>
+                <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png" alt="Panier" width="30 px"></a></li>
+                <li class="nav-item"><a class="nav-link" href="VotreCompte.php">Mon Compte</a></li>
             </ul>
         </div>
     </nav>
@@ -47,8 +47,8 @@
         <div id="liste1">
             <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat immédiat</button></a><br><br>
             <a href="Transaction.php"><button class="btn btn-outline-secondary btn-lg">Transaction vendeur client</button></a> <br><br>
-            <a href="MeilleureOffre.php"><button class="btn btn-outline-secondary btn-lg">Meilleure offre</button>
-        </div></a>
+            <a href="MeilleureOffre.php"><button class="btn btn-outline-secondary btn-lg">Meilleure offre</button></a>
+        </div>
     </div>
 
     <br>

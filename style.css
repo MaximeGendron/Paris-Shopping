@@ -61,6 +61,7 @@ body {
  border-radius: 0;
  color: #fff;
  font-size: 0.9rem;
+ float: right;
 }
 .description button:hover {
  border:1px solid #fff;
@@ -94,6 +95,7 @@ body {
  border: 1px solid #936a4f;
  color: #fff;
  margin-top: 20px;
+
 }
 .features .btn:hover {
  background-color: #333;
@@ -177,9 +179,93 @@ h1 {
     text-align: center;
 }
 
-.jack
+.choixtype
 {
 
-    margin-left: 80px;
+     text-align: center;
+     background-color : #936a4f;
+     border-radius: 20px 20px 20px 20px;
+     box-shadow: 0 0 0.5em #000;
+     color: beige;
+     font-size: 0.9rem;
+     margin-left: 100px;
 }
+
+.ChoixUtilisateur
+
+{
+          text-align: center;
+          border: #fff;
+          border : solid #fff;
+          border-radius: 10px 10px 10px 10px;
+          padding: 40px 40px 40px 40px;
+          background-color: #edddc6;
+          box-shadow: 0 0 0.5em #000;   
+          width: 400px;
+          margin: 0 auto;
+          opacity: 0.95;
+          left: 50%;
+          position: absolute;
+          top: 45%;
+          transform: translate(-50%, -55%);
+}
+
+.ChoixUtilisateur h2,h1,h3
+{
+     color: #936a4f;
+}
+.ChoixUtilisateur button {
+     text-align: center;
+     background-color : #936a4f;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 0 0 0.5em #000;
+     color: beige;
+     font-size: 0.9rem;
+
+}
+.ChoixUtilisateur input {
+     text-align: center;
+     background-color : #936a4f;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 0 0 0.5em #000;
+     color: beige;
+     font-size: 0.9rem;
+}
+.ChoixUtilisateur button:hover {
+     border:1px solid #fff;
+     background-color: #fff;
+     color: #000;
+    }
+
+
+
+.Accès input
+{
+     text-align: center;
+     background-color : #936a4f;
+     width: 300px;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 0 0 0.5em #000;
+     color: beige;
+     font-size: 0.9rem;
+     margin: 0 auto;
+     margin-left: auto;
+}
+
+.retourbouton input
+{
+     text-align: center;
+     background-color : #936a4f;
+     width: 70px;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 0 0 0.5em #000;
+     color: beige;
+     font-size: 0.9rem;
+     margin-left: auto;
+     float: left;
+}
+
+
+
+
 
