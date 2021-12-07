@@ -70,7 +70,7 @@
                 $image = $data['Image'];
                 echo "<img src='$image' height='120' width='100'>" . "<br>";
                 }//end while
-                //end if
+                }//end if
                 //si le BDD n'existe pas
 
             ?>
