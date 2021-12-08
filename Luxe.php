@@ -15,7 +15,7 @@
 <body>
     <!--Barre de navigation // A copier sur chaque page<-->
     <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="Accueil.html">ParisShopping</a>
+        <a class="navbar-brand" href="Accueil.php">ParisShopping</a>
         <a class="navbar-brand" href="Image/logo.png"></a><img src="Image/logo.png" alt="Logo" width="50 px"></a></li>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
             <span class="navbar-toggler-icon"></span>
@@ -105,7 +105,7 @@
                         $result = mysqli_query($db_handle, $sql);
 
                         while ($data = mysqli_fetch_assoc($result)) {
-                            echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                            echo "<strong><a href='Article.php'>" . $data['Nom'] . "</a></strong><br>";  
                             $image = $data['Image'];
                             echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                             echo $data['Description'] . "<br>";
@@ -140,7 +140,7 @@
                         $result = mysqli_query($db_handle, $sql);
 
                         while ($data = mysqli_fetch_assoc($result)) {
-                            echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                            echo "<strong><a href='Article.php'>" . $data['Nom'] . "</a></strong><br>";  
                             $image = $data['Image'];
                             echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                             echo $data['Description'] . "<br>";
@@ -176,7 +176,7 @@
                 $result = mysqli_query($db_handle, $sql);
 
                 while ($data = mysqli_fetch_assoc($result)) {
-                    echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                    echo "<strong><a href='Article.php'>" . $data['Nom'] . "</a></strong><br>";  
                     $image = $data['Image'];
                     echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                     echo $data['Description'] . "<br>";

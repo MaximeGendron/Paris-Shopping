@@ -93,7 +93,7 @@
                     <div id="liste1">
                     <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat Immédiat</button></a><br><br>
                 </div>
-                    <?php
+                <?php
                     //identifier votre BDD 
                     $database = "parisshopping";
                     //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
@@ -104,7 +104,7 @@
                         $result = mysqli_query($db_handle, $sql);
 
                         while ($data = mysqli_fetch_assoc($result)) {
-                            echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                            echo "<strong><a href='Article.php'>" . $data['Nom'] . "</a></strong><br>"; 
                             $image = $data['Image'];
                             echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                             echo $data['Description'] . "<br>";
@@ -139,7 +139,7 @@
                         $result = mysqli_query($db_handle, $sql);
 
                         while ($data = mysqli_fetch_assoc($result)) {
-                            echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                            echo "<strong><a href='Article.php'>" . $data['Nom'] . "</a></strong><br>"; 
                             $image = $data['Image'];
                             echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                             echo $data['Description'] . "<br>";
