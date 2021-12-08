@@ -10,11 +10,26 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md">
+
+    <?php
+    if(isset($_SESSION['email']))
+    {
+        //echo "Vous êtes connecté en tant que :" . $_SESSION['email'];
+        ?>
+                <?php
+                header('Location: Dejaconnecte.php');
+                ?>
+                <?php
+        
+    }
+    else
+    {
+        ?>
+
+        <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="Accueil.php">ParisShopping</a>
         <a class="navbar-brand" href="Panier.php"></a><img src="Image/logo.png" alt="Logo" width="50 px"></a></li>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
@@ -25,6 +40,7 @@
                 <li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
+
                 <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
                 <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png"
                             alt="Panier" width="30 px"></a></li>
@@ -56,33 +72,48 @@
                     echo "<li class='nav-item'><a class='nav-link' href='VotreCompte.php'> Se connecter</a></li>";
 
                 }
-			    ?> 
+			    ?>           
             </ul>
         </div>
     </nav>
-   <header class="page-header header container-fluid">
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('.header').height($(window).height());
-        });
+    <header class="page-header header container-fluid">
+
+    <script type="text/javascript">$(document).ready(function()
+    { 
+        $('.header').height($(window).height());
+    });
     </script>
 
         <div class="overlay">
 
             <div class="ChoixUtilisateur">
-            <h2>Connexion</h2>
-                    
-                <br><br>
-                    <a href="VendeurConnexion.php"><button class="btn btn-outline-secondary btn-lg">Vendeur</button></a>
-                 
-                    <a href="AdminConnexion.php"><button class="btn btn-outline-secondary btn-lg">Admin</button></a>
+                <form action="login.php" method="post">
+                    <table border="2">
+                        <h2>Content de vous revoir !</h2>
+						<tr>Email<br>
+						<input type="text" name="emailvendeur" placeholder="" size="30"></tr><br><br>
+						<tr>Mot de Passe<br>
+						<input type="password" name="mdp" placeholder="" size="30"></tr><br><br>
+                        
+                
+                    <div class="Accès">
+                    <input type="submit"name="covendeur" value="Se connecter" size="30"></div><br>
+                    <br><div><a href="PageEnvoidemailpourvendeur.php" class="txt">Mot de passe oublié ?</a></div><br>
+                
 
-                    <a href="AcheteurConnexion.php"><button class="btn btn-outline-secondary btn-lg">Client</button></a>
 
+                    </table>
+                </form>
+                <div class="retourbouton">
+                    <input type="submit"name="retour" value="Retour" onclick = "history.back()" ></div><br>
+	
             </div>
-        </div>
-        
-    </form>
-    
+         </div>
+
+        <?php
+    }
+
+    ?>  
+
     </body>
 </html>

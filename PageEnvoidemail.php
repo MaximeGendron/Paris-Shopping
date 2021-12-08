@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php require 'login.php'; ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -42,7 +43,35 @@
                 <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
                 <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png"
                             alt="Panier" width="30 px"></a></li>
-                <li class="nav-item"><a class="nav-link" href="VotreCompte.php">Mon Compte</a></li>
+                            <?php 
+                if(isset($_SESSION['email'])) //Connecté en client
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'> MonProfilAcheteur</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
+
+
+                }
+
+                else if(isset($_SESSION['Email'])) ///Connecté en vendeur
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'> MonProfilVendeur</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
+
+
+                }
+
+                else if(isset($_SESSION['pseudo'])) ///Connecté en admin
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilAdmin.php'> MonProfilAdmin</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
+
+                }
+                else
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='VotreCompte.php'> Se connecter</a></li>";
+
+                }
+			    ?>         
             </ul>
         </div>
     </nav>
@@ -72,15 +101,14 @@
 						<input type="password" name="newmdp" placeholder="" size="30"></tr><br><br>
                     <div class="Accès">
                     <input type="submit"name="reinitmdp" value="Confirmer le changement de mot de passe" size="30"></div><br>
-                    <form action="retour.php" method="post">
-                    <div class="retourbouton">
-                    <input type="submit"name="retour" value="Retour" ></div><br>
-                    </form>
-
+           
                     </table>
-                    </form>
                 </form>
-	
+                    <div class="retourbouton">
+                    <input type="submit"name="retour" value="Retour" onclick = "history.back()" ></div><br>
+
+                    
+                
             </div>
          </div>
 
