@@ -5,15 +5,16 @@
     $Email = isset($_POST["email"])? $_POST["email"] : "";
     $Adresse = isset($_POST["adresse"])? $_POST["adresse"] : "";
     $mdp = isset($_POST["mdp"])? $_POST["mdp"] : "";
-    
-    $database = "article";
+    $Pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
+
+    $database = "parisshopping";
     //connectez-vous dans BDD
     $db_handle = mysqli_connect('localhost', 'root', '');
     $db_found = mysqli_select_db($db_handle, $database);
     
 
   
-    if (isset($_POST["button2"])) {
+    if (isset($_POST["creationclient"])) {
         if ($db_found) {
     $sql = "SELECT * FROM client "; 
     if ($Nom != "") {
@@ -35,6 +36,12 @@
         if (mysqli_num_rows($result) != 0) {
         
             echo "<p>Client existe déjà</p>";
+            ?>
+                <?php
+                header('Location: AcheteurConnexion.php');
+                ?>
+                <?php
+            
         } 
         else 
         {
@@ -80,17 +87,74 @@
                 }
                 echo "</table>";*/
                 ?> 
-                <?php header('Location: http://localhost/Paris-Shopping/ToutParcourir.php'); exit(); ?>  
+                <?php header('Location: http://localhost/Paris-Shopping/VotreCompte.php'); exit(); ?>  
                 <?php
                 }
                 
             
-    } else
+        } 
+        else
 
-    {
-        echo "<p>Database not found.</p>";
+        {
+            echo "<p>Database not found.</p>";
+        }
     }
-}
+        //crea vendeur
+        if (isset($_POST["creationvendeur"])) {
+            if ($db_found) {
+        $sql = "SELECT * FROM vendeur "; 
+        if ($Pseudo != "") {
+                $sql .= " WHERE Pseudo LIKE '%$Pseudo%'";
+                    if ($Email != "") {
+                        $sql .= " AND Email LIKE '%$Email%'";
+                            if ($mdp != "") {
+                                $sql .= " AND MDP LIKE '%$mdp%'";                                                                     
+                             }
+                         }
+            }
+            $result = mysqli_query($db_handle, $sql);
+            if (mysqli_num_rows($result) != 0) {
+            
+                echo "<p>Client existe déjà</p>";
+                ?>
+                    <?php
+                    header('Location: VendeurConnexion.php');
+                    ?>
+                    <?php
+                
+            } 
+            else 
+            {
+                   // $mdp=password_hash($mdp, PASSWORD_DEFAULT);
+                    $sql = "INSERT INTO vendeur(Pseudo, Email, MDP) VALUES('$Pseudo', '$Email', '$mdp')";
+                    $result =mysqli_query($db_handle, $sql);
+                    echo "<p>Client ajouté à la base de donnée</p>";
+                    $sql = "SELECT * FROM vendeur";
+                    if ($Pseudo != "") {
+                        $sql .= " WHERE Pseudo LIKE '%$Pseudo%'";
+                            if ($Email != "") {
+                                $sql .= " AND Email LIKE '%$Email%'";
+                                    if ($mdp != "") {
+                                        $sql .= " AND MDP LIKE '%$mdp%'";                                           
+                                     }
+                                 }
+                    }
+                    $result = mysqli_query($db_handle, $sql);
+                 
+                    ?> 
+                    <?php header('Location: http://localhost/Paris-Shopping/VotreCompte.php'); exit(); ?>  
+                    <?php
+                    }
+                    
+                
+        } 
+            else
+    
+            {
+                echo "<p>Database not found.</p>";
+            }
+    }
+
 //fermer la connexion
 mysqli_close($db_handle);
 ?>
