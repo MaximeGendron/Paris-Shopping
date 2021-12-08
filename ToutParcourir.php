@@ -33,15 +33,21 @@
         </div>
     </nav>
 
-    <!-- placer les divs <-->
+   
     <header class="page-header header container-fluid">
     <script type="text/javascript">
         $(document).ready(function(){
             $('.header').height($(window).height());
         });
     </script>
+
     <br><br><br><br><br><br>
     <div class="TypeArticle">
+
+
+      <div class="overlay"></div>
+      <div class="TypeArticle">
+
         <h3>Types de vêtements : </h3>
         <div id="liste2">
             <a href="Regulier.php"><button class="btn btn-outline-secondary btn-lg">Régulier</button></a><br><br>
@@ -49,8 +55,17 @@
             <a href="Luxe.php"><button class="btn btn-outline-secondary btn-lg">Luxe</button></a>
         </div>
     </div>
+
     <br><br><br><br><br><br><br><br><br>
+
+
+   
+</div>
+</header>
+
+
 </body>
+
 </html>
 
 <?php require 'Footer.php'; ?>

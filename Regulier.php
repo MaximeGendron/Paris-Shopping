@@ -38,6 +38,57 @@
             $('.header').height($(window).height());
         });
     </script>
+
+
+    <br>
+    <br><br><br><br><br>
+
+    <div class="overlay"></div>
+    <div class="Titre">
+    <h2>Vêtements réguliers</h2></div>
+
+    <div class="description2">
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p><strong>Les vêtements réguliers sont des vêtements de toutes marques, à prix abordables, et que l'on trouve régulièrement dans les sites de magasinages concurrents. Paris-shopping vous offre l'opportunité faire une affaire en fonction de leur type de vente. <br><br>
+        Vous trouverez ci-dessous les articles triés en fonction de leur type de vente (achat immédiat, transaction vendeur-client ou par enchère. <br><br>
+        Bon shopping ! <br><br>
+    </strong></p> 
+    </div>
+    </header>
+
+    <br>
+
+    <div class="typedevente">
+        <div id="liste1">
+            <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat immédiat</button></a><br><br>
+    </div>
+    
+    <?php 
+    //identifier votre BDD
+    $database = "parisshopping";
+    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+    $db_handle = mysqli_connect('localhost', 'root', '');
+    $db_found = mysqli_select_db($db_handle, $database);
+    ?>
+
+    <?php if ($db_found) {
+    	$sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Vente immediate"';
+    	$result = mysqli_query($db_handle, $sql);
+
+            while ($data = mysqli_fetch_assoc($result)) {
+                echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                $image = $data['Image'];
+                echo "<img src='$image' height='120' width='100'>" . "<br>"; 
+                echo $data['Description'] . "<br>";
+                echo $data['Prix'] . "€ <br>";
+                echo $data['Categorie'] . "<br>";
+                echo $data['TypeVente'] . "<br><br>";
+                } 
+            }else{echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";}
+    	mysqli_close($db_handle);
+        ?>
+    </div>
+
     <br><br>
     <div class="Titre">
         <h2>Régulier</h2>
@@ -155,8 +206,14 @@
             ?>
         </div>
     </div>
+
 </div>
+
+
+</div>
+
 </body>
+
 </html>
 
 <?php require 'Footer.php'; ?>

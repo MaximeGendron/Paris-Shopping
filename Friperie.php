@@ -38,7 +38,14 @@
             $('.header').height($(window).height());
         });
     </script>
+
     <br><br>
+
+
+    <br>
+
+    <div class="overlay"></div>
+
     <div class="Titre">
         <h2>Friperie</h2>
     </div>
@@ -157,8 +164,16 @@
             ?>
         </div>
     </div>
+
 </div>
+
+
+</div>
+
+
+
 </body>
+
 </html>
 
 <?php require 'Footer.php'; ?>
