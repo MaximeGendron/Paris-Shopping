@@ -72,6 +72,7 @@
 
         <div class="overlay"></div>
         <div class="description">
+        <div class="col-sm-2" style="height:150px; background-color:orange;">YO</div>
             <h1>Bienvenue sur votre profil Client !</h1>
             
 

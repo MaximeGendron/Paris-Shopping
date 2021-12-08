@@ -87,7 +87,7 @@
             </ul>
 
         </p>
-        <a href="MonCompte.php"><button class="btn btn-outline-secondary btn-lg">Devenir membre !</button>
+        <a href="VotreCompte.php"><button class="btn btn-outline-secondary btn-lg">Devenir membre !</button>
         </a>
 </div>
 </header>
