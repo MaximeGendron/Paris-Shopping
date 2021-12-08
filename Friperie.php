@@ -41,16 +41,11 @@
 
     <br><br>
 
-
-    <br>
-
     <div class="overlay"></div>
-
     <div class="Titre">
-        <h2>Friperie</h2>
-    </div>
+    <h2>Friperie</h2></div>
 
-    <div class="container description2">
+    <div class="description2">
         <p><strong>
             Les vêtements de friperie sont des vêtements d'occasion. Quoi de mieux que Paris-shopping pour leur donner une nouvelle vie ! Entre marques anciennes et vêtements vintage, le toux à un prix unique, cette catégorie a plus d'une merveille à vous offrir. <br><br>
             
@@ -61,14 +56,16 @@
     </div>
     </header>
 
+    <br>
+
     <div class="article2">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div id="liste1">
-                    <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat Immédiat</button></a><br><br>
-                </div>
 
                 <div class="php">
+                    <div id="liste1">
+                    <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat Immédiat</button></a><br><br>
+                </div>
                     <?php
                     //identifier votre BDD 
                     $database = "parisshopping";
@@ -98,11 +95,10 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div id="liste1">
-                    <a href="Transaction.php"><button class="btn btn-outline-secondary btn-lg">Transaction vendeur client</button></a> <br><br>
-                </div>
 
                 <div class="php">
+                    <div id="liste1">
+                    <a href="Transaction.php"><button class="btn btn-outline-secondary btn-lg">Transaction vendeur client</button></a> <br><br></div>
                     <?php 
 
                     //identifier votre BDD
@@ -134,10 +130,10 @@
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div id="liste1">
+        <div class="php">
+             <div id="liste1">
                     <a href="MeilleureOffre.php"><button class="btn btn-outline-secondary btn-lg">Meilleure offre</button></a><br><br>
                 </div>
-        <div class="php">
             <?php 
             
             //identifier votre BDD
@@ -159,18 +155,16 @@
                     echo $data['Prix'] . "€ <br>";
                     echo $data['Categorie'] . "<br>";
                     echo $data['TypeVente'] . "<br><br>";
+                    echo "Articles Meilleure offre indisponibles pour le moment";
                 }
             }mysqli_close($db_handle);
             ?>
         </div>
     </div>
-
 </div>
 
 
 </div>
-
-
 
 </body>
 
