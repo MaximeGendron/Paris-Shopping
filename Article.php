@@ -55,9 +55,8 @@
     {
         $item_clique = $_SESSION['itemClick']; 
 
-    }
 
-    if($db_found)
+        if($db_found)
     {
         //On sélectionne tous les items présents dans la table item
         $sql = "SELECT * FROM article";
@@ -114,16 +113,12 @@
                     }
             }
             }   
-
-    ?>
-
-
-</div>
-        
-
-</div>
-</header>
-</body>
-</html>
+    }
+?>
+                    </div>           
+                 </div>
+            </header>
+        </body>
+    </html>
 
 <?php require 'Footer.php'; ?>
