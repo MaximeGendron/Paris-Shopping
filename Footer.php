@@ -24,7 +24,7 @@
             </div>
           </div>
           <div class="carousel-item" data-interval="1000">
-            <img src="Image/bonnet.png" alt="Carrousel slide 3" class="d-block w-100">
+            <img src="Image/bonnet.png" alt="Carrousel slide 3" class="d-block w-100" >
             <div class="carousel-caption d-none d-md-block">
             </div>
           </div>

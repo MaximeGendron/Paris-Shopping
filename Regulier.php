@@ -14,7 +14,7 @@
 <body>
     <!--Barre de navigation // A copier sur chaque page<-->
     <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="Accueil.html">ParisShopping</a>
+        <a class="navbar-brand" href="Accueil.php">ParisShopping</a>
         <a class="navbar-brand" href="Image/logo.png"></a><img src="Image/logo.png" alt="Logo" width="50 px"></a></li>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
             <span class="navbar-toggler-icon"></span>
@@ -64,7 +64,7 @@
                     <div id="liste1">
                     <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat Immédiat</button></a><br><br>
                 </div>
-                    <?php
+                <?php
                     //identifier votre BDD 
                     $database = "parisshopping";
                     //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
@@ -75,7 +75,7 @@
                         $result = mysqli_query($db_handle, $sql);
 
                         while ($data = mysqli_fetch_assoc($result)) {
-                            echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                            echo "<strong><a href='Article.php'>" . $data['Nom'] . "</a></strong><br>"; 
                             $image = $data['Image'];
                             echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                             echo $data['Description'] . "<br>";
@@ -110,7 +110,7 @@
                         $result = mysqli_query($db_handle, $sql);
 
                         while ($data = mysqli_fetch_assoc($result)) {
-                            echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                            echo "<strong><a href='Article.php'>" . $data['Nom'] . "</a></strong><br>"; 
                             $image = $data['Image'];
                             echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                             echo $data['Description'] . "<br>";
@@ -132,31 +132,7 @@
              <div id="liste1">
                     <a href="MeilleureOffre.php"><button class="btn btn-outline-secondary btn-lg">Meilleure offre</button></a><br><br>
                 </div>
-            <?php 
-            
-            //identifier votre BDD
-            $database = "parisshopping";
-            
-            //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
-            $db_handle = mysqli_connect('localhost', 'root', '');
-            $db_found = mysqli_select_db($db_handle, $database);
-
-            if ($db_found) {
-                $sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Enchere"';
-                $result = mysqli_query($db_handle, $sql);
-
-                while ($data = mysqli_fetch_assoc($result)) {
-                    echo "<strong>" . $data['Nom'] . "</strong><br>"; 
-                    $image = $data['Image'];
-                    echo "<img src='$image' height='120' width='100'>" . "<br>"; 
-                    echo $data['Description'] . "<br>";
-                    echo $data['Prix'] . "€ <br>";
-                    echo $data['Categorie'] . "<br>";
-                    echo $data['TypeVente'] . "<br><br>";
-                    echo "Article Meilleure offre indisponibles pour le moment.";
-                }
-            }mysqli_close($db_handle);
-            ?>
+                <p> Les articles de Friperie ne sont pas disponibles en vente par meilleure offre. </p>
         </div>
     </div>
 </div>
