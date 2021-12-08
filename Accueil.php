@@ -16,7 +16,7 @@
     <body>
     <!--Barre de navigation // A copier sur chaque page<-->
     <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="Accueil.html">ParisShopping</a>
+        <a class="navbar-brand" href="Accueil.php">ParisShopping</a>
         <a class="navbar-brand" href="Image/logo.png"></a><img src="Image/logo.png" alt="Logo" width="50 px"></a></li>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
             <span class="navbar-toggler-icon"></span>
