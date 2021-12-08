@@ -31,7 +31,7 @@
         </div>
     </nav>
     
-<header class="page-header header container-fluid">
+s<header class="page-header header container-fluid">
       <script type="text/javascript">
  $(document).ready(function(){
  $('.header').height($(window).height());
