@@ -134,31 +134,7 @@
              <div id="liste1">
                     <a href="MeilleureOffre.php"><button class="btn btn-outline-secondary btn-lg">Meilleure offre</button></a><br><br>
                 </div>
-            <?php 
-            
-            //identifier votre BDD
-            $database = "parisshopping";
-            
-            //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
-            $db_handle = mysqli_connect('localhost', 'root', '');
-            $db_found = mysqli_select_db($db_handle, $database);
-
-            if ($db_found) {
-                $sql = 'SELECT * FROM article WHERE Categorie = "Friperie" AND  TypeVente ="Enchere"';
-                $result = mysqli_query($db_handle, $sql);
-
-                while ($data = mysqli_fetch_assoc($result)) {
-                    echo "<strong>" . $data['Nom'] . "</strong><br>"; 
-                    $image = $data['Image'];
-                    echo "<img src='$image' height='120' width='100'>" . "<br>"; 
-                    echo $data['Description'] . "<br>";
-                    echo $data['Prix'] . "€ <br>";
-                    echo $data['Categorie'] . "<br>";
-                    echo $data['TypeVente'] . "<br><br>";
-                    echo "Articles Meilleure offre indisponibles pour le moment";
-                }
-            }mysqli_close($db_handle);
-            ?>
+                <p> Les articles de Friperie ne sont pas disponibles en vente par meilleure offre. </p>
         </div>
     </div>
 </div>

@@ -32,21 +32,141 @@
             </ul>
         </div>
     </nav>
-    
-<header class="page-header header container-fluid">
-    <script type="text/javascript">
- $(document).ready(function(){
- $('.header').height($(window).height());
- });
-</script>
 
-<div class="TitleAI">
-    <h1>Achat Immediat</h1>
-    <p>
-        
-    </p>
-</div>
+    <header class="page-header header container-fluid">
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.header').height($(window).height());
+            });
+        </script>
 
+        <div class="overlay"></div>
+        <br><br>
+        <div class="Titre">
+            <h2>Achat Immédiat</h2>
+        </div>
+
+        <div class="description2">
+        <p><strong>
+            Bienvenue dans la section Vente immédiate. Vous trouverez ici les articles proposez par Paris-Shopping à acheter directement. <br><br>
+            
+            Si un produit vous intéresse, mettez le dans votre panier, et le prix indiqué sera inchangé. C'est un moyen rapide, pratique et sur d'obtenir vos articles préférés. <br><br>
+
+            Bon shopping !<br><br>
+        </strong></p> 
+    </div>
+    </header>
+
+    <br>
+
+    <div class="article2">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+                <div class="php">
+                    <div id="liste1">
+                    <a href="Regulier.php"><button class="btn btn-outline-secondary btn-lg">Vêtements réguliers</button></a><br><br>
+                </div>
+                    <?php
+                    //identifier votre BDD 
+                    $database = "parisshopping";
+                    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+                    $db_handle = mysqli_connect('localhost', 'root', '');
+                    $db_found = mysqli_select_db($db_handle, $database);
+                    if ($db_found) {
+                        $sql = 'SELECT * FROM article WHERE Categorie = "Vente immediate" AND  TypeVente ="Regulier"';
+                        $result = mysqli_query($db_handle, $sql);
+
+                        while ($data = mysqli_fetch_assoc($result)) {
+                            echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                            $image = $data['Image'];
+                            echo "<img src='$image' height='120' width='100'>" . "<br>"; 
+                            echo $data['Description'] . "<br>";
+                            echo $data['Prix'] . " € <br>";
+                            echo $data['Categorie'] . "<br>";
+                            echo $data['TypeVente'] . "<br><br>";
+                        }
+                    }else{
+                        echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";
+                    }
+                    mysqli_close($db_handle);
+                    ?>
+                        
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+                <div class="php">
+                    <div id="liste1">
+                    <a href="Frierie.php"><button class="btn btn-outline-secondary btn-lg">Friperie</button></a><br><br>
+                    </div>
+
+                    <?php
+                    //identifier votre BDD 
+                    $database = "parisshopping";
+                    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+                    $db_handle = mysqli_connect('localhost', 'root', '');
+                    $db_found = mysqli_select_db($db_handle, $database);
+                    if ($db_found) {
+                        $sql = 'SELECT * FROM article WHERE Categorie = "Vente immediate" AND  TypeVente ="Friperie"';
+                        $result = mysqli_query($db_handle, $sql);
+
+                        while ($data = mysqli_fetch_assoc($result)) {
+                            echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                            $image = $data['Image'];
+                            echo "<img src='$image' height='120' width='100'>" . "<br>"; 
+                            echo $data['Description'] . "<br>";
+                            echo $data['Prix'] . " € <br>";
+                            echo $data['Categorie'] . "<br>";
+                            echo $data['TypeVente'] . "<br><br>";
+                        }
+                    }else{
+                        echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";
+                    }
+                    mysqli_close($db_handle);
+                    ?>     
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+                <div class="php">
+                    <div id="liste1">
+                    <a href="Luxe.php"><button class="btn btn-outline-secondary btn-lg">Luxe</button></a><br><br>
+                    </div>
+                    
+                    <?php
+                    //identifier votre BDD 
+                    $database = "parisshopping";
+                    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+                    $db_handle = mysqli_connect('localhost', 'root', '');
+                    $db_found = mysqli_select_db($db_handle, $database);
+                    if ($db_found) {
+                        $sql = 'SELECT * FROM article WHERE Categorie = "Vente immediate" AND  TypeVente ="Luxe"';
+                        $result = mysqli_query($db_handle, $sql);
+
+                        while ($data = mysqli_fetch_assoc($result)) {
+                            echo "<strong>" . $data['Nom'] . "</strong><br>"; 
+                            $image = $data['Image'];
+                            echo "<img src='$image' height='120' width='100'>" . "<br>"; 
+                            echo $data['Description'] . "<br>";
+                            echo $data['Prix'] . " € <br>";
+                            echo $data['Categorie'] . "<br>";
+                            echo $data['TypeVente'] . "<br><br>";
+                        }
+                    }else{
+                        echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";
+                    }
+                    mysqli_close($db_handle);
+                    ?>     
+                </div>
+            </div>
+
+
+
+
+</div></div>
 
 
 
