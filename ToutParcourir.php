@@ -69,7 +69,6 @@
             $('.header').height($(window).height());
         });
     </script>
-    <br><br><br><br><br>
 
       <div class="overlay"></div>
       <div class="TypeArticle">

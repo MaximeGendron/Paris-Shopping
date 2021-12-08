@@ -79,6 +79,8 @@
             <input type="submit" name="deco" value="Se déconnecter" size="30"></div><br>
 
             </form>
+            </header>
     </body>
-
+    
 </html>
+<?php require 'Footer.php'; ?>

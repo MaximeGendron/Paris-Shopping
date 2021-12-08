@@ -112,6 +112,8 @@
     }
 
     ?>  
-
+    </header>
     </body>
+    
 </html>
+<?php require 'Footer.php'; ?>
