@@ -40,8 +40,8 @@
             $('.header').height($(window).height());
         });
     </script>
-    <br><br><br><br><br><br><br><br>
-
+    
+    <div class="overlay"></div>
     <div class="typedevente">
         <h3><strong>Type de ventes : </strong></h3>
         <div id="liste1">
@@ -50,11 +50,12 @@
             <a href="MeilleureOffre.php"><button class="btn btn-outline-secondary btn-lg">Meilleure offre</button>
         </div></a>
     </div>
-    <br><br><br><br><br>
-    <br><br><br><br><br>
-    <br><br><br><br><br>
     
+</div>
+</header>
+
 </body>
+
 </html>
 
 <?php require 'Footer.php'; ?>

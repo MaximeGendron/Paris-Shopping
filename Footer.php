@@ -2,7 +2,7 @@
  <div class="container features">
  <div class="row">
  <div class="col-lg-4 col-md-4 col-sm-12">
-      <div id="demo" class="carousel slide" data-ride="carousel">
+      <div id="demo" class="carousel slide carousel-fade" data-ride="carousel">
         <!-- Indicateurs -->
         <ul class="carousel-indicators">
           <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -14,12 +14,12 @@
         <h3 class="feature-title">Sélection du jour</h3>
         <div class="carousel-inner">
           <div class="carousel-item active"  data-interval="1000">
-            <img src="Image/talon.png" alt="Carrousel slide 1" class="d-block w-100">
+            <img src="Image/talon.png" alt="Carrousel slide 1" class="d-block w-100" >
             <div class="carousel-caption d-none d-md-block">
         </div>
           </div>
           <div class="carousel-item" data-interval="1000">
-            <img src="Image/basket.png" alt="Carrousel slide 2" class="d-block w-100">
+            <img src="Image/basket.png" alt="Carrousel slide 2" class="d-block w-100" >
             <div class="carousel-caption d-none d-md-block text-dark">
             </div>
           </div>
@@ -42,43 +42,43 @@
           <span class="sr-only">Suivant</span>
         </a>
       </div>
- 
  </div>
+
  <div class="col-lg-4 col-md-4 col-sm-12">
-  <div id="demo" class="carousel slide" data-ride="carousel">
+  <div id="demo1" class="carousel slide carousel-fade" data-ride="carousel">
      <!-- Indicateurs -->
         <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo1" data-slide-to="0" class="active"></li>
+          <li data-target="#demo1" data-slide-to="1"></li>
+          <li data-target="#demo1" data-slide-to="2"></li>
         </ul>
 
         <!-- Carrousel -->
         <h3 class="feature-title">Ventes flash</h3>
         <div class="carousel-inner">
           <div class="carousel-item active"  data-interval="1000">
-            <img src="Image/echarpe.png" alt="Carrousel slide 1" class="d-block w-100">
+            <img src="Image/echarpe.png" alt="Carrousel slide 1" class="d-block w-100" >
             <div class="carousel-caption d-none d-md-block">
         </div>
           </div>
           <div class="carousel-item" data-interval="1000">
-            <img src="Image/sac chanel.png" alt="Carrousel slide 2" class="d-block w-100">
+            <img src="Image/sacchanel.png" alt="Carrousel slide 2" class="d-block w-100" >
             <div class="carousel-caption d-none d-md-block text-dark">
             </div>
           </div>
           <div class="carousel-item" data-interval="1000">
-            <img src="Image/sac dior.png" alt="Carrousel slide 3" class="d-block w-100">
+            <img src="Image/sacdior.png" alt="Carrousel slide 3" class="d-block w-100" >
             <div class="carousel-caption d-none d-md-block">
             </div>
           </div>
         </div>
 
         <!-- Contrôles -->
-        <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#demo1" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Précédent</span>
         </a>
-        <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#demo1" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Suivant</span>
         </a>

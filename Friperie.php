@@ -40,6 +40,8 @@
     </script>
 
     <br>
+
+    <div class="overlay"></div>
     <div class="Titre">
     <h2>Friperie</h2></div>
 
@@ -151,9 +153,12 @@
         }mysqli_close($db_handle);
         ?>
     </div>
-    <br><br>
+
+</div>
+</header>
 
 </body>
+
 </html>
 
 <?php require 'Footer.php'; ?>

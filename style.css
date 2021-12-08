@@ -37,7 +37,7 @@ body {
 .description {
  left: 50%;
  position: absolute;
- top: 45%;
+ top: 50%;
  transform: translate(-50%, -55%);
  
 }
@@ -51,7 +51,7 @@ body {
 }
 .description li {
  color: #fff;
- font-size: 0.8rem;
+ font-size: 0.9rem;
  line-height: 1.5;
 }
 
@@ -112,23 +112,25 @@ body {
 }
 
 .typedevente h3 {
-     text-align: center;
-     color: #2c1a0b;
-     font-size: 1.25rem;
-     line-height: 1.5;
+ color: #2c1a0b;
+ font-size: 1.25rem;
+ line-height: 1.5;
 }
 
 .typedevente {
-          text-align: center;
-          border: #fff;
-          border : solid #fff;
-          border-radius: 10px 10px 10px 10px;
-          padding: 30px 20px 30px 20px;
-          background-color: #edddc6;
-          box-shadow: 0 0 0.5em #000;   
-          width: 400px;
-          margin: 0 auto;
-          opacity: 0.95;
+ right: 30%;
+ position: absolute;
+ top: 30%;
+ text-align: center;
+ border: #fff;
+ border : solid #fff;
+ border-radius: 10px 10px 10px 10px;
+ padding: 30px 20px 30px 20px;
+ background-color: #edddc6;
+ box-shadow: 0 0 0.5em #000;   
+ width: 550px;
+ margin: 0 auto;
+ opacity: 0.95;
      }
 
      
@@ -154,6 +156,9 @@ body {
 }
 
 .TypeArticle {
+ right: 30%;
+ position: absolute;
+ top: 30%;
  text-align: center;
  border: #fff;
  border : solid #fff;
@@ -161,7 +166,7 @@ body {
  padding: 30px 20px 30px 20px;
  background-color: #edddc6;
  box-shadow: 0 0 0.5em #000;   
- width: 400px;
+ width: 550px;
  margin: 0 auto;
  opacity: 0.95;
      }
@@ -174,9 +179,6 @@ body {
  color: #edddc6;
  font-size: 0.9rem;
 }
-
-
-
 
  .Titre {
      text-align: center;
@@ -437,8 +439,6 @@ input:checked + .slider:before {
      color: #000;
     }
 
-
-
 .Accès input
 {
      text-align: center;
@@ -464,3 +464,29 @@ input:checked + .slider:before {
      margin-left: auto;
      float: left;
 }
+.InfoPaiement {
+ left: 50%;
+ position: absolute;
+ top: 50%;
+ transform: translate(-50%, -55%);
+ text-align: center;
+}
+.InfoPaiement h3 {
+ color: #fff;
+}
+.InfoPaiement p {
+ color: #fff;
+ font-size: 1.0rem;
+ line-height: 1.0;
+}
+.InfoPaiement .btn {
+ background-color: #936a4f;
+ border: 1px solid #936a4f;
+ color: #fff;
+ margin-top: 20px;
+}
+.InfoPaiement .btn:hover {
+ background-color: #333;
+ border: 1px solid #333;
+}
+

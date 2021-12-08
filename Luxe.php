@@ -40,6 +40,8 @@
     </script>
 
     <br>
+
+    <div class="overlay"></div>
     <div class="Titre">
     <h2>Luxe</h2></div>
 
@@ -147,9 +149,12 @@
         }mysqli_close($db_handle);
         ?>
     </div></div>
-    <br><br>
+
+</div>
+</header>
 
 </body>
+
 </html>
 
 <?php require 'Footer.php'; ?>

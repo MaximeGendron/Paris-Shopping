@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Notifications</title>
+<title>Paiement2</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
- <body>
+<body>
     <!--Barre de navigation // A copier sur chaque page<-->
     <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="Accueil.html">ParisShopping</a>
@@ -30,7 +30,6 @@
             </ul>
         </div>
     </nav>
-    
 <header class="page-header header container-fluid">
       <script type="text/javascript">
  $(document).ready(function(){
@@ -38,29 +37,47 @@
  });
 </script>
     
- <div class="overlay">
- <div class="Notifications">
-     <form role="search">
- <div>
-    <input type="search" id="maRecherche" name="q"
-     placeholder="Rechercher sur le site…"
-     aria-label="Rechercher parmi le contenu du site">
-    <button>Rechercher</button>
- </div>
-</form>
-<br>
-        <h3> Activez les alertes :<h3>
-        <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-        </label>    
-        <h3>Dès qu'un article correspondra à vos critères, vous en serez alerter.</h3>    
-</div>
+ <div class="overlay"></div>
+   <div class="InfoPaiement">
+   <form method="post" action="traitement.php">
+    <h3>Informations de paiement :</h3>
+    <br>
+   <p>
+       Veuillez sélectionner votre type de carte de paiement :<br />
+       <input type="radio" name="carteV" id="carteV" /><label for="Visa"><img src="Image/visa.png" alt="Visa" width="50px" ></label>
+       <input type="radio" name="carteM" id="carteM" /><label for="Master"><img src="Image/master card logo.png" alt="Master" width="50px" ></label>
+       <input type="radio" name="carteV" id="carteA" /><label for="American"><img src="Image/american-express.png" alt="American" width="50px" ></label>
+       <input type="radio" name="carteV" id="Paypal" /><label for="Visa"><img src="Image/paypal.png" alt="Paypal" width="50px" ></label>
+   </p>
+   <p>
+       <label for="numCarte">Votre numero de carte</label> : <input type="text" name="numCarte" id="numCarte" placeholder="Votre numero de carte:" name="" required/>
+   </p>
+   <p>
+       <label for="nomCarte">Votre nom sur la carte</label> : <input type="text" name="nomCarte" id="nomCarte" placeholder="Votre nom:" name="" required />
+   </p>
+   <p>
+       <label for="dateExp">La date d'expiration</label> : <input type="date" name="dateExp" id="dateExp" placeholder="La date d'expiration:" name="" /> 
+   </p>
+   <p>
+       <label for="codeS">Le code de securite</label> : <input type="tel" name="codeS" id="codeS" maxlength="4" placeholder="Le code de securite:" name="" required />
+   </p>
+  
+   <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="">
+   
 </div>
 
+    </form>
+
+     
+</body>
+
+
+
+</div>
 </header>
 </body>
 </html>
 
 <?php require 'Footer.php'; ?>
+
 
