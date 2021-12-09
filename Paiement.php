@@ -1,4 +1,4 @@
-<?php require 'login.php'; ?>
+    <?php require 'login.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,7 +68,7 @@
     
  <div class="overlay"></div>
    <div class="InfoLivraison">
-   <form method="post" action="traitement.php">
+   <form method="post" action="InfoLivraison.php">
     <h3>Informations de livraison :</h3>
     <br>
    <p>
@@ -87,7 +87,7 @@
        <label for="ville">Votre Ville</label> : <input type="text" name="ville" id="ville" placeholder="Votre ville:" name="" required />
    </p>
    <p>
-       <label for="codeP">Votre Code Postal</label> : <input type="text" name="codeP" id="codeP" placeholder="Votre Code Postal:" name="" required />
+       <label for="codeP">Votre Code Postal</label> : <input type="number" name="codeP" id="codeP" placeholder="Votre Code Postal:" name="" required />
    </p>
    <p>
        <label for="pays">Dans quel pays habitez-vous ?</label><br />
@@ -112,7 +112,7 @@
        <label for="num">Votre numero de telephone</label> : <input type="tel" name="num" id="num" placeholder="Votre numero:" name="" required />
    </p>
   
-   <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="">
+   <input type="submit" name="button2" value="Envoyer">
 <a class="nav-link" href="Paiement2.php">Suivant</a>
 </div>
 

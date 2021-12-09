@@ -121,7 +121,7 @@ $panier = new panier($DB);
                    </div>
 
                    <div class="aAjoutPanier">
-                   <a class="ajoutpanier" href="Transaction.php?id=<?= $article->ID; ?>">
+                   <a class="ajoutpanier" href="AjoutPanier.php?id=<?= $article->ID; ?>">
                    <img src="Image/panier2.png" alt="Panier" width="40px">
                    </a>
                    </div>

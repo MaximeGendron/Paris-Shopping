@@ -78,6 +78,7 @@ $panier = new panier($DB);
                     <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat Immédiat</button></a><br><br>
                 </div>
 
+
                    <?php $article = $DB->query('SELECT * FROM article WHERE Categorie = "Friperie" AND  TypeVente ="Vente immediate" '); ?>
                    <?php foreach ($article as $key => $article): ?>
 
@@ -100,6 +101,33 @@ $panier = new panier($DB);
                    </div>
 
                     <?php endforeach ?>
+
+                    <?php
+                    //identifier votre BDD 
+                    $database = "parisshopping";
+                    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+                    $db_handle = mysqli_connect('localhost', 'root', '');
+                    $db_found = mysqli_select_db($db_handle, $database);
+                    if ($db_found) {
+                        $sql = 'SELECT * FROM article WHERE Categorie = "Friperie" AND  TypeVente ="Vente immediate"';
+                        $result = mysqli_query($db_handle, $sql);
+
+                        while ($data = mysqli_fetch_assoc($result)) {
+                            $id=$data['ID'];
+                            echo "<strong><a href='Article.php?id=$id'>" . $data['Nom'] . "</a></strong><br>"; 
+                            $image = $data['Image'];
+                            echo "<img src='$image' height='120' width='100'>" . "<br>"; 
+                            echo $data['Description'] . "<br>";
+                            echo $data['Prix'] . " € <br>";
+                            echo $data['Categorie'] . "<br>";
+                            echo $data['TypeVente'] . "<br><br>";
+                        }
+                    }else{
+                        echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";
+                    }
+                    mysqli_close($db_handle);
+                    ?>
+
                         
                 </div>
             </div>
