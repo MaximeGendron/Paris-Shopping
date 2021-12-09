@@ -29,7 +29,7 @@
                             <?php 
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'> MonProfilAcheteur</a></li>";
+                    echo ""."<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'>". $_SESSION['prenom']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
 
 
@@ -79,12 +79,14 @@
                         <tr>Adresse<br>
 						<input type="text" name="adresse" placeholder="" size="30"></tr><br>
 						<tr>Email<br>
-						<input type="text" name="email" placeholder="" size="30"></tr><br><br>
+						<input type="text" name="email" placeholder="" size="30"></tr><br>
                         <tr>Mot de passe<br>
-						<input type="password" name="mdp" placeholder="" size="30"></tr><br><br>
+						<input type="password" name="mdp" placeholder="" size="30"></tr><br>
+                        <tr>Photo de profil<br>
+                        <input type="text" name="pp" placeholder="ex : Image/xxx.png" size="30"></tr><br>
+                        <tr>Banniere<br>
+                        <input type="text" name="banniere" placeholder="ex : Image/xxx.png" size="30"></tr><br><br><br><br>
                         
-                
-                    <!--<br><div><a href="PageEnvoidemail.php" class="txt">Mot de passe oublié ?</a></div><br>-->
                     <div class="Accès">
                     <input type="submit" name="creationclient" value="Se créer un compte" size="30"></div><br><br>
 

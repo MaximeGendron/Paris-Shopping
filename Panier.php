@@ -39,7 +39,7 @@ if(isset($_GET['del'])) {
                 <?php 
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'> MonProfilAcheteur</a></li>";
+                    echo ""."<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'>". $_SESSION['prenom']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
 
 

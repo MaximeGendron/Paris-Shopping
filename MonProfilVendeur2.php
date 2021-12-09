@@ -1,7 +1,5 @@
 <?php require 'login.php'; ?>
 
-<?php $PPClient=$_SESSION['pp'] ;?>
-<?php $banniere=$_SESSION['banniere'] ;?>
 
 <!DOCTYPE html>
 <html>
@@ -52,7 +50,7 @@
 
                 else if(isset($_SESSION['pseudo'])) ///Connecté en admin
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilAdmin.php'> MonProfilAdmin</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilAdmin.php'>" .$_SESSION['pseudo']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
 
                 }
@@ -74,38 +72,33 @@
             <div class="ChoixUtilisateur">
 
             
-            <form action="login.php" method="post"> 
-            <?php echo " " . "<img src='$banniere' height='100' width='300' " . " ";?><br><br><br>
-            <div><h3 class="TitreCompte"> Bienvenue sur votre profil <?php echo"".$_SESSION['prenom'].""; ?>!</h3></div><br>
+        
+            
+            <div><h2 class="TitreCompte"> Bienvenue chez vous <br> <?php echo"".$_SESSION['Pseudo'].""; ?> !</h2></div><br>
 
     
-           <?php echo " " . "<img src='$PPClient' height='120' width='100'>" . " ";?><br><br><br>
+          
            <div class="ProfilInformations">
-                     
-                        <tr><h6>Email du compte:<br></h6>
-						<input type="text" name="email" placeholder="" size="30"></tr><br><br>
-                        <tr><h6>Envie d'une nouvelle bannière ?<br></h6>
-                        <input type="text" name="banniere" placeholder="ex : Image/xxx.png" size="30"><br><br>
-                        <tr><h6>Envie d'une nouvelle photo de profil ?<br></h6>
-						<input type="text" name="pp" placeholder="ex : image/png" size="30"></tr><br><br></div>
-
+           <form action="loginnew.php" method="post">
+                        <tr><h3>Retirer un article du commerce ?<br></h3>
+                        <h6>ID:<br><input type="text" name="id"  size="30"></h6><br>     
+                        <h6>Nom:<br><input type="text" name="nom"  size="30"></h6><br><br>                                                      
                         <div class="Accès">
-                        <input type="submit"name="ajoutpp" value="Ajouter" size="30"></div><br>
+                        <input type="submit"name="supparticlevendeur" value="Retirer" size="30"></div><br>
 
             </form>
-		        <div class="ProfilInformations">
-                <h6><div>Adresse email: <br> <?php echo"".$_SESSION['email'].""; ?> </div><br></h6>
-                <h6><div>Nom de famille: <br> <?php echo"".$_SESSION['nom'].""; ?> </div><br></h6>			
-                <h6><div>Adresse: <br> <?php echo"".$_SESSION['adresse'].""; ?> </div><br></h6>		
-                <h6><div>Adresse de l'image: <br> <?php echo"".$_SESSION['pp'] .""; ?> </div><br></h6>  	
-                     
-                <h6>Vous souhaitez rechercher un article en ligne? <br><a href="ToutParcourir.php" class="lien">Cliquez ici</a><br></h6><br>				
-		        </div>
-                <div class="retourbouton">
-                    <input type="submit"name="retour" value="Retour" onclick = "history.back()" ></div><br>		
-			
+		         
+               
 		    </div>
+            
+            <div class="retourbouton">
+                    <input type="submit"name="retour" value="Retour" onclick = "history.back()" > </div>
+                    
+                     
+          	
+			
         </div>
+            </div>
              
             
     </header>

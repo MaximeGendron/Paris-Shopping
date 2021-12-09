@@ -4,17 +4,19 @@
     session_start();
     $fichierCSS = "style.css";
     echo "<link rel='stylesheet' type='text/css' href='$fichierCSS'>";
-    $Nom = isset($_POST["nom"])? $_POST["nom"] : "";
-    $Prenom = isset($_POST["prenom"])? $_POST["prenom"] : "";
+
     $EmailClient = isset($_POST["email"])? $_POST["email"] : "";
-    $Adresse = isset($_POST["adresse"])? $_POST["adresse"] : "";
     $mdp = isset($_POST["mdp"])? $_POST["mdp"] : "";
     $newmdp = isset($_POST["newmdp"])? $_POST["newmdp"] : "";
     $Pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
+    $PseudoVendeur = isset($_POST["pseudovendeur"])? $_POST["pseudovendeur"] : "";
+
     $Emailvendeur = isset($_POST["emailvendeur"])? $_POST["emailvendeur"] : "";
+    $pp = isset($_POST["pp"])? $_POST["pp"] : "";
+    $banniere = isset($_POST["banniere"])? $_POST["banniere"] : "";
 
     $Admin=NULL;
-    $Client=NULL;
+    $NomClient=NULL;
     $Vendeur=NULL;
     
     $database = "parisshopping";
@@ -35,6 +37,8 @@
                     {
                         $sql .= " AND mdp LIKE '%$mdp%'";
                     }
+                    
+
             }
             $result = mysqli_query($db_handle, $sql);
             if (mysqli_num_rows($result) == 0) 
@@ -51,9 +55,45 @@
             
             else 
             {
+               
                 
-                
+
+                $sql = "SELECT nom FROM client WHERE email LIKE '%$EmailClient%' ";
+                $result = mysqli_query($db_handle, $sql);
+                $data = mysqli_fetch_assoc($result);
+                $NomClient =$data['nom'] ;
+                $_SESSION['nom'] = $NomClient;
+
+                $sql = "SELECT prenom FROM client WHERE email LIKE '%$EmailClient%' ";
+                $result = mysqli_query($db_handle, $sql);
+                $data = mysqli_fetch_assoc($result);
+                $PrenomClient =$data['prenom'] ;
+                $_SESSION['prenom'] = $PrenomClient;
+
+                $sql = "SELECT adresse FROM client WHERE email LIKE '%$EmailClient%' ";
+                $result = mysqli_query($db_handle, $sql);
+                $data = mysqli_fetch_assoc($result);
+                $AdresseClient =$data['adresse'] ;
+                $_SESSION['adresse'] = $AdresseClient;
+
+                $sql = "SELECT pp FROM client WHERE email LIKE '%$EmailClient%' ";
+                $result = mysqli_query($db_handle, $sql);
+                $data = mysqli_fetch_assoc($result);
+                $PPClient=NULL;
+                $PPClient =$data['pp'] ;
+                $_SESSION['pp'] = $PPClient;
+
+                $sql = "SELECT banniere FROM client WHERE email LIKE '%$EmailClient%' ";
+                $result = mysqli_query($db_handle, $sql);
+                $data = mysqli_fetch_assoc($result);
+                $banniere=NULL;
+                $banniere =$data['banniere'] ;
+                $_SESSION['banniere'] = $banniere;
+               
                 $_SESSION['email'] = $EmailClient;
+                $_SESSION['mdp'] = $mdp;
+
+
                ///bien connecté
                 ?>
                 <?php
@@ -103,9 +143,20 @@
                 
                 
                 
-                
+                $sql = "SELECT Pseudo FROM vendeur WHERE Email LIKE '%$Emailvendeur%' ";
+                $result = mysqli_query($db_handle, $sql);
+                $data = mysqli_fetch_assoc($result);
+                $PseudoVendeur =$data['Pseudo'] ;
+                $_SESSION['Pseudo'] = $PseudoVendeur;
+
+                $sql = "SELECT MDP FROM vendeur WHERE Email LIKE '%$Emailvendeur%' ";
+                $result = mysqli_query($db_handle, $sql);
+                $data = mysqli_fetch_assoc($result);
+                $PseudoVendeur =$data['MDP'] ;
+                $_SESSION['MDP'] = $PseudoVendeur;
                 
                 $_SESSION['Email'] = $Emailvendeur;
+
                 
                 ?>
                 <?php
@@ -234,8 +285,8 @@
         {
             if ($db_found) {
                 $sql = "SELECT * FROM vendeur";
-                if ($Pseudo != "") {
-                    $sql .= " WHERE Pseudo LIKE '%$Pseudo%'";
+                if ($PseudoVendeur != "") {
+                    $sql .= " WHERE Pseudo LIKE '%$PseudoVendeur%'";
                         if ($Emailvendeur != "") {
                             $sql .= " AND Email LIKE '%$Emailvendeur%'";
                             if($mdp != "")
@@ -280,8 +331,51 @@
                     echo "<p>Database not found.</p>";
                 }
 
+                
 
             }
+
+
+            
+                    //crea photo
+        if (isset($_POST["ajoutpp"])) {
+            if ($db_found) {
+        $sql = "SELECT * FROM client "; 
+        if ($EmailClient!= "") {
+                $sql .= " AND email LIKE '%$EmailClient%'";
+                
+            }
+            $result = mysqli_query($db_handle, $sql);
+            if (mysqli_num_rows($result) != 0) {
+            
+                echo "<p>Client existe déjà</p>";
+                ?>
+                    <?php
+                    header('Location: VendeurConnexion.php');
+                    ?>
+                    <?php
+                
+                } 
+            else 
+            {
+                    $sql = "UPDATE client SET pp ='$pp' WHERE email='$EmailClient'";
+                    $result =mysqli_query($db_handle, $sql);
+                    $sql = "UPDATE client SET banniere ='$banniere' WHERE email='$EmailClient'";
+                    $result =mysqli_query($db_handle, $sql);
+
+                    ?> 
+                    <?php header('Location: http://localhost/Paris-Shopping/VotreCompte.php'); exit(); ?>  
+                    <?php
+                    }
+                    
+                
+        } 
+            else
+    
+            {
+                echo "<p>Database not found.</p>";
+            }
+    }
 
     mysqli_close($db_handle);
 ?>

@@ -36,7 +36,7 @@ $DB = new DB();
                 <?php 
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'> MonProfilAcheteur</a></li>";
+                    echo ""."<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'>". $_SESSION['prenom']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
 
 
@@ -61,7 +61,7 @@ $DB = new DB();
                     echo "<li class='nav-item'><a class='nav-link' href='VotreCompte.php'> Se connecter</a></li>";
 
                 }
-                ?>             
+			    ?>
             </ul>
         </div>
     </nav>

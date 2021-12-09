@@ -30,7 +30,7 @@
                             <?php 
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'> MonProfilAcheteur</a></li>";
+                    echo ""."<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'>". $_SESSION['prenom']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
 
 
@@ -74,7 +74,7 @@
                     <table border="2">
                         <h2>Nouveau vendeur chez Paris shopping ?</h2>
 						<tr>Pseudo<br>
-						<input type="text" name="pseudo" placeholder="" size="30"></tr><br>
+						<input type="text" name="pseudovendeur" placeholder="" size="30"></tr><br>
 						<tr>Email<br>
 						<input type="text" name="email" placeholder="" size="30"></tr><br><br>
                         <tr>Mot de passe<br>
