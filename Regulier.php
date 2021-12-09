@@ -83,7 +83,7 @@ $panier = new panier($DB);
                    </div>
 
                    <div class="aInformations">
-                   <h5><?= $article->Nom ?></h5>
+                   <h5><a href="Article.php"><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
                    <p><?= $article->Prix ?> € </p>
 
@@ -115,7 +115,7 @@ $panier = new panier($DB);
                    </div>
 
                    <div class="aInformations">
-                   <h5><?= $article->Nom ?></h5>
+                   <h5><a href="Article.php"><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
                    <p><?= $article->Prix ?> € </p>
                    </div>

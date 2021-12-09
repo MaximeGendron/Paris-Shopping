@@ -540,7 +540,7 @@ input:checked + .slider:before {
 .description3 {
      left: 50%;
      position: absolute;
-     top: 10%;
+     top: 40%;
      transform: translate(-50%, -50%);
      text-align : center
 }
@@ -550,3 +550,4 @@ input:checked + .slider:before {
     font-size: 1rem;
     line-height: 1.5;
 }
+
