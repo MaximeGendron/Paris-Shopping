@@ -1,6 +1,6 @@
 <?php require 'login.php'; ?>
 
-<?php $PseudoVendeur=$_SESSION['pseudovendeur'] ;?>
+<?php $PseudoVendeur=$_SESSION['Pseudo'] ;?>
 
 <!DOCTYPE html>
 <html>
@@ -107,7 +107,7 @@
 
                     <p><h6> <label>Vendeur</label><br><h6>
                     <select name="pseudovendeur">
-                    <?php echo " " . "<option value='$PseudoVendeur'>"."$_SESSION['Pseudo'].</option>" ?>
+                     <option value="<?php echo"".$_SESSION['Pseudo'].""; ?>"> <?php echo"".$_SESSION['Pseudo'].""; ?></option>"  
 
                     
                                         
