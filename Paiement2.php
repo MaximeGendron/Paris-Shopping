@@ -88,7 +88,7 @@
        <label for="dateExp">La date d'expiration</label> : <input type="date" name="dateExp" id="dateExp" placeholder="La date d'expiration:" name="" /> 
    </p>
    <p>
-       <label for="codeS">Le code de securite</label> : <input type="tel" name="codeS" id="codeS" maxlength="4" placeholder="Le code de securite:" name="" required />
+       <label for="codeS">Le code de securite</label> : <input type="tel" name="codeS" id="codeS" minlength="3" maxlength="4" placeholder="Le code de securite:" name="" required />
    </p>
   
    <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="">

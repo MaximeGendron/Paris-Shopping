@@ -106,7 +106,8 @@
                         $result = mysqli_query($db_handle, $sql);
 
                         while ($data = mysqli_fetch_assoc($result)) {
-                            echo "<strong><a href='Article.php'>" . $data['Nom'] . "</a></strong><br>"; 
+                            $id=$data['ID'];
+                            echo "<strong><a href='Article.php?id=$id'>" . $data['Nom'] . "</a></strong><br>"; 
                             $image = $data['Image'];
                             echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                             echo $data['Description'] . "<br>";

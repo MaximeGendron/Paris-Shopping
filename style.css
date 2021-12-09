@@ -367,7 +367,7 @@ input:checked + .slider:before {
 }
 :required
 {
-    background-color: white;
+    background-color: red;
 }
 .InfoLivraison .form-control,
 .features input {
