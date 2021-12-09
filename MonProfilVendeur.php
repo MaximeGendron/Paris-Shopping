@@ -1,5 +1,6 @@
 <?php require 'login.php'; ?>
 
+<?php $PseudoVendeur=$_SESSION['pseudovendeur'] ;?>
 
 <!DOCTYPE html>
 <html>
@@ -72,30 +73,66 @@
             <div class="ChoixUtilisateur">
 
             
-            <form action="login.php" method="post"> 
+        
             
             <div><h2 class="TitreCompte"> Bienvenue chez vous <br> <?php echo"".$_SESSION['Pseudo'].""; ?> !</h2></div><br>
 
     
           
            <div class="ProfilInformations">
-                     
+           <form action="loginnew.php" method="post">
                         <tr><h3>Vendre un nouvel article ?<br></h3>
                         <h6>ID:<br><input type="text" name="id"  size="30"></h6><br>     
                         <h6>Nom:<br><input type="text" name="nom"  size="30"></h6><br>     
                         <h6>Description:<br><input type="text" name="description"  size="30"></h6><br>  
-                        <h6>Photos:<br><input type="text" name="photo"  size="30"></h6><br>                             
-                        <h6>Prix:<br><input type="text" name="prix"  size="30"></h6><br>   
-                        <h6>Catégorie:<br><input type="text" name="catégorie"  size="30"></h6><br>     
+                        <h6>Photos:<br><input type="text" name="image"  size="30"></h6><br>                             
+                        <h6>Prix:<br><input type="text" name="prix"  size="30"></h6>    
+                        <p><h6> <label>Quelle Catégorie ?</label><br><h6>
+                    <select name="categorie">
+                         
+                            <option value="Luxe">Luxe</option>
+                            <option value="Régulier">Régulier</option>
+                            <option value="Friperie">Friperie</option>
+                                        
+                    </select> </p>
+                         
+                        <p><h6> <label>Quel type de vente  ?</label><br><h6>
+                    <select name="typevente">
+                         
+                            <option value="Achat-Immediat">Achat-Immediat</option>
+                            <option value="Vendeur-Client">Vendeur-Client</option>
+                            <option value="Enchere">Enchere</option>
+                                        
+                    </select> </p>
+
+                    <p><h6> <label>Vendeur</label><br><h6>
+                    <select name="pseudovendeur">
+                    <?php echo " " . "<option value='$PseudoVendeur'>"."$_SESSION['Pseudo'].</option>" ?>
+
+                    
+                                        
+                    </select> </p>
+            </form>
+                
+                 
+                         
                         <div class="Accès">
-                        <input type="submit"name="ajoutarticle" value="Ajouter" size="30"></div><br>
+                        <input type="submit"name="ajoutarticlevendeur" value="Ajouter" size="30"></div><br>
 
             </form>
 		         
                
 		    </div>
+            
             <div class="retourbouton">
-                    <input type="submit"name="retour" value="Retour" onclick = "history.back()" ></div><br>		
+                    <input type="submit"name="retour" value="Retour" onclick = "history.back()" ></div>
+           
+            <div><a href=" MonProfilVendeur2.php"><button class="suivantbouton">Retirer un objet à vendre</button></a></div>
+                         
+                      
+
+        
+          	
 			
         </div>
         

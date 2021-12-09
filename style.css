@@ -472,7 +472,19 @@ input::placeholder {
      margin-left: auto;
      float: left;
 }
-
+.suivantbouton button
+{
+     text-align: center;
+     background-color : #936a4f;
+     width: 70px;
+     font-size: 0.9rem;
+     position:relative;
+     right:70%;
+      
+      
+      
+      
+}
 
 .article2 {
      background-color: #f2f6e9;
