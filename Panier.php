@@ -76,9 +76,11 @@ if(isset($_GET['del'])) {
 </script>
 
 <section class="page-header header container-fluid">
-        <br><h1 class="titre">Panier</h1>
+        <div class="Titre">
+    <h2>Panier</h2></div>
 
         <form method="post" action="Panier.php">
+            <div class="php2">
         <?php
         $ids = array_keys($_SESSION['panier']);
         if(empty($ids)){
@@ -109,12 +111,14 @@ if(isset($_GET['del'])) {
                 <a href="Panier.php?del=<?= $article->ID; ?>"><img src="Image/poubelle.png" alt="Poubelle" width="35"></a>
             </div>
         </div>
+</div>
         <?php endforeach; ?>
         <br>
         <div class="finPanier">
             <h4 class="titre">Prix total : <?= number_format($panier->total(),2,',',''); ?>€</h4>
         </div>
-        <button class="boutonP"><a href="Paiement.php">Paiement</a></button>
+        <div class = "Panier">
+        <a href="Paiement.php"><button class="btn btn-outline-secondary btn-lg">Paiement</button></a><br><br></div>
         
         </form>
         <br>

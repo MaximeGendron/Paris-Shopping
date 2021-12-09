@@ -495,6 +495,15 @@ input:checked + .slider:before {
      background-color: #edddc6;
      padding: 30px 20px 30px 20px;
 }
+
+.php2 {
+     margin-bottom: 16px;
+     text-align : center; 
+     border: #fff;
+     border-radius: 10px 10px 10px 10px;
+     padding: 30px 20px 30px 20px;
+     top : 30%;
+}
      
 .article2 button {
      text-align: center;
@@ -540,7 +549,7 @@ input:checked + .slider:before {
 .description3 {
      left: 50%;
      position: absolute;
-     top: 40%;
+     top: 50%;
      transform: translate(-50%, -50%);
      text-align : center
 }
@@ -551,3 +560,17 @@ input:checked + .slider:before {
     line-height: 1.5;
 }
 
+.description3 button {
+     text-align: center;
+     background-color : #936a4f;
+     border-radius: 10px 10px 10px 10px;
+     box-shadow: 0 0 0.5em #000;
+     color: beige;
+     font-size: 0.9rem;
+}
+
+.description3 button:hover {
+ border:1px solid #fff;
+ background-color: #fff;
+ color: #000;
+}

@@ -74,12 +74,10 @@
         <p><strong>
             L'article a bien été ajouté au panier. <br><br>
     </strong></p> 
-    </div>
-
-    <div id="article2">
-                    <a href="ToutParcourir.php"><button class="btn btn-outline-secondary btn-lg">Retour aux achats</button></a><br><br>
+    <a href="ToutParcourir.php"><button class="btn btn-outline-secondary btn-lg">Retour aux achats</button></a><br><br>
                      <a href="Panier.php"><button class="btn btn-outline-secondary btn-lg">Voir le panier</button></a><br><br>
-                </div>
+
+    </div>
 
     </header>
 
