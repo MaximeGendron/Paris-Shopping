@@ -1,4 +1,13 @@
-<?php require 'login.php'; ?>
+<?php require 'login.php'; 
+require 'CreateDB.php';
+require 'CreatePanierDB.php';
+$DB = new DB();
+$panier = new panier($DB);
+if(isset($_GET['del'])) {
+    $panier->del($_GET['del']);
+}
+?>
+
 <!DOCTYPE html> 
 <html>
 <head>
@@ -66,13 +75,51 @@
  });
 </script>
 
-<div class="overlay"></div>
-<div class="Panier">
+<section class="page-header header container-fluid">
+        <br><h1 class="titre">Panier</h1>
 
-  <a href="Paiement.php"><button class="btn btn-outline-secondary btn-lg">Paiement</button>
-        </a>
-   
-</div>
+        <form method="post" action="Panier.php">
+        <?php
+        $ids = array_keys($_SESSION['panier']);
+        if(empty($ids)){
+            $article = array();
+        }
+        else {
+            $article = $DB->query('SELECT * FROM article WHERE ID IN ('.implode(',', $ids). ')');
+        }
+        foreach($article as $article):
+        ?>
+        <br>
+      
+            <div class="aImage">
+                <p><img src="Image/<?= $article->ID;?>.png" width="140px"></p>
+            </div>
+            <div class="aInformations">
+                <h5><?= $article->Nom ?></h5>
+                <p><?= $article->Description ?></p>
+            </div>
+            <div class="aQuantiteP">
+                <p>Quantité : 
+                    <input type="number" name="panier[quantite][<?= $article->ID;?>]" value="<?= $_SESSION['panier'][$article->ID]; ?>">
+                    <input type="submit" value="✓">   
+                    <p>Prix unitaire : <?= number_format($article->Prix,2,',',''); ?>€ </p>
+                </p>
+            </div>
+            <div class="aSupprimer">
+                <a href="Panier.php?del=<?= $article->ID; ?>"><img src="Image/poubelle.png" alt="Poubelle" width="35"></a>
+            </div>
+        </div>
+        <?php endforeach; ?>
+        <br>
+        <div class="finPanier">
+            <h4 class="titre">Prix total : <?= number_format($panier->total(),2,',',''); ?>€</h4>
+        </div>
+        <button class="boutonP"><a href="Paiement.php">Paiement</a></button>
+        
+        </form>
+        <br>
+    </section>
+
 </header>
 </body>
 </html>

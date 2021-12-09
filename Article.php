@@ -1,124 +1,67 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Paiement</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
- href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
-<link rel="stylesheet" type="text/css" href="styles.css">
-<link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-    <!--Barre de navigation // A copier sur chaque page<-->
-    <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="Accueil.php">ParisShopping</a>
-        <a class="navbar-brand" href="Image/logo.png"></a><img src="Image/logo.png" alt="Logo" width="50 px"></a></li>
-        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="main-navigation">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
-                <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
-                <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
-                <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png" alt="Panier" width="30 px"></a></li>
-                <li class="nav-item"><a class="nav-link" href="VotreCompte.php">Mon Compte</a></li>
-            </ul>
-        </div>
-    </nav>
-<header class="page-header header container-fluid">
-      <script type="text/javascript">
- $(document).ready(function(){
- $('.header').height($(window).height());
- });
-</script>
+<?php
+
+function component($Nom, $Prix, $Image, $Description, $Categorie, $TypeVente, $ID){
+    $element = "" ?>
     
- <div class="overlay"></div> 
- <div class="InfoArticle">
+    <div class="col-md-3 col-sm-6 my-3 my-md-0">
+                <form action="reuglier.php" method="post">
+                    <div class="card shadow">
+                        <div>
+                            <img src="$Image" alt="Image1" class="img-fluid card-img-top\">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">$Nom</h5>
+                            <h6>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </h6>
+                            <p class="card-text">
+                                Some quick example text to build on the card.
+                            </p>
+                            <h5>
+                                <span class="prix">$$Prix</span>
+                            </h5>
+                            <button type="submit" class="btn btn-warning my-3" name="add">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+                             <input type='hidden' name='ID' value='$ID'>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    ";
+    echo $element;
+}
 
-    <?php
-
-        $database = "parisshopping";
-
-        $db_handle = mysqli_connect('localhost', 'root', '');
-        $db_found = mysqli_select_db($db_handle, $database);
-        $table_article = array();
-        $temp = array();
-
-
-        session_start();
-        if(isset($_SESSION['itemClick']))    
-    {
-        $item_clique = $_SESSION['itemClick']; 
-
-
-        if($db_found)
-    {
-        //On sélectionne tous les items présents dans la table item
-        $sql = "SELECT * FROM article";
-        $r = mysqli_query($db_handle, $sql);
-
-            $i = 0;
-            //On récupère id, nom, catégorie, type de vente et prix de chaque item
-            while ($data = mysqli_fetch_assoc($r)) 
-            {
-                $Nom[$i] = $data['Nom'];
-                $Prix[$i] = $data['Prix'];
-                $Description[$i] = $data['Description'];
-                $Categorie[$i] = $data['Categorie'];
-                $TypeVente[$i] = $data['TypeVente'];
-                $Image[$i] = $data['Image'];
-                $i++;
-            }
-
-            //Pour chaque item, on garder en mémoire dans un seul tableau toutes ses données
-            for ($u = 0 ; $u < count($Nom) ; $u++)
-            { 
-                $temp[0] = $Nom[$u]; 
-                $temp[1] = $Prix[$u];
-                $temp[2] = $Description[$u]; 
-                $temp[3] = $Categorie[$u];
-                $temp[4] = $TypeVente[$u];
-                $temp[5] = $Image[$u];
-
-                $table_article["$Nom[$u]"] = $temp; // Tableau associatif
-                //Tous les items sont donc dans $table_article
-            }
-
-        $ID_temporaire_item = $item_clique;
-        $sql = "SELECT * FROM article WHERE Nom LIKE '$ID_temporaire_item'";
-        $result = mysqli_query($db_handle, $sql);
-
-            $Nom ="";
-            $Description = "";
-            $Prix = "";
-            $TypeVente = "";
-            $Categorie = "";
-            $Image = "";
-
-
-        if (mysqli_num_rows($result) != 0){
-            while ($data = mysqli_fetch_assoc($result) ) 
-                    {   //On les récupère
-                        $Nom = $data['Nom'];
-                        $Description = $data['Description'];
-                        $Prix = $data['Prix'];
-                        $Categorie = $data['Categorie'];
-                        $Image = $data['Image'];
-
-                    }
-            }
-            }   
-    }
+function cartElement($Image, $Nom, $Prix, $Categorie, $Description, $TypeVente, $ID){
+    $element = "" ?>
+    
+    <form action="cart.php?action=remove&id=$productid" method="post" class="cart-items">
+                    <div class="border rounded">
+                        <div class="row bg-white">
+                            <div class="col-md-3 pl-0">
+                                <img src=$productimg alt="Image1" class="img-fluid">
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="pt-2">$Nom</h5>
+                                <small class="text-secondary">Seller: dailytuition</small>
+                                <h5 class="pt-2">$$Prix</h5>
+                                <button type="submit" class="btn btn-warning">Save for Later</button>
+                                <button type="submit" class="btn btn-danger mx-2" name="remove">Remove</button>
+                            </div>
+                            <div class="col-md-3 py-5">
+                                <div>
+                                    <button type="button" class="btn bg-light border rounded-circle"><i class="fas fa-minus"></i></button>
+                                    <input type="text" value="1" class="form-control w-25 d-inline">
+                                    <button type="button" class="btn bg-light border rounded-circle"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+    
+    ";
+    echo  $element;
+}
 ?>
-                    </div>           
-                 </div>
-            </header>
-        </body>
-    </html>
-
-<?php require 'Footer.php'; ?>
