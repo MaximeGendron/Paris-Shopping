@@ -22,8 +22,8 @@ body {
 }
 .header {
  background-image: url('Image/fond.jpg');
- background-size: cover;
- background-position: center;
+ background-size: auto;
+ background-position: unset;
  position: relative;
 }
 .overlay {
@@ -322,9 +322,11 @@ input:checked + .slider:before {
  line-height: 1.0;
 }
 .Notifications {
- right: 30%;
+ margin: 0 auto;
+ left: 50%;
  position: absolute;
- top: 30%;
+ top: 45%;
+ transform: translate(-50%, -55%);
  text-align: center;
  border: #fff;
  border : solid #fff;

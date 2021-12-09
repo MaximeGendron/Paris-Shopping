@@ -14,17 +14,17 @@
         <h3 class="feature-title">Sélection du jour</h3>
         <div class="carousel-inner">
           <div class="carousel-item active"  data-interval="1000">
-            <img src="Image/talon.png" alt="Carrousel slide 1" class="d-block w-100" >
+            <img src="Image/9.png" alt="Carrousel slide 1" class="d-block w-100" >
             <div class="carousel-caption d-none d-md-block">
         </div>
           </div>
           <div class="carousel-item" data-interval="1000">
-            <img src="Image/basket.png" alt="Carrousel slide 2" class="d-block w-100" >
+            <img src="Image/2.png" alt="Carrousel slide 2" class="d-block w-100" >
             <div class="carousel-caption d-none d-md-block text-dark">
             </div>
           </div>
           <div class="carousel-item" data-interval="1000">
-            <img src="Image/bonnet.png" alt="Carrousel slide 3" class="d-block w-100" >
+            <img src="Image/3.png" alt="Carrousel slide 3" class="d-block w-100" >
             <div class="carousel-caption d-none d-md-block">
             </div>
           </div>
@@ -57,13 +57,13 @@
         <h3 class="feature-title">Ventes flash</h3>
         <div class="carousel-inner">
           <div class="carousel-item active"  data-interval="1000">
-            <img src="Image/echarpe.png" alt="Carrousel slide 1" class="d-block w-100" >
+            <img src="Image/5.png" alt="Carrousel slide 1" class="d-block w-100" >
             <div class="carousel-caption d-none d-md-block">
         </div>
           </div>
           <div class="carousel-item" data-interval="1000">
 
-            <img src="Image/sacchanel.png" alt="Carrousel slide 2" class="d-block w-100">
+            <img src="Image/13.png" alt="Carrousel slide 2" class="d-block w-100">
 
             
 
@@ -72,7 +72,7 @@
           </div>
           <div class="carousel-item" data-interval="1000">
 
-            <img src="Image/sacdior.png" alt="Carrousel slide 3" class="d-block w-100">
+            <img src="Image/14.png" alt="Carrousel slide 3" class="d-block w-100">
 
             
 
