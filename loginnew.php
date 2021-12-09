@@ -1,11 +1,18 @@
+
 <?php
 
+    
     $Nom = isset($_POST["nom"])? $_POST["nom"] : "";
     $Prenom = isset($_POST["prenom"])? $_POST["prenom"] : "";
     $Email = isset($_POST["email"])? $_POST["email"] : "";
     $Adresse = isset($_POST["adresse"])? $_POST["adresse"] : "";
     $mdp = isset($_POST["mdp"])? $_POST["mdp"] : "";
     $Pseudo = isset($_POST["pseudo"])? $_POST["pseudo"] : "";
+    $PseudoVendeur = isset($_POST["pseudovendeur"])? $_POST["pseudovendeur"] : "";
+
+    $pp = isset($_POST["pp"])? $_POST["pp"] : "";
+    $banniere = isset($_POST["banniere"])? $_POST["banniere"] : "";
+
 
     $database = "parisshopping";
     //connectez-vous dans BDD
@@ -27,6 +34,14 @@
                                     $sql .= " AND adresse LIKE '%$Adresse%'";
                                         if ($mdp != "") {
                                             $sql .= " AND mdp LIKE '%$mdp%'";
+                                            if ($pp != "") {
+                                                $sql .= " AND pp LIKE '%$pp%'";
+                                                if ($banniere != "") {
+                                                    $sql .= " AND banniere LIKE '%$banniere%'";
+                                                    
+                                                 }
+
+                                             }
                                          }
                                     }
                          }
@@ -46,7 +61,7 @@
         else 
         {
                // $mdp=password_hash($mdp, PASSWORD_DEFAULT);
-                $sql = "INSERT INTO client(nom, prenom, email, adresse, mdp) VALUES('$Nom', '$Prenom', '$Email', '$Adresse', '$mdp')";
+                $sql = "INSERT INTO client(nom, prenom, email, adresse, mdp, pp, banniere) VALUES('$Nom', '$Prenom', '$Email', '$Adresse', '$mdp', '$pp', '$banniere')";
                 $result =mysqli_query($db_handle, $sql);
                 echo "<p>Client ajouté à la base de donnée</p>";
                 $sql = "SELECT * FROM client";
@@ -60,12 +75,21 @@
                                             $sql .= " AND adresse LIKE '%$Adresse%'";
                                                 if ($mdp != "") {
                                                     $sql .= " AND mdp LIKE '%$mdp%'";
+                                                    if ($pp != "") {
+                                                        $sql .= " AND pp LIKE '%$pp%'";
+                                                        if ($banniere != "") {
+                                                            $sql .= " AND banniere LIKE '%$banniere%'";
+                                                         }
+                                                     }
                                                  }
                                             }
                                  }
                              }
                 }
                 $result = mysqli_query($db_handle, $sql);
+                
+                ///$NomClient=
+
                /* echo "<h2>" . "Informations sur le nouveau client ajouté:" . "</h2>";
                 echo "<table border='1'>";
                 echo "<tr>";
@@ -87,7 +111,7 @@
                 }
                 echo "</table>";*/
                 ?> 
-                <?php header('Location: http://localhost/Paris-Shopping/VotreCompte.php'); exit(); ?>  
+                <?php header('Location: http://localhost/Paris-Shopping/DejacompteAcheteur.php'); exit(); ?>  
                 <?php
                 }
                 
@@ -103,8 +127,8 @@
         if (isset($_POST["creationvendeur"])) {
             if ($db_found) {
         $sql = "SELECT * FROM vendeur "; 
-        if ($Pseudo != "") {
-                $sql .= " WHERE Pseudo LIKE '%$Pseudo%'";
+        if ($PseudoVendeur != "") {
+                $sql .= " WHERE Pseudo LIKE '%$PseudoVendeur%'";
                     if ($Email != "") {
                         $sql .= " AND Email LIKE '%$Email%'";
                             if ($mdp != "") {
@@ -126,12 +150,12 @@
             else 
             {
                    // $mdp=password_hash($mdp, PASSWORD_DEFAULT);
-                    $sql = "INSERT INTO vendeur(Pseudo, Email, MDP) VALUES('$Pseudo', '$Email', '$mdp')";
+                    $sql = "INSERT INTO vendeur(Pseudo, Email, MDP) VALUES('$PseudoVendeur', '$Email', '$mdp')";
                     $result =mysqli_query($db_handle, $sql);
                     echo "<p>Client ajouté à la base de donnée</p>";
                     $sql = "SELECT * FROM vendeur";
-                    if ($Pseudo != "") {
-                        $sql .= " WHERE Pseudo LIKE '%$Pseudo%'";
+                    if ($PseudoVendeur != "") {
+                        $sql .= " WHERE Pseudo LIKE '%$PseudoVendeur%'";
                             if ($Email != "") {
                                 $sql .= " AND Email LIKE '%$Email%'";
                                     if ($mdp != "") {
@@ -153,8 +177,8 @@
             {
                 echo "<p>Database not found.</p>";
             }
-    }
+        }
 
-//fermer la connexion
-mysqli_close($db_handle);
+    //fermer la connexion
+    mysqli_close($db_handle);
 ?>

@@ -1,5 +1,8 @@
 <?php require 'login.php'; ?>
 
+<?php $PPClient=$_SESSION['pp'] ;?>
+<?php $banniere=$_SESSION['banniere'] ;?>
+
 <!DOCTYPE html>
 <html>
 
@@ -33,7 +36,7 @@
                 <?php 
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'> MonProfilAcheteur</a></li>";
+                    echo ""."<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'>". $_SESSION['prenom']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
 
 
@@ -64,25 +67,51 @@
     </nav>
 
                     <header class="page-header header container-fluid">
-                        <script type="text/javascript">
-                    $(document).ready(function(){
-                    $('.header').height($(window).height());
-                    });
-                    </script>
+                        <script type="text/javascript">$(document).ready(function(){ $('.header').height($(window).height());});</script>
 
-        <div class="overlay"></div>
-        <div class="description">
-        <div class="col-sm-2" style="height:150px; background-color:orange;">YO</div>
-            <h1>Bienvenue sur votre profil Client !</h1>
+        <div class="overlay">
             
+            <div class="ChoixUtilisateur">
 
-        </p>
+            
+            <form action="login.php" method="post"> 
+            <?php echo " " . "<img src='$banniere' height='100' width='300' " . " ";?><br><br><br>
+            <div><h3 class="TitreCompte"> Bienvenue sur votre profil <?php echo"".$_SESSION['prenom'].""; ?>!</h3></div><br>
 
-</div>
-</header>
+    
+           <?php echo " " . "<img src='$PPClient' height='120' width='100'>" . " ";?><br><br><br>
+           <div class="ProfilInformations">
+                     
+                        <tr><h6>Email du compte:<br></h6>
+						<input type="text" name="email" placeholder="" size="30"></tr><br><br>
+                        <tr><h6>Envie d'une nouvelle bannière ?<br></h6>
+                        <input type="text" name="banniere" placeholder="ex : Image/xxx.png" size="30"><br><br>
+                        <tr><h6>Envie d'une nouvelle photo de profil ?<br></h6>
+						<input type="text" name="pp" placeholder="ex : image/png" size="30"></tr><br><br></div>
 
-</body>
+                        <div class="Accès">
+                        <input type="submit"name="ajoutpp" value="Ajouter" size="30"></div><br>
 
-</html>
+            </form>
+		        <div class="ProfilInformations">
+                <h6><div>Adresse email: <br> <?php echo"".$_SESSION['email'].""; ?> </div><br></h6>
+                <h6><div>Nom de famille: <br> <?php echo"".$_SESSION['nom'].""; ?> </div><br></h6>			
+                <h6><div>Adresse: <br> <?php echo"".$_SESSION['adresse'].""; ?> </div><br></h6>		
+                <h6><div>Adresse de l'image: <br> <?php echo"".$_SESSION['pp'] .""; ?> </div><br></h6>  	
+                     
+                <h6>Vous souhaitez rechercher un article en ligne? <br><a href="ToutParcourir.php" class="lien">Cliquez ici</a><br></h6><br>				
+		        </div>
+                <div class="retourbouton">
+                    <input type="submit"name="retour" value="Retour" onclick = "history.back()" ></div><br>		
+			
+		    </div>
+        </div>
+             
+            
+    </header>
 
-<?php require 'Footer.php'; ?>
+    </body>
+
+    </html>
+
+    <?php require 'Footer.php'; ?>
