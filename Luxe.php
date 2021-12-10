@@ -81,7 +81,7 @@ $panier = new panier($DB);
 
     <div class="overlay"></div>
     <div class="Titre">
-    <h2>Friperie</h2></div>
+    <h2>Luxe</h2></div>
 
     <div class="description2">
         
@@ -131,6 +131,7 @@ $panier = new panier($DB);
                     ?>
                         
                 </div>
+            </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12">
 

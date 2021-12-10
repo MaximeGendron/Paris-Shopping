@@ -83,7 +83,48 @@
         <input type="checkbox">
         <span class="slider round"></span>
         </label>    
-        <h3>Dès qu'un article correspondra à vos critères, vous en serez alerter.</h3>    
+        <h3>Dès qu'un article correspondra à vos critères, vous en serez alerter.</h3>
+
+           <form action="InfoNotif.php" method="post">   
+                        <p><h6> <label>Quelle Catégorie ?</label><br><h6>
+                    <select name="categorie">
+                         
+                            <option value="Luxe">Luxe</option>
+                            <option value="Régulier">Régulier</option>
+                            <option value="Friperie">Friperie</option>
+                                        
+                    </select> </p>
+                         
+                        <p><h6> <label>Quel type de vente  ?</label><br><h6>
+                    <select name="typevente">
+                         
+                            <option value="Vente immediate">Achat-Immediat</option>
+                            <option value="Transaction Vendeur-Client">Vendeur-Client</option>
+                            <option value="Enchere">Enchere</option>
+                                        
+                    </select> </p>
+
+                    <label for="couleur">La couleur de l'article recherché ?</label> : <input type="color" name="couleur" id="couleur" />
+                                        
+                    </select> </p>
+
+                        <p>Veuillez indiquer la fourchette du prix :<br/>
+                            <br>
+                            <input type="radio" name="prix" value="moins10" id="moins10" /> <label for="moins10">Moins de 10€</label><br/>
+                            <input type="radio" name="prix" value="medium10-50" id="medium10-50" /> <label for="medium10-50">10-50€</label><br />
+                            <input type="radio" name="prix" value="medium50-100" id="medium50-100" /> <label for="medium50-100">50-100€</label><br />
+                            <input type="radio" name="prix" value="medium100-500" id="medium100-500" /> <label for="medium100-500">100-500€</label><br />
+                            <input type="radio" name="prix" value="medium500-1000" id="medium500-1000" /> <label for="medium500-1000">500-1000€</label><br />
+                            <input type="radio" name="age" value="plus1000" id="plus1000" /> <label for="plus1000">Plus de 1000€ ?</label>
+   </p>
+             
+</form>
+            </form>
+                
+                        <div class="Accès">
+                        <input type="submit"name="ajoutnotif" value="Ajouter" size="30"></div><br>
+
+            </form>    
 </div>
 </div>
 
