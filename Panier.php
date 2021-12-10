@@ -118,8 +118,9 @@ if(isset($_GET['del'])) {
             <h4 class="titre">Prix total : <?= number_format($panier->total(),2,',',''); ?>€</h4>
         </div>
         <div class = "Panier">
-        <a href="Paiement.php"><button class="btn btn-outline-secondary btn-lg">Paiement</button></a><br><br></div>
-        
+            <a href="Paiement.php">Paiement</a>
+        </div>
+         
         </form>
         <br>
     </section>

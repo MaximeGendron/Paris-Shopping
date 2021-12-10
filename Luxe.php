@@ -75,7 +75,6 @@ $panier = new panier($DB);
                     <div id="liste1">
                     <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat Immédiat</button></a><br><br>
                 </div>
-            </div>
 
                    <?php $article = $DB->query('SELECT * FROM article WHERE Categorie = "Luxe" AND  TypeVente ="Vente immediate" '); ?>
                    <?php foreach ($article as $key => $article): ?>
@@ -97,11 +96,11 @@ $panier = new panier($DB);
                    </div>
 
                    </div>
+                   </div>
 
                     <?php endforeach ?>
                         
                 </div>
-            </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12">
 

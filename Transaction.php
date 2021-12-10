@@ -96,12 +96,48 @@ $panier = new panier($DB);
 
     <br>
 
-    <div class="article2">
-             <div id="liste1">
-                    <a href="Luxe.php"><button class="btn btn-outline-secondary btn-lg">Luxe</button></a><br><br>
+     <div class="article2">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+                <div class="php">
+                    <div id="liste1">
+                    <a href="Regulier.php"><button class="btn btn-outline-secondary btn-lg">Régulier</button></a><br><br>
                 </div>
 
-                <?php $article = $DB->query('SELECT * FROM article WHERE TypeVente = "Enchere" AND  Categorie ="Luxe" '); ?>
+                   <?php $article = $DB->query('SELECT * FROM article WHERE TypeVente = "Transaction Vendeur-Client" AND  Categorie ="Regulier" '); ?>
+                   <?php foreach ($article as $key => $article): ?>
+
+                   <div class="aImage">
+                   <p><img src="Image/<?= $article->ID;?>.png" width="140px"></p>
+                   </div>
+
+                   <div class="aInformations">
+                   <h5><a href="Article.php"><?= $article->Nom ?></a></h5>
+                   <p><?= $article->Description ?></p>
+                   <p><?= $article->Prix ?> € </p>
+
+                   <div class="aAjoutPanier">
+                   <a class="ajoutpanier" href="AjoutPanier.php?id=<?= $article->ID; ?>">
+                   <img src="Image/panier2.png" alt="Panier" width="40px">
+                   </a>
+
+                   </div>
+
+                   </div>
+
+                    <?php endforeach ?>
+                        
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+                <div class="php">
+                    <div id="liste1">
+                    <a href="Friperie.php"><button class="btn btn-outline-secondary btn-lg">Friperie</button></a> <br><br></div>
+
+                   <?php $article = $DB->query('SELECT * FROM article WHERE TypeVente = "Transaction Vendeur-Client" AND  Categorie ="Friperie" '); ?>
                    <?php foreach ($article as $key => $article): ?>
 
                     <div class="aImage">
@@ -121,6 +157,40 @@ $panier = new panier($DB);
                    </div>
 
                   <?php endforeach ?>
+                        
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="php">
+             <div id="liste1">
+                    <a href="Luxe.php"><button class="btn btn-outline-secondary btn-lg">Luxe</button></a><br><br>
+                </div>
+
+                <?php $article = $DB->query('SELECT * FROM article WHERE TypeVente = "Transaction Vendeur-Client" AND  Categorie ="Luxe" '); ?>
+                   <?php foreach ($article as $key => $article): ?>
+
+                    <div class="aImage">
+                   <p><img src="Image/<?= $article->ID;?>.png" width="140px"></p>
+                   </div>
+
+                   <div class="aInformations">
+                   <h5><a href="Article.php"><?= $article->Nom ?></a></h5>
+                   <p><?= $article->Description ?></p>
+                   <p><?= $article->Prix ?> € </p>
+                   </div>
+
+                   <div class="aAjoutPanier">
+                   <a class="ajoutpanier" href="AjouterPanier.php?id=<?= $article->ID; ?>">
+                   <img src="Image/panier2.png" alt="Panier" width="40px">
+                   </a>
+                   </div>
+
+                  <?php endforeach ?>
+
+
+        </div>
+    </div>
 </div>
 
 
