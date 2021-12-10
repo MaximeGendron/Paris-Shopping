@@ -43,7 +43,7 @@
 
                 else if(isset($_SESSION['Email'])) ///Connecté en vendeur
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'> MonProfilVendeur</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'>".$_SESSION['Pseudo']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
 
 
@@ -81,38 +81,61 @@
           
            <div class="ProfilInformations">
            <form action="loginnew.php" method="post">
-                        <tr><h3>Envie d'un nouveau vendeur ?<br></h3>
-                        <h6>Pseudo:<br><input type="text" name="Pseudo"  size="30"></h6><br>     
-                        <h6>Email:<br><input type="text" name="nom"  size="30"></h6><br>     
-                        <div class="Accès">
-                        <input type="submit"name="ajoutvendeur" value="Ajouter" size="30"></div><br>
-                    </form>
-                    <form action="loginnew.php" method="post">
+                    <table border="2">
+                        <h3>Créer un nouveau vendeur ?</h3>
+						<tr>Pseudo<br>
+						<input type="text" name="pseudovendeur" placeholder="" size="30"></tr><br>
+						<tr>Email<br>
+						<input type="text" name="email" placeholder="" size="30"></tr><br>
+                        <tr>Mot de passe<br>
+						<input type="password" name="mdp" placeholder="" size="30"></tr><br><br>                        
+                    <div class="Accès">
+                    <input type="submit" name="creationvendeur" value="Se créer un compte" size="30"></div><br><br>            
+                    </table>
+                </form>
+                <form action="loginnew.php" method="post">
                         <tr><h3>Vendre un nouvel article ?<br></h3>
-                        <h6>ID:<br><input type="text" name="id"  size="30"></h6><br>     
                         <h6>Nom:<br><input type="text" name="nom"  size="30"></h6><br>     
                         <h6>Description:<br><input type="text" name="description"  size="30"></h6><br>  
-                        <h6>Photos:<br><input type="text" name="photo"  size="30"></h6><br>                             
-                        <h6>Prix:<br><input type="text" name="prix"  size="30"></h6><br>   
-                        <h6>Catégorie:<br><input type="text" name="catégorie"  size="30"></h6> 
-                        <p><h6> <label>Quel type de vente  ?</label><h6>
-                    <select name="catégorie" id="pays">
+                        <h6>Photos:<br><input type="text" name="image"  size="30"></h6><br>                             
+                        <h6>Prix:<br><input type="text" name="prix"  size="30"></h6>    
+                        <p><h6> <label>Quelle Catégorie ?</label><br><h6>
+                    <select name="categorie">
+                         
+                            <option value="Luxe">Luxe</option>
+                            <option value="Regulier">Régulier</option>
+                            <option value="Friperie">Friperie</option>
+                                        
+                    </select> </p>
+                         
+                        <p><h6> <label>Quel type de vente  ?</label><br><h6>
+                    <select name="typevente">
                          
                             <option value="Vente immediate">Achat-Immediat</option>
                             <option value="Transaction Vendeur-Client">Vendeur-Client</option>
                             <option value="Enchere">Enchere</option>
                                         
-                    </select> </p>     
-                        <div class="Accès">
-                        <input type="submit"name="ajoutarticleadmin" value="Ajouter" size="30"></div><br>
+                    </select> </p>
 
-            </form>		    
+                    <p><h6> <label>Vendeur</label><br><h6>
+                    <select name="pseudo">
+                     <option value="<?php echo"".$_SESSION['pseudo'].""; ?>"> <?php echo"".$_SESSION['pseudo'].""; ?></option>"  
+
+                    
+                                        
+                    </select> </p>
+             
+                    <div class="Accès">
+                        <input type="submit"name="ajoutarticleadmin" value="Ajouter" size="30"></div><br>
+                        </form>
+            
 		    </div>
 
             <div class="retourbouton">
                     <input type="submit"name="retour" value="Retour" onclick = "history.back()" ></div><br>		
-			
+                    <div><a href=" MonProfilAdmin2.php"><button class="suivantbouton">Retirer un objet à vendre ou vendeur</button></a></div>
         </div>
+         
         
              
             

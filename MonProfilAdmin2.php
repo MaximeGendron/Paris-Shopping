@@ -1,17 +1,11 @@
-<?php require 'login.php'; 
-require 'CreateDB.php';
-require 'CreatePanierDB.php';
-$DB = new DB();
-$panier = new panier($DB);
-if(isset($_GET['del'])) {
-    $panier->del($_GET['del']);
-}
-?>
+<?php require 'login.php'; ?>
 
-<!DOCTYPE html> 
+
+<!DOCTYPE html>
 <html>
+
 <head>
-<title>Panier</title>
+<title>ParisShopping</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -21,10 +15,11 @@ if(isset($_GET['del'])) {
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+
+    <body>
     <!--Barre de navigation // A copier sur chaque page<-->
     <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="Accueil.php">ParisShopping</a>
+        <a class="navbar-brand" href="Accueil.html">ParisShopping</a>
         <a class="navbar-brand" href="Image/logo.png"></a><img src="Image/logo.png" alt="Logo" width="50 px"></a></li>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
             <span class="navbar-toggler-icon"></span>
@@ -64,69 +59,62 @@ if(isset($_GET['del'])) {
                     echo "<li class='nav-item'><a class='nav-link' href='VotreCompte.php'> Se connecter</a></li>";
 
                 }
-			    ?>        
+			    ?> 
             </ul>
         </div>
     </nav>
-<header class="page-header header container-fluid">
-      <script type="text/javascript">
- $(document).ready(function(){
- $('.header').height($(window).height());
- });
-</script>
 
-<section class="page-header header container-fluid">
-        <div class="Titre">
-    <h2>Panier</h2></div>
+                    <header class="page-header header container-fluid">
+                        <script type="text/javascript">$(document).ready(function(){ $('.header').height($(window).height());});</script>
 
-        <form method="post" action="Panier.php">
-            <div class="php2">
-        <?php
-        $ids = array_keys($_SESSION['panier']);
-        if(empty($ids)){
-            $article = array();
-        }
-        else {
-            $article = $DB->query('SELECT * FROM article WHERE ID IN ('.implode(',', $ids). ')');
-        }
-        foreach($article as $article):
-        ?>
-        <br>
-      
-            <div class="aImage">
-                <p><img src="Image/<?= $article->ID;?>.png" width="140px"></p>
-            </div>
-            <div class="aInformations">
-                <h5><?= $article->Nom ?></h5>
-                <p><?= $article->Description ?></p>
-            </div>
-            <div class="aQuantiteP">
-                <p>Quantité : 
-                    <input type="number" name="panier[quantite][<?= $article->ID;?>]" value="<?= $_SESSION['panier'][$article->ID]; ?>">
-                    <input type="submit" value="✓">   
-                    <p>Prix unitaire : <?= number_format($article->Prix,2,',',''); ?>€ </p>
-                </p>
-            </div>
-            <div class="aSupprimer">
-                <a href="Panier.php?del=<?= $article->ID; ?>"><img src="Image/poubelle.png" alt="Poubelle" width="35"></a>
-            </div>
+        <div class="overlay">
+            
+            <div class="ChoixUtilisateur">
+
+            
+        
+            
+            <div><h2 class="TitreCompte"> Bienvenue chez vous <br> <?php echo"".$_SESSION['pseudo'].""; ?> !</h2></div><br>
+
+    
+          
+           <div class="ProfilInformations">
+           <form action="loginnew.php" method="post">
+                        <tr><h3>Retirer un article du commerce ?<br></h3>
+                        <h6>Nom:<br><input type="text" name="nom"  size="30"></h6>       
+                        <br>                                              
+                        <div class="Accès">
+                        <input type="submit"name="supparticleadmin" value="Retirer" size="30"></div><br>
+
+            </form>
+
+
+
+            <form action="loginnew.php" method="post">
+                        <tr><h3>Retirer vendeur du commerce ?<br></h3>
+                        <h6>Pseudo:<br><input type="text" name="pseudovendeur"  size="30"></h6><br> <br>                                                
+                        <div class="Accès">
+                        <input type="submit"name="suppvendeurparadmin" value="Retirer vendeur du marché" size="30"></div><br>
+
+            </form>
+		         
+               
+		    </div>
+            
+            <div class="retourbouton">
+                    <input type="submit"name="retour" value="Retour" onclick = "history.back()" > </div>
+                    
+                     
+          	
+			
         </div>
-</div>
-        <?php endforeach; ?>
-        <br>
-        <div class="finPanier">
-            <h4 class="titre">Prix total : <?= number_format($panier->total(),2,',',''); ?>€</h4>
-        </div>
-        <div class = "Panier">
-            <a href="Paiement.php">Paiement</a>
-        </div>
-         
-        </form>
-        <br>
-    </section>
+            </div>
+             
+            
+    </header>
 
-</header>
-</body>
-</html>
+    </body>
 
-<?php require 'Footer.php'; ?>
+    </html>
+
+    <?php require 'Footer.php'; ?>

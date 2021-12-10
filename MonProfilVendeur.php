@@ -43,7 +43,7 @@
 
                 else if(isset($_SESSION['Email'])) ///Connecté en vendeur
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'> MonProfilVendeur</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'>".$_SESSION['Pseudo']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
 
 
@@ -82,7 +82,6 @@
            <div class="ProfilInformations">
            <form action="loginnew.php" method="post">
                         <tr><h3>Vendre un nouvel article ?<br></h3>
-                        <h6>ID:<br><input type="text" name="id"  size="30"></h6><br>     
                         <h6>Nom:<br><input type="text" name="nom"  size="30"></h6><br>     
                         <h6>Description:<br><input type="text" name="description"  size="30"></h6><br>  
                         <h6>Photos:<br><input type="text" name="image"  size="30"></h6><br>                             
@@ -91,7 +90,7 @@
                     <select name="categorie">
                          
                             <option value="Luxe">Luxe</option>
-                            <option value="Régulier">Régulier</option>
+                            <option value="Regulier">Régulier</option>
                             <option value="Friperie">Friperie</option>
                                         
                     </select> </p>
@@ -112,27 +111,20 @@
                     
                                         
                     </select> </p>
-            </form>
-                
-                 
+                      
                          
                         <div class="Accès">
                         <input type="submit"name="ajoutarticlevendeur" value="Ajouter" size="30"></div><br>
 
-            </form>
+                        </form>
 		         
-               
 		    </div>
             
             <div class="retourbouton">
                     <input type="submit"name="retour" value="Retour" onclick = "history.back()" ></div>
            
             <div><a href=" MonProfilVendeur2.php"><button class="suivantbouton">Retirer un objet à vendre</button></a></div>
-                         
-                      
-
-        
-          	
+                           	
 			
         </div>
         

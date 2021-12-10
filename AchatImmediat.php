@@ -47,7 +47,7 @@ $panier = new panier($DB);
 
                 else if(isset($_SESSION['Email'])) ///Connecté en vendeur
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'> MonProfilVendeur</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'>".$_SESSION['Pseudo']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
 
 
@@ -55,7 +55,7 @@ $panier = new panier($DB);
 
                 else if(isset($_SESSION['pseudo'])) ///Connecté en admin
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilAdmin.php'> MonProfilAdmin</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilAdmin.php'>" .$_SESSION['pseudo']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
 
                 }
@@ -147,6 +147,8 @@ $panier = new panier($DB);
                    <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
                    <p><?= $article->Prix ?> € </p>
+                   <p><?= $article->Proprio ?>  </p>
+
                    </div>
 
                    <div class="aAjoutPanier">

@@ -193,14 +193,11 @@
         if (isset($_POST["ajoutarticlevendeur"])) {
           
             if ($db_found) {
-                 
-
-                 
-        $sql = "SELECT * FROM article "; 
-        if ($ID != "") {
-                $sql .= " WHERE ID LIKE '%$ID%'";
+                                  
+                $sql = "SELECT * FROM article "; 
+        
                     if ($Nom != "") {
-                        $sql .= " AND Nom LIKE '%$Nom%'";
+                        $sql .= " WHERE Nom LIKE '%$Nom%'";
                             if ($Description != "") {
                                 $sql .= " AND Description LIKE '%$Description%'";   
                                 if ($Prix != "") {
@@ -219,7 +216,8 @@
                                  }                                                                  
                              }
                          }
-            }
+                     }
+        
             $result = mysqli_query($db_handle, $sql);
             if (mysqli_num_rows($result) != 0) {
             
@@ -229,13 +227,14 @@
                     header('Location: MonProfilVendeur.php');
                     ?>
                     <?php
+                    
                 
             } 
             else 
             {
                    // $mdp=password_hash($mdp, PASSWORD_DEFAULT);
-                    $sql = "INSERT INTO article(ID, Nom, Description, Prix, Categorie, TypeVente, Image, Proprio) 
-                    VALUES('$ID','$Nom','$Description','$Prix','$Categorie','$TypeVente','$Image', '$PseudoVendeur')";
+                    $sql = "INSERT INTO article(Nom, Description, Prix, Categorie, TypeVente, Image, Proprio) 
+                    VALUES('$Nom','$Description','$Prix','$Categorie','$TypeVente','$Image', '$PseudoVendeur')";
                     $result =mysqli_query($db_handle, $sql);
                      
                  
@@ -245,14 +244,80 @@
                     }
                     
                 
-        } 
+                }     
             else
     
             {
                 echo "<p>Database not found.</p>";
             }
-        }
         
+             
+    }
+
+     if (isset($_POST["ajoutarticleadmin"])) {
+          
+            if ($db_found) {
+                 
+
+                 
+        $sql = "SELECT * FROM article "; 
+        
+                    if ($Nom != "") {
+                        $sql .= " WHERE Nom LIKE '%$Nom%'";
+                            if ($Description != "") {
+                                $sql .= " AND Description LIKE '%$Description%'";   
+                                if ($Prix != "") {
+                                    $sql .= " AND Prix LIKE '%$Prix%'"; 
+                                    if ($Categorie != "") {
+                                        $sql .= " AND Categorie LIKE '%$Categorie%'";      
+                                        if ($TypeVente != "") {
+                                            $sql .= " AND TypeVente LIKE '%$TypeVente%'";  
+                                            if ($Image != "") {
+                                                $sql .= " AND Image LIKE '%$Image%'";
+                                                if ($Pseudo != "") {
+                                                    $sql .= " AND Proprio LIKE '%$Pseudo%'";                                                                     
+                                             }                                                                   
+                                         }                                                               
+                                     }                                                                    
+                                 }                                                                  
+                             }
+                         }
+            }
+        
+            $result = mysqli_query($db_handle, $sql);
+            if (mysqli_num_rows($result) != 0) {
+            
+                echo "<p>Client existe déjà</p>";
+                ?>
+                    <?php
+                    header('Location: MonProfilAdmin.php');
+                    ?>
+                    <?php
+                    
+                
+            } 
+            else 
+            {
+                   // $mdp=password_hash($mdp, PASSWORD_DEFAULT);
+                    $sql = "INSERT INTO article(Nom, Description, Prix, Categorie, TypeVente, Image, Proprio) 
+                    VALUES('$Nom','$Description','$Prix','$Categorie','$TypeVente','$Image', '$Pseudo')";
+                    $result =mysqli_query($db_handle, $sql);
+                     
+                 
+                    ?> 
+                    <?php header('Location: http://localhost/Paris-Shopping/Achat.php'); exit(); ?>  
+                    <?php
+                    }
+                    
+                
+                }     
+            else
+    
+            {
+                echo "<p>Database not found.</p>";
+            }
+        
+             
     }
 
 
@@ -262,14 +327,19 @@
            
             if ($db_found) {
                 
-        $sql = "SELECT * FROM article "; 
-        if ($ID != "") {
-                $sql .= " WHERE ID LIKE '%$ID%'";
-                    if ($Nom != "") {
-                        $sql .= " AND Nom LIKE '%$Nom%'";
-                            
+              $sql = "SELECT * FROM article "; 
+                    if($Nom != ""){
+                        $sql .= " WHERE Nom LIKE '%$Nom%'";
+                        if ($PseudoVendeur != "") {
+                            $sql .= " AND Proprio LIKE '%$PseudoVendeur%'";
+                                
+                             } 
+                             
+                             
                          }
-            }
+                            
+                         
+            
             $result = mysqli_query($db_handle, $sql);
             if (mysqli_num_rows($result) == 0) {
             
@@ -284,11 +354,114 @@
             else 
             {
                     while ($data = mysqli_fetch_assoc($result)) {
-                        $id = $data['ID'];
-                        }
+                        $name = $data['Nom'];
+                        $PseudoVendeurr = $data['Proprio'];
+                        }                   
+                    $sql = "DELETE FROM article WHERE Nom = '$name' AND Proprio = '$PseudoVendeurr'" ;
+                    $result =mysqli_query($db_handle, $sql);
+                     
+                 
+                    ?> 
+                    <?php header('Location: http://localhost/Paris-Shopping/Achat.php'); exit(); ?>  
+                    <?php
+                    }
                     
+                
+        } 
+            else
+    
+            {
+                echo "<p>Database not found.</p>";
+            }
+        
+    }
+    
+
+
+    if (isset($_POST["creationvendeur"])) {
+            if ($db_found) {
+        $sql = "SELECT * FROM vendeur "; 
+        if ($PseudoVendeur != "") {
+                $sql .= " WHERE Pseudo LIKE '%$PseudoVendeur%'";
+                    if ($Email != "") {
+                        $sql .= " AND Email LIKE '%$Email%'";
+                            if ($mdp != "") {
+                                $sql .= " AND MDP LIKE '%$mdp%'";                                                                     
+                             }
+                         }
+            }
+            $result = mysqli_query($db_handle, $sql);
+            if (mysqli_num_rows($result) != 0) {
+            
+                echo "<p>Client existe déjà</p>";
+                ?>
+                    <?php
+                    header('Location: VendeurConnexion.php');
+                    ?>
+                    <?php
+                
+            } 
+            else 
+            {
                    // $mdp=password_hash($mdp, PASSWORD_DEFAULT);
-                    $sql = "DELETE FROM article WHERE ID = $id";
+                    $sql = "INSERT INTO vendeur(Pseudo, Email, MDP) VALUES('$PseudoVendeur', '$Email', '$mdp')";
+                    $result =mysqli_query($db_handle, $sql);
+                    echo "<p>Client ajouté à la base de donnée</p>";
+                    $sql = "SELECT * FROM vendeur";
+                    if ($PseudoVendeur != "") {
+                        $sql .= " WHERE Pseudo LIKE '%$PseudoVendeur%'";
+                            if ($Email != "") {
+                                $sql .= " AND Email LIKE '%$Email%'";
+                                    if ($mdp != "") {
+                                        $sql .= " AND MDP LIKE '%$mdp%'";                                           
+                                     }
+                                 }
+                    }
+                    $result = mysqli_query($db_handle, $sql);
+                 
+                    ?> 
+                    <?php header('Location: http://localhost/Paris-Shopping/VotreCompte.php'); exit(); ?>  
+                    <?php
+                    }
+                    
+                
+        } 
+            else
+    
+            {
+                echo "<p>Database not found.</p>";
+            }
+        }
+
+
+        if (isset($_POST["supparticleadmin"])) {
+           
+            if ($db_found) {
+                
+              $sql = "SELECT * FROM article "; 
+                    if($Nom != ""){
+                        $sql .= " WHERE Nom LIKE '%$Nom%'";                        
+                         }
+                            
+                         
+            
+            $result = mysqli_query($db_handle, $sql);
+            if (mysqli_num_rows($result) == 0) {
+            
+                echo "<p>Article pas trouvé</p>";
+                ?>
+                    <?php
+                    header('Location: MonProfilAdmin2.php');
+                    ?>
+                    <?php
+                
+            } 
+            else 
+            {
+                    while ($data = mysqli_fetch_assoc($result)) {
+                        $name = $data['Nom'];
+                        }                   
+                    $sql = "DELETE FROM article WHERE Nom = '$name'" ;
                     $result =mysqli_query($db_handle, $sql);
                      
                  
@@ -307,6 +480,53 @@
         
     }
 
+    if (isset($_POST["suppvendeurparadmin"])) {
+           
+        if ($db_found) {
+            
+          $sql = "SELECT * FROM vendeur "; 
+                if($PseudoVendeur != ""){
+                    $sql .= " WHERE Pseudo LIKE '%$PseudoVendeur%'";
+                     
+                     }
+                        
+                     
+        
+        $result = mysqli_query($db_handle, $sql);
+        if (mysqli_num_rows($result) == 0) {
+        
+            echo "<p>Article pas trouvé</p>";
+            ?>
+                <?php
+                header('Location: MonProfilAdmin2.php');
+                ?>
+                <?php
+            
+        } 
+        else 
+        {
+                while ($data = mysqli_fetch_assoc($result)) {
+                    $name = $data['Pseudo'];
+                    }                   
+                $sql = "DELETE FROM vendeur WHERE Pseudo = '$name'";
+                $result =mysqli_query($db_handle, $sql);
+                 
+             
+                ?> 
+                <?php header('Location: http://localhost/Paris-Shopping/Achat.php'); exit(); ?>  
+                <?php
+                }
+                
+            
+    } 
+        else
+
+        {
+            echo "<p>Database not found.</p>";
+        }
+    
+}
+    
     //fermer la connexion
     mysqli_close($db_handle);
 ?>

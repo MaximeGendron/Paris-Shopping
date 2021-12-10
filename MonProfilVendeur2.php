@@ -42,7 +42,7 @@
 
                 else if(isset($_SESSION['Email'])) ///Connecté en vendeur
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'> MonProfilVendeur</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'>".$_SESSION['Pseudo']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
 
 
@@ -59,7 +59,7 @@
                     echo "<li class='nav-item'><a class='nav-link' href='VotreCompte.php'> Se connecter</a></li>";
 
                 }
-			    ?> 
+			    ?>
             </ul>
         </div>
     </nav>
@@ -81,8 +81,10 @@
            <div class="ProfilInformations">
            <form action="loginnew.php" method="post">
                         <tr><h3>Retirer un article du commerce ?<br></h3>
-                        <h6>ID:<br><input type="text" name="id"  size="30"></h6><br>     
-                        <h6>Nom:<br><input type="text" name="nom"  size="30"></h6><br><br>                                                      
+                        <h6>Nom:<br><input type="text" name="nom"  size="30"></h6>     
+                        <p><h6> <label>Vendeur</label><br><h6>
+                    <select name="pseudovendeur">
+                     <option value="<?php echo"".$_SESSION['Pseudo'].""; ?>"> <?php echo"".$_SESSION['Pseudo'].""; ?></option>" </select></p><br> <br>                                                 
                         <div class="Accès">
                         <input type="submit"name="supparticlevendeur" value="Retirer" size="30"></div><br>
 
