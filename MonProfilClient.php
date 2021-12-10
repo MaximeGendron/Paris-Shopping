@@ -75,7 +75,7 @@
 
             
             <form action="login.php" method="post"> 
-            <?php echo " " . "<img src='$banniere' height='100' width='300' " . " ";?><br><br><br>
+            <?php echo " " . "<img src='$banniere' height='100' width='300'> " . " ";?><br><br><br>
             <div><h3 class="TitreCompte"> Bienvenue sur votre profil <?php echo"".$_SESSION['prenom'].""; ?>!</h3></div><br>
 
     
