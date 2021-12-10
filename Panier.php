@@ -1,4 +1,25 @@
-<?php require 'login.php'; 
+<!--<?php require 'login.php'; 
+
+if(isset($_SESSION['email']))
+{
+    $panier=($_SESSION['email']);
+}
+else if(isset($_SESSION['Email']))
+{
+    $panier=($_SESSION['Email']);
+
+}
+else if(isset($_SESSION['pseudo']))
+{
+    $panier=($_SESSION['pseudo']);
+}
+else
+{
+    $panier=NULL;
+}
+?>*/-->
+
+<?php  
 require 'CreateDB.php';
 require 'CreatePanierDB.php';
 $DB = new DB();
@@ -34,8 +55,38 @@ if(isset($_GET['del'])) {
                 <li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
-                <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
-                <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png" alt="Panier" width="30 px"></a></li>
+                <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>                
+                <?php
+                if(isset($_SESSION['email'])) //Connecté en client
+                {
+                    echo ""."<li class='nav-item'><a class='nav-link' href='Panier.php'>". "<img src='Image/panier.png'  width='30'>" ."</a></li>";
+                   
+                    
+
+
+                }
+
+                else if(isset($_SESSION['Email'])) ///Connecté en vendeur
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>"."<img src='Image/panier.png'  width='30'>" ."</a></li>";
+                     
+
+                }
+
+                else if(isset($_SESSION['pseudo'])) ///Connecté en admin
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>" ."<img src='Image/panier.png'  width='30'>" ."</a></li>";
+
+                }
+                else
+                {
+                     
+                }
+			    ?>
+
+
+
+
                 <?php 
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
