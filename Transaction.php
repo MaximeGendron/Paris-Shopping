@@ -105,28 +105,32 @@ $panier = new panier($DB);
                     <a href="Regulier.php"><button class="btn btn-outline-secondary btn-lg">Régulier</button></a><br><br>
                 </div>
 
-                   <?php $article = $DB->query('SELECT * FROM article WHERE TypeVente = "Transaction Vendeur-Client" AND  Categorie ="Regulier" '); ?>
-                   <?php foreach ($article as $key => $article): ?>
+                    <?php
+                    //identifier votre BDD 
+                    $database = "parisshopping";
+                    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+                    $db_handle = mysqli_connect('localhost', 'root', '');
+                    $db_found = mysqli_select_db($db_handle, $database);
+                    if ($db_found) {
+                        $sql = 'SELECT * FROM article WHERE Categorie = "Regulier" AND  TypeVente ="Transaction Vendeur-Client"';
+                        $result = mysqli_query($db_handle, $sql);
 
-                   <div class="aImage">
-                   <p><img src="Image/<?= $article->ID;?>.png" width="140px"></p>
-                   </div>
+                        while ($data = mysqli_fetch_assoc($result)) {
+                            $id=$data['ID'];
+                            echo "<strong><a href='Article.php?id=$id'>" . $data['Nom'] . "</a></strong><br>"; 
+                            $image = $data['Image'];
+                            echo "<img src='$image' height='120' width='100'>" . "<br>"; 
+                            echo $data['Description'] . "<br>";
+                            echo $data['Prix'] . " € <br>";
+                            echo $data['Categorie'] . "<br>";
+                            echo $data['TypeVente'] . "<br><br>";
+                        }
 
-                   <div class="aInformations">
-                   <h5><a href="Article.php"><?= $article->Nom ?></a></h5>
-                   <p><?= $article->Description ?></p>
-                   <p><?= $article->Prix ?> € </p>
-
-                   <div class="aAjoutPanier">
-                   <a class="ajoutpanier" href="AjoutPanier.php?id=<?= $article->ID; ?>">
-                   <img src="Image/panier2.png" alt="Panier" width="40px">
-                   </a>
-
-                   </div>
-
-                   </div>
-
-                    <?php endforeach ?>
+                    }else{
+                        echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";
+                    }
+                    mysqli_close($db_handle);
+                    ?>
                         
                 </div>
             </div>
@@ -137,26 +141,32 @@ $panier = new panier($DB);
                     <div id="liste1">
                     <a href="Friperie.php"><button class="btn btn-outline-secondary btn-lg">Friperie</button></a> <br><br></div>
 
-                   <?php $article = $DB->query('SELECT * FROM article WHERE TypeVente = "Transaction Vendeur-Client" AND  Categorie ="Friperie" '); ?>
-                   <?php foreach ($article as $key => $article): ?>
+                    <?php
+                    //identifier votre BDD 
+                    $database = "parisshopping";
+                    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+                    $db_handle = mysqli_connect('localhost', 'root', '');
+                    $db_found = mysqli_select_db($db_handle, $database);
+                    if ($db_found) {
+                        $sql = 'SELECT * FROM article WHERE Categorie = "Friperie" AND  TypeVente ="Transaction Vendeur-Client"';
+                        $result = mysqli_query($db_handle, $sql);
 
-                    <div class="aImage">
-                   <p><img src="Image/<?= $article->ID;?>.png" width="140px"></p>
-                   </div>
+                        while ($data = mysqli_fetch_assoc($result)) {
+                            $id=$data['ID'];
+                            echo "<strong><a href='Article.php?id=$id'>" . $data['Nom'] . "</a></strong><br>"; 
+                            $image = $data['Image'];
+                            echo "<img src='$image' height='120' width='100'>" . "<br>"; 
+                            echo $data['Description'] . "<br>";
+                            echo $data['Prix'] . " € <br>";
+                            echo $data['Categorie'] . "<br>";
+                            echo $data['TypeVente'] . "<br><br>";
+                        }
 
-                   <div class="aInformations">
-                   <h5><a href="Article.php"><?= $article->Nom ?></a></h5>
-                   <p><?= $article->Description ?></p>
-                   <p><?= $article->Prix ?> € </p>
-                   </div>
-
-                   <div class="aAjoutPanier">
-                   <a class="ajoutpanier" href="AjouterPanier.php?id=<?= $article->ID; ?>">
-                   <img src="Image/panier2.png" alt="Panier" width="40px">
-                   </a>
-                   </div>
-
-                  <?php endforeach ?>
+                    }else{
+                        echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";
+                    }
+                    mysqli_close($db_handle);
+                    ?>
                         
                 </div>
             </div>
@@ -167,26 +177,32 @@ $panier = new panier($DB);
                     <a href="Luxe.php"><button class="btn btn-outline-secondary btn-lg">Luxe</button></a><br><br>
                 </div>
 
-                <?php $article = $DB->query('SELECT * FROM article WHERE TypeVente = "Transaction Vendeur-Client" AND  Categorie ="Luxe" '); ?>
-                   <?php foreach ($article as $key => $article): ?>
+                <?php
+                    //identifier votre BDD 
+                    $database = "parisshopping";
+                    //identifier votre serveur (localhost), utlisateur (root), mot de passe ("")
+                    $db_handle = mysqli_connect('localhost', 'root', '');
+                    $db_found = mysqli_select_db($db_handle, $database);
+                    if ($db_found) {
+                        $sql = 'SELECT * FROM article WHERE Categorie = "Luxe" AND  TypeVente ="Transaction Vendeur-Client"';
+                        $result = mysqli_query($db_handle, $sql);
 
-                    <div class="aImage">
-                   <p><img src="Image/<?= $article->ID;?>.png" width="140px"></p>
-                   </div>
+                        while ($data = mysqli_fetch_assoc($result)) {
+                            $id=$data['ID'];
+                            echo "<strong><a href='Article.php?id=$id'>" . $data['Nom'] . "</a></strong><br>"; 
+                            $image = $data['Image'];
+                            echo "<img src='$image' height='120' width='100'>" . "<br>"; 
+                            echo $data['Description'] . "<br>";
+                            echo $data['Prix'] . " € <br>";
+                            echo $data['Categorie'] . "<br>";
+                            echo $data['TypeVente'] . "<br><br>";
+                        }
 
-                   <div class="aInformations">
-                   <h5><a href="Article.php"><?= $article->Nom ?></a></h5>
-                   <p><?= $article->Description ?></p>
-                   <p><?= $article->Prix ?> € </p>
-                   </div>
-
-                   <div class="aAjoutPanier">
-                   <a class="ajoutpanier" href="AjouterPanier.php?id=<?= $article->ID; ?>">
-                   <img src="Image/panier2.png" alt="Panier" width="40px">
-                   </a>
-                   </div>
-
-                  <?php endforeach ?>
+                    }else{
+                        echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";
+                    }
+                    mysqli_close($db_handle);
+                    ?>
 
 
         </div>
