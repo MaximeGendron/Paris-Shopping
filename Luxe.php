@@ -74,8 +74,6 @@ $panier = new panier($DB);
                     <div id="liste1">
                     <a href="Transaction.php"><button class="btn btn-outline-secondary btn-lg">Transaction vendeur-client</button></a><br><br>
                 </div>
-            </div>
-
                     <?php
                     //identifier votre BDD 
                     $database = "parisshopping";
@@ -104,7 +102,6 @@ $panier = new panier($DB);
                     ?>
                         
                 </div>
-            </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12">
 
