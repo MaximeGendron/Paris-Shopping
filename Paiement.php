@@ -26,8 +26,33 @@
                 <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
                 <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
-                <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png" alt="Panier" width="30 px"></a></li>
-                <?php 
+                <?php
+                if(isset($_SESSION['email'])) //Connecté en client
+                {
+                    echo ""."<li class='nav-item'><a class='nav-link' href='Panier.php'>". "<img src='Image/panier.png'  width='30'>" ."</a></li>";
+                   
+                    
+
+
+                }
+
+                else if(isset($_SESSION['Email'])) ///Connecté en vendeur
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>"."<img src='Image/panier.png'  width='30'>" ."</a></li>";
+                     
+
+                }
+
+                else if(isset($_SESSION['pseudo'])) ///Connecté en admin
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>" ."<img src='Image/panier.png'  width='30'>" ."</a></li>";
+
+                }
+                else
+                {
+                     
+                }
+			    ?>               <?php 
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
                     echo ""."<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'>". $_SESSION['prenom']."</a></li>";
@@ -72,22 +97,22 @@
     <h3>Informations de livraison :</h3>
     <br>
    <p>
-       <label for="nom">Votre nom</label> : <input type="text" name="nom" id="nom" placeholder="Votre nom:" name="" required autofocus /> 
+       <label for="nom">Votre nom</label> : <input type="text" name="nom" id="nom" placeholder="Votre nom:" name="" required /> 
    </p>
    <p>
-       <label for="prenom">Votre prenom</label> : <input type="text" name="prenom" id="prenom" placeholder="Votre prenom:" name="" required/>
+       <label for="prenom">Votre prenom</label> : <input type="text" name="prenom" id="prenom" placeholder="Votre prenom:" name="" required />
    </p>
    <p>
-       <label for="adresse1">Votre Adresse</label> : <input type="text" name="adresse1" id="adresse1" placeholder="Votre adresse:" name="" required />
+       <label for="adresse1">Votre Adresse</label> : <input type="text" name="adresse1" id="adresse1" placeholder="Votre adresse:"  name="" required />
    </p>
    <p>
-       <label for="adresse2">Votre complement d'adresse</label> : <input type="text" name="adresse2" id="adresse2" placeholder="Votre adresse:" name="" />
+       <label for="adresse2">Votre complement d'adresse</label> : <input type="text" name="adresse2" id="adresse2" placeholder="Votre adresse:" name="" required />
    </p>
    <p>
-       <label for="ville">Votre Ville</label> : <input type="text" name="ville" id="ville" placeholder="Votre ville:" name="" required />
+       <label for="ville">Votre Ville</label> : <input type="text" name="ville" id="ville" placeholder="Votre ville:"  name="" required />
    </p>
    <p>
-       <label for="codeP">Votre Code Postal</label> : <input type="number" name="codeP" id="codeP" placeholder="Votre Code Postal:" name="" required />
+       <label for="codeP">Votre Code Postal</label> : <input type="number" name="codepostal" id="codeP" placeholder="Votre Code Postal:"name="" required  />
    </p>
    <p>
        <label for="pays">Dans quel pays habitez-vous ?</label><br />
@@ -112,7 +137,7 @@
        <label for="num">Votre numero de telephone</label> : <input type="tel" name="num" id="num" placeholder="Votre numero:" name="" required />
    </p>
   
-   <input type="submit" name="button2" value="Envoyer">
+   <input type="submit" name="creationlivraison" value="Envoyer">
 <a class="nav-link" href="Paiement2.php">Suivant</a>
 </div>
 

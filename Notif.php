@@ -26,7 +26,33 @@
                 <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
                 <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
-                <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png" alt="Panier" width="30 px"></a></li>
+                <?php
+                if(isset($_SESSION['email'])) //Connecté en client
+                {
+                    echo ""."<li class='nav-item'><a class='nav-link' href='Panier.php'>". "<img src='Image/panier.png'  width='30'>" ."</a></li>";
+                   
+                    
+
+
+                }
+
+                else if(isset($_SESSION['Email'])) ///Connecté en vendeur
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>"."<img src='Image/panier.png'  width='30'>" ."</a></li>";
+                     
+
+                }
+
+                else if(isset($_SESSION['pseudo'])) ///Connecté en admin
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>" ."<img src='Image/panier.png'  width='30'>" ."</a></li>";
+
+                }
+                else
+                {
+                     
+                }
+			    ?>
                 <?php 
                 if(isset($_SESSION['email'])) //Connecté en client
                 {

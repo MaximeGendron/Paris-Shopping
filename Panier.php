@@ -1,9 +1,30 @@
-<?php require 'login.php'; 
+<!--<?php require 'login.php'; 
+
+if(isset($_SESSION['email']))
+{
+    $panier=($_SESSION['email']);
+}
+else if(isset($_SESSION['Email']))
+{
+    $panier=($_SESSION['Email']);
+
+}
+else if(isset($_SESSION['pseudo']))
+{
+    $panier=($_SESSION['pseudo']);
+}
+else
+{
+    $panier=NULL;
+}
+?>*/-->
+
+<?php  
 require 'CreateDB.php';
 require 'CreatePanierDB.php';
 $DB = new DB();
 $panier = new panier($DB);
-if((isset($_SESSION['email']))||(isset($_SESSION['Email']))||(isset($_SESSION['pseudo']))) {
+if(isset($_GET['del'])) {
     $panier->del($_GET['del']);
 }
 ?>
@@ -35,7 +56,7 @@ if((isset($_SESSION['email']))||(isset($_SESSION['Email']))||(isset($_SESSION['p
                 <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
                 <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>                
-                <?php 
+                <?php
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
                     echo ""."<li class='nav-item'><a class='nav-link' href='Panier.php'>". "<img src='Image/panier.png'  width='30'>" ."</a></li>";
@@ -47,14 +68,14 @@ if((isset($_SESSION['email']))||(isset($_SESSION['Email']))||(isset($_SESSION['p
 
                 else if(isset($_SESSION['Email'])) ///Connecté en vendeur
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>".$_SESSION['Pseudo']."</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>"."<img src='Image/panier.png'  width='30'>" ."</a></li>";
                      
 
                 }
 
                 else if(isset($_SESSION['pseudo'])) ///Connecté en admin
                 {
-                    echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>" .$_SESSION['pseudo']."</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>" ."<img src='Image/panier.png'  width='30'>" ."</a></li>";
 
                 }
                 else

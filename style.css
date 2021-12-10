@@ -356,6 +356,7 @@ input:checked + .slider:before {
      top: 45%;
      transform: translate(-50%, -55%);
 }
+
 .Panier button {
  border:1px solid #936a4f;
  background-color: #936a4f;
