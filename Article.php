@@ -75,7 +75,7 @@ $DB = new DB();
 
                 <div class="php">
                     <div id="liste1">
-                    <a href="AchatImmediat.php"><button class="btn btn-outline-secondary btn-lg">Achat Immédiat</button></a><br><br>
+                   
                 </div>
                     <?php
 
@@ -91,9 +91,11 @@ $DB = new DB();
                         
 
                    <div class="aInformations">
-                   <h5><?= $article->Nom ?></h5>
+                   <h5><?= $article->TypeVente ?></h5>
+                   <p><?= $article->Nom ?></p>
                    <p><?= $article->Description ?></p>
                    <p><?= $article->Prix ?> € </p>
+                   
                    </div>
                 </div>
             </div>

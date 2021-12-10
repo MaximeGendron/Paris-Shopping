@@ -112,7 +112,7 @@ $panier = new panier($DB);
                    </div>
 
                    <div class="aInformations">
-                   <h5><a href="Article.php"><?= $article->Nom ?></a></h5>
+                   <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
                    <p><?= $article->Prix ?> € </p>
 
@@ -144,13 +144,13 @@ $panier = new panier($DB);
                    </div>
 
                    <div class="aInformations">
-                   <h5><a href="Article.php"><?= $article->Nom ?></a></h5>
+                   <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
                    <p><?= $article->Prix ?> € </p>
                    </div>
 
                    <div class="aAjoutPanier">
-                   <a class="ajoutpanier" href="AjouterPanier.php?id=<?= $article->ID; ?>">
+                   <a class="ajoutpanier" href="AjoutPanier.php?id=<?= $article->ID; ?>">
                    <img src="Image/panier2.png" alt="Panier" width="40px">
                    </a>
                    </div>
@@ -174,13 +174,13 @@ $panier = new panier($DB);
                    </div>
 
                    <div class="aInformations">
-                   <h5><a href="Article.php"><?= $article->Nom ?></a></h5>
+                   <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
                    <p><?= $article->Prix ?> € </p>
                    </div>
 
                    <div class="aAjoutPanier">
-                   <a class="ajoutpanier" href="AjouterPanier.php?id=<?= $article->ID; ?>">
+                   <a class="ajoutpanier" href="AjoutPanier.php?id=<?= $article->ID; ?>">
                    <img src="Image/panier2.png" alt="Panier" width="40px">
                    </a>
                    </div>
