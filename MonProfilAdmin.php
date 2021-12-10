@@ -98,8 +98,8 @@
                         <p><h6> <label>Quel type de vente  ?</label><h6>
                     <select name="catégorie" id="pays">
                          
-                            <option value="Achat-Immediat">Achat-Immediat</option>
-                            <option value="Vendeur-Client">Vendeur-Client</option>
+                            <option value="Vente immediate">Achat-Immediat</option>
+                            <option value="Transaction Vendeur-Client">Vendeur-Client</option>
                             <option value="Enchere">Enchere</option>
                                         
                     </select> </p>     

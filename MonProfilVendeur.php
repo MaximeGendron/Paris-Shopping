@@ -99,8 +99,8 @@
                         <p><h6> <label>Quel type de vente  ?</label><br><h6>
                     <select name="typevente">
                          
-                            <option value="Achat-Immediat">Achat-Immediat</option>
-                            <option value="Vendeur-Client">Vendeur-Client</option>
+                            <option value="Vente immediate">Achat-Immediat</option>
+                            <option value="Transaction Vendeur-Client">Vendeur-Client</option>
                             <option value="Enchere">Enchere</option>
                                         
                     </select> </p>
