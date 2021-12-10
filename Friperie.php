@@ -99,7 +99,7 @@ $panier = new panier($DB);
                             echo $data['TypeVente'] . "<br><br>";
                         }
 
-                    }else{
+                    }else{  
                         echo "Articles réguliers en vente immédiate indisponibles pour le moment. <br>";
                     }
                     mysqli_close($db_handle);

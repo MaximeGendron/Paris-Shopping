@@ -337,7 +337,7 @@ input:checked + .slider:before {
  box-shadow: 0 0 0.5em #000;   
  width: 550px;
  margin: 0 auto;
- opacity: 0.95;
+ 
 
 }
 .Panier {
@@ -613,6 +613,7 @@ input::placeholder {
  border:1px solid #fff;
  background-color: #fff;
  color: #000;
+}
 .lien:hover {
      color:cornsilk;
 }
