@@ -26,7 +26,35 @@
                 <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
                 <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
                 <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png" alt="Panier" width="30 px"></a></li>
-                <li class="nav-item"><a class="nav-link" href="VotreCompte.php">Mon Compte</a></li>
+                <?php 
+                if(isset($_SESSION['email'])) //Connecté en client
+                {
+                    echo ""."<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'>". $_SESSION['prenom']."</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
+
+
+                }
+
+                else if(isset($_SESSION['Email'])) ///Connecté en vendeur
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'>".$_SESSION['Pseudo']."</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
+
+
+                }
+
+                else if(isset($_SESSION['pseudo'])) ///Connecté en admin
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='MonProfilAdmin.php'>" .$_SESSION['pseudo']."</a></li>";
+                    echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
+
+                }
+                else
+                {
+                    echo "<li class='nav-item'><a class='nav-link' href='VotreCompte.php'> Se connecter</a></li>";
+
+                }
+			    ?>
             </ul>
         </div>
     </nav>
