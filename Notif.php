@@ -27,12 +27,7 @@
                 <li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
-                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle ="dropdown" aria-haspopup ="true" aria-expanded ="false">Notifications</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item count" href="#"></a>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png" alt="Panier" width="30 px"></a></li>
+                <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
 
                 <?php
                 if(isset($_SESSION['email'])) //Connecté en client
@@ -129,7 +124,7 @@
 
         if(utilisateur != ""){
         $.ajax({
-          type: 'GET',
+          type: 'POST',
           url: 'recherche_article.php',
           data: 'user=' + encodeURIComponent(utilisateur),
           success: function(data){
@@ -142,14 +137,11 @@
         });
       }
 
-
-
     });
 });
       
   </script>
 
- 
         <h3> Activez les alertes :<h3>
         <label class="switch">
         <input type="checkbox">
@@ -162,7 +154,7 @@
                     <select name="categorie">
                          
                             <option value="Luxe">Luxe</option>
-                            <option value="Régulier">Régulier</option>
+                            <option value="Régulier">Regulier</option>
                             <option value="Friperie">Friperie</option>
                                         
                     </select> </p>
@@ -182,21 +174,19 @@
 
                         <p>Veuillez indiquer la fourchette du prix :<br/>
                             <br>
-                            <input type="radio" name="prix" value="moins10" id="moins10" /> <label for="moins10">Moins de 10€</label><br/>
-                            <input type="radio" name="prix" value="medium10-50" id="medium10-50" /> <label for="medium10-50">10-50€</label><br />
-                            <input type="radio" name="prix" value="medium50-100" id="medium50-100" /> <label for="medium50-100">50-100€</label><br />
-                            <input type="radio" name="prix" value="medium100-500" id="medium100-500" /> <label for="medium100-500">100-500€</label><br />
-                            <input type="radio" name="prix" value="medium500-1000" id="medium500-1000" /> <label for="medium500-1000">500-1000€</label><br />
-                            <input type="radio" name="prix" value="plus1000" id="plus1000" /> <label for="plus1000">Plus de 1000€ ?</label>
+                            <input type="radio" name="prix" value="moins10" /> <label for="moins10">Moins de 10€</label><br/>
+                            <input type="radio" name="prix" value="medium10-50" /> <label for="medium10-50">10-50€</label><br />
+                            <input type="radio" name="prix" value="medium50-100" /> <label for="medium50-100">50-100€</label><br />
+                            <input type="radio" name="prix" value="medium100-500"/> <label for="medium100-500">100-500€</label><br />
+                            <input type="radio" name="prix" value="medium500-1000" /> <label for="medium500-1000">500-1000€</label><br />
+                            <input type="radio" name="prix" value="plus1000" /> <label for="plus1000">Plus de 1000€ ?</label>
+
+                        <div class="Accès">
+                        <input type="submit" name="ajoutnotif" value="Ajouter" size="30"></div><br> 
    </p>
              
-</form>
             </form>
                 
-                        <div class="Accès">
-                        <input type="submit"name="ajoutnotif" value="Ajouter" size="30"></div><br>
-
-            </form>    
 </div>
 </div>
 

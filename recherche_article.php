@@ -1,20 +1,21 @@
 <?php
-require 'login.php'; 
-require 'CreateDB.php';
-$DB = new DB();
+
+
+$user = isset($_POST['user']) ? $_POST['user'] : '';
  
-  if(isset($_GET['user'])){
-    $user = (String) trim($_GET['user']);
+  $req = $DB->query("SELECT Nom FROM article WHERE Nom LIKE '%$user%' LIMIT 10");?>
+  <?php foreach ($req as $key => $req): ?>
  
-    $req = $DB->query("SELECT * FROM article WHERE Nom LIKE ? LIMIT 10", array("$user%"));
- 
-    $req = $req->fetchALL(PDO::FETCH_OBJ);
-  
-    foreach($req as $r):{
-?>   
-        <div style="margin-top: 20px 0; border-bottom: 2px solid #ccc"><?= $r['Nom'] . " " . $r['Description'] ?></div>
-        <?php    
+    while($r = mysqli_fetch_assoc($req)){
+       echo "<div style='margin-top: 20px 0; border-bottom: 2px solid #ccc'> " . $r['Nom'] . "</div>";
     }
-  } 
+     
+  <?php endforeach ?>
+
 ?>
+
+
+
+    
+
 

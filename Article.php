@@ -144,7 +144,13 @@ $_SESSION["statutPaiement"] = "void";
                    <p><?= $article->Nom ?></p>
                    <p><?= $article->Description ?></p>
                    <p><?= $article->Prix ?> € </p>
-                   <p><?= $article->Proprio ?> € </p>
+                   <p><?= $article->Proprio ?> </p>
+
+                   <div class="aAjoutPanier">
+                   <a class="ajoutpanier" href="AjoutPanier.php?id=<?= $article->ID; ?>">
+                   <img src="Image/panier2.png" alt="Panier" width="40px">
+                   </a>
+                   </div>
                    
                    </div>
                 </div>
