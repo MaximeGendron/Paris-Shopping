@@ -1,8 +1,9 @@
 <?php require 'login.php'; ?>
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Notifications</title>
+<title>ParisShopping</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -12,8 +13,8 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
- <body>
-    <!--Barre de navigation // A copier sur chaque page<-->
+
+<body>
     <nav class="navbar navbar-expand-md">
         <a class="navbar-brand" href="Accueil.php">ParisShopping</a>
         <a class="navbar-brand" href="Image/logo.png"></a><img src="Image/logo.png" alt="Logo" width="50 px"></a></li>
@@ -24,7 +25,6 @@
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
-                <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
                 <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
                 <?php
                 if(isset($_SESSION['email'])) //Connecté en client
@@ -53,7 +53,7 @@
                      
                 }
 			    ?>
-                <?php 
+                            <?php 
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
                     echo ""."<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'>". $_SESSION['prenom']."</a></li>";
@@ -81,82 +81,31 @@
                     echo "<li class='nav-item'><a class='nav-link' href='VotreCompte.php'> Se connecter</a></li>";
 
                 }
-			    ?>      
+			    ?>
+			    
             </ul>
         </div>
     </nav>
-    
-<header class="page-header header container-fluid">
-      <script type="text/javascript">
- $(document).ready(function(){
- $('.header').height($(window).height());
- });
-</script>
-    
- <div class="overlay">
- <div class="Notifications">
-     <form role="search">
- <div>
-    <input type="search" id="maRecherche" name="q"
-     placeholder="Rechercher sur le site…"
-     aria-label="Rechercher parmi le contenu du site">
-    <button>Rechercher</button>
- </div>
-</form>
-<br>
-        <h3> Activez les alertes :<h3>
-        <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-        </label>    
-        <h3>Dès qu'un article correspondra à vos critères, vous en serez alerter.</h3>
+    <header class="page-header header container-fluid">
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.header').height($(window).height());
+            });
+        </script>
 
-           <form action="InfoNotif.php" method="post">   
-                        <p><h6> <label>Quelle Catégorie ?</label><br><h6>
-                    <select name="categorie">
-                         
-                            <option value="Luxe">Luxe</option>
-                            <option value="Régulier">Régulier</option>
-                            <option value="Friperie">Friperie</option>
-                                        
-                    </select> </p>
-                         
-                        <p><h6> <label>Quel type de vente  ?</label><br><h6>
-                    <select name="typevente">
-                         
-                            <option value="Vente immediate">Achat-Immediat</option>
-                            <option value="Transaction Vendeur-Client">Vendeur-Client</option>
-                            <option value="Enchere">Enchere</option>
-                                        
-                    </select> </p>
+    <div class="overlay"></div>
+        <div class="description">
+            
+            <form action="DeconnexionAcheteur.php" method="post">
 
-                    <label for="couleur">La couleur de l'article recherché ?</label> : <input type="color" name="couleur" id="couleur" />
-                                        
-                    </select> </p>
-
-                        <p>Veuillez indiquer la fourchette du prix :<br/>
-                            <br>
-                            <input type="radio" name="prix" value="moins10" id="moins10" /> <label for="moins10">Moins de 10€</label><br/>
-                            <input type="radio" name="prix" value="medium10-50" id="medium10-50" /> <label for="medium10-50">10-50€</label><br />
-                            <input type="radio" name="prix" value="medium50-100" id="medium50-100" /> <label for="medium50-100">50-100€</label><br />
-                            <input type="radio" name="prix" value="medium100-500" id="medium100-500" /> <label for="medium100-500">100-500€</label><br />
-                            <input type="radio" name="prix" value="medium500-1000" id="medium500-1000" /> <label for="medium500-1000">500-1000€</label><br />
-                            <input type="radio" name="prix" value="plus1000" id="plus1000" /> <label for="plus1000">Plus de 1000€ ?</label>
-   </p>
+                <h1>Le vendeur à bien reçu votre demande !</h1><br>
+            <!-- <button class="btn btn-outline-secondary btn-lg">Dites m'en plus!</button>-->
+            <div class="Accès">
              
-</form>
+
             </form>
-                
-                        <div class="Accès">
-                        <input type="submit"name="ajoutnotif" value="Ajouter" size="30"></div><br>
-
-            </form>    
-</div>
-</div>
-
-</header>
-</body>
+            </header>
+    </body>
+    
 </html>
-
 <?php require 'Footer.php'; ?>
-

@@ -149,7 +149,7 @@ $panier = new panier($DB);
                             echo $data['Description'] . "<br>";
                             echo $data['Prix'] . " € <br>";
                             echo $data['Categorie'] . "<br>";
-                            echo $data['TypeVente'] . "<br><br>";
+                            echo $data['Proprio'] . "<br><br>";
                         }
 
                     }else{
@@ -185,7 +185,7 @@ $panier = new panier($DB);
                             echo $data['Description'] . "<br>";
                             echo $data['Prix'] . " € <br>";
                             echo $data['Categorie'] . "<br>";
-                            echo $data['TypeVente'] . "<br><br>";
+                            echo $data['Proprio'] . "<br><br>";
                         }
 
                     }else{
@@ -221,7 +221,8 @@ $panier = new panier($DB);
                             echo $data['Description'] . "<br>";
                             echo $data['Prix'] . " € <br>";
                             echo $data['Categorie'] . "<br>";
-                            echo $data['TypeVente'] . "<br><br>";
+                            echo $data['Proprio'] . "<br><br>";
+
                         }
 
                     }else{

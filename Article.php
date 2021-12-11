@@ -142,34 +142,150 @@ $_SESSION["statutPaiement"] = "void";
                    <p><?= $article->Nom ?></p>
                    <p><?= $article->Description ?></p>
                    <p><?= $article->Prix ?> € </p>
-                   
+                   <p><?= $article->Proprio ?>  </p>
+
+                   <?php $nomvendeur= $article->Proprio ?>
                    </div>
                 </div>
             </div>
 
+            
+            
+            
+             <?php 
+             if(isset($_SESSION['email']))
+             {
 
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <p> Cet article se vend par Transaction Vendeur-Client. </p>
-                <form action="" method="post">
+              
 
-                    <table>
-                        <tr>
-                            <td>Nouveau prix:</td>
-                            <td><input type="number" step="0.01" name="prix"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" align="center"> 
-                                <input type="submit" name="button1" value="Soumettre">
+            echo '<div class="col-lg-4 col-md-4 col-sm-12">';
+                echo "<p> Cet article est vendu par : $nomvendeur </p>";
+               echo  '<form action="nouveauprix.php" method="post">';
+
+                   echo ' <table>';
+                   echo'<tr>';
+                   echo'<td>Nouveau prix:</td>';
+                   echo'<td><input type="number" step="0.01" name="newprix"></td>';
+                   echo' </tr>';
+                   echo'<tr>';
+                   echo'<td>Votre pseudo:</td>';
+                   echo'<td><input type="text" step="0.01" name="pseudoclient"></td>';
+                   echo' </tr>';
+                   echo'<tr>';
+                   echo' <td colspan="2" align="center"> ';
+                   echo' <input type="submit" name="demanderautreprix" value="Soumettre">';
                                 
-                            </td>
-                        </tr>
-                    </table>
-                </form>
+                   echo'  </td>';
+                   echo'  </tr>';
+                   echo'</table>';
+                   echo '</form>';
+                   echo '</div>';
+                } 
+            ?>
+
+             
+            <?php  
+             if(isset($_SESSION['Email']))
+             {
+
+              
+
+                echo '<div class="col-lg-4 col-md-4 col-sm-12">';
+                
+               
+
+                   echo ' <table>';
+                   echo'<tr>';
+                   
+                    
+
+                   $database = "parisshopping";
+                   $db_handle = mysqli_connect('localhost', 'root', '');
+                   $db_found = mysqli_select_db($db_handle, $database);
+
+                   $NewPrix = isset($_POST["newprix"])? $_POST["newprix"] : "";
+                   $PseudoClient = isset($_POST["pseudoclient"])? $_POST["pseudoclient"] : "";
+
+                   if ($db_found) {
+                 
+                        $sql = "SELECT * FROM transaction "; 
+                        if ($NewPrix != "") {
+                            $sql .= " WHERE Nouveauprix LIKE '%$NewPrix%'";
+                                if ($PseudoClient!= "") {
+                                    $sql .= " AND Pseudoacheteur LIKE '%$PseudoClient%'";
+                                    
+                                         }
+                                     }
+                
+                        $result = mysqli_query($db_handle, $sql);
+                         
+                 
+                         
+                            echo "<table border='1'>";
+                            echo "<tr>";
+                            echo "<th>" . "Prix proposé par le client" . "</th>";
+                            echo "<th>" . "Pseudo du client" . "</th>";
+                            
+                           
+                            while ($data = mysqli_fetch_assoc($result)) {
+                            echo "<tr>";
+                            echo "<td>" . $data['Nouveauprix'] . "</td>";
+                            echo "<td>" . $data['Pseudoacheteur'] . "</td>";
+                          
+                            echo "</tr>";
+                            }
+                            echo "</table>";
+        
+                           
+                         
+                           
+                           echo '</div>';
+                           echo  '<form action="nouveauprix.php" method="post">';
+
+                           echo"<td> Etes vous ok avec ce que propose le client ? <br><br></td>";
+
+                           echo'<td>Nouveau prix:<br></td>';
+                           echo'<td><input type="number" step="0.01"  name="newprix"></td>';
+                           echo' </tr>';
+                           echo'<tr>';
+                           echo'<td><br>Nom article: <br></td>';
+                           echo'<td><input type="text" step="0.01" name="nomarticle"></td>';
+                           echo' </tr>';
+                            ?>
+                            <p><h6> <label>Vendeur</label><br><h6>
+                            <select name="nomvendeur">
+                            <option value="<?php echo"".$_SESSION['Pseudo'].""; ?>"> <?php echo"".$_SESSION['Pseudo'].""; ?></option>"  
+                            <br>
+                            <?php
+                           echo '  <div class="Accès"> <br>';  
+                           echo '<input type="submit" name="accepterprix" value="Accepter le prix" size="30"> <br><br> ';         
+                           echo '<input type="submit" name="refuserprix" value="Refuser le prix" size="30"></div><br><br> ';     
+                           echo '</form>';    
+
+                             
+                                
+                        
+                                
+                            
+                        } 
+                        else
+                
+                        {
+                            echo "<p>Database not found.</p>";
+                        }
+                        
+                        mysqli_close($db_handle);
+                    }
+                     
+                 
+            ?>
+            
+           
+             
             </div>
-</div>
 
 
-</div>
+            </div>
 
 </body>
 
