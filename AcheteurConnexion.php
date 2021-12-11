@@ -29,23 +29,16 @@
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
                     echo ""."<li class='nav-item'><a class='nav-link' href='Panier.php'>". "<img src='Image/panier.png'  width='30'>" ."</a></li>";
-                   
-                    
-
-
                 }
 
                 else if(isset($_SESSION['Email'])) ///Connecté en vendeur
                 {
                     echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>"."<img src='Image/panier.png'  width='30'>" ."</a></li>";
-                     
-
                 }
 
                 else if(isset($_SESSION['pseudo'])) ///Connecté en admin
                 {
                     echo "<li class='nav-item'><a class='nav-link' href='Panier.php'>" ."<img src='Image/panier.png'  width='30'>" ."</a></li>";
-
                 }
                 else
                 {
@@ -85,13 +78,7 @@
             </ul>
         </div>
     </nav>
-    <header class="page-header header container-fluid">
-
-    <script type="text/javascript">$(document).ready(function()
-    { 
-        $('.header').height($(window).height());
-    });
-    </script>
+    <header class="page-header header container-fluid" style="height: 1000px;">
 
         <div class="overlay">
 

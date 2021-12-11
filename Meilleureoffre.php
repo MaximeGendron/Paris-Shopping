@@ -125,8 +125,6 @@ $panier = new panier($DB);
     <br>
 
     <div class="article2">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12">
         <div class="php">
              <div id="liste1">
                     <a href="Luxe.php"><button class="btn btn-outline-secondary btn-lg">Luxe</button></a><br><br>
@@ -144,7 +142,7 @@ $panier = new panier($DB);
 
                         while ($data = mysqli_fetch_assoc($result)) {
                             $id=$data['ID'];
-                            echo "<strong><a href='Article.php?id=$id'>" . $data['Nom'] . "</a></strong><br>"; 
+                            echo "<strong>". $data['Nom'] . "</strong><br>"; 
                             $image = $data['Image'];
                             echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                             echo $data['Description'] . "<br>";
@@ -160,11 +158,7 @@ $panier = new panier($DB);
                     mysqli_close($db_handle);
                     ?>
         </div>
-    </div>
-</div>
-
-
-</div>
+</di>
 
 </body>
 

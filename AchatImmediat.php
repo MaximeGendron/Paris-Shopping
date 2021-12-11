@@ -39,10 +39,7 @@ $panier = new panier($DB);
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
                     echo ""."<li class='nav-item'><a class='nav-link' href='Panier.php'>". "<img src='Image/panier.png'  width='30'>" ."</a></li>";
-                   
-                    
-
-
+                
                 }
 
                 else if(isset($_SESSION['Email'])) ///Connecté en vendeur

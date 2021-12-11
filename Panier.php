@@ -120,19 +120,14 @@ if(isset($_GET['del'])) {
             </ul>
         </div>
     </nav>
-<header class="page-header header container-fluid">
-      <script type="text/javascript">
- $(document).ready(function(){
- $('.header').height($(window).height());
- });
-</script>
+    
 
-<section class="page-header header container-fluid">
+<div class="article2">
         <div class="Titre">
     <h2>Panier</h2></div>
 
         <form method="post" action="Panier.php">
-            <div class="php2">
+        <div class="php2">
         <?php
         $ids = array_keys($_SESSION['panier']);
         if(empty($ids)){
@@ -162,22 +157,24 @@ if(isset($_GET['del'])) {
             <div class="aSupprimer">
                 <a href="Panier.php?del=<?= $article->ID; ?>"><img src="Image/poubelle.png" alt="Poubelle" width="35"></a>
             </div>
-        </div>
-</div>
+        
+
         <?php endforeach; ?>
         <br>
         <div class="finPanier">
             <h4 class="titre">Prix total : <?= number_format($panier->total(),2,',',''); ?>€</h4>
         </div>
+        
         <div class = "Panier">
             <a href="Paiement.php">Paiement</a>
         </div>
-         
+
+        </div> 
         </form>
         <br>
     </section>
 
-</header>
+</div>
 </body>
 </html>
 

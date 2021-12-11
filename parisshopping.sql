@@ -59,8 +59,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   `Proprio` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
-
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `article`
@@ -83,7 +82,6 @@ INSERT INTO `article` (`ID`, `Nom`, `Description`, `Prix`, `Categorie`, `TypeVen
 (14, 'Jean droit', 'Jean Levi\'s, droit, taille haute, bleu clair, taille 38, vintage, tres bon etat, de 1991. ', 79.9, 'Friperie', 'Transaction Vendeur-Client', 'Image/6.png', ''),
 (15, 'Lunette de soleil', 'Lunettes de soleil, ronde, teintees bleu, en or, Ray-Ban, 2001', 139.95, 'Friperie', 'Vente immediate', 'Image/7.png', ''),
 (16, 'Doudoune', 'Belle', 50, 'Friperie', 'Transaction Vendeur-Client', 'Image/16.png', 'aze');
-
 
 -- --------------------------------------------------------
 
@@ -116,7 +114,6 @@ INSERT INTO `client` (`nom`, `prenom`, `adresse`, `email`, `mdp`, `pp`, `bannier
 ('Rousselot', 'Maud', '24 rue des Etats-Generaux', 'maudrousselot@icloud.com', 'bitch', '', ''),
 ('yo', 'yo', 'yo', 'yo', 'yo', 'yo', 'yo'),
 ('client', 'client', 'client', 'client', 'client', 'client', 'client');
-
 
 -- --------------------------------------------------------
 

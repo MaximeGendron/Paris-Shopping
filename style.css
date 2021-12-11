@@ -21,13 +21,15 @@ body {
 .navbar-collapse {
  justify-content: flex-end;
 }
+
 .header {
  background: url('Image/fond.jpg') no-repeat;
  position: relative;
- 
-
+ background-size:cover;
 }
 
+
+}
 .overlay {
  position: absolute;
  min-height: 100%;
@@ -239,7 +241,7 @@ text-align: center;
  line-height: 1.5;
 }
 
-@media (max-width: 1024){
+@media (max-width: 575.98px) {
  .description {
  left: 0;
  padding: 0 15px;
@@ -346,17 +348,16 @@ input:checked + .slider:before {
 }
 .Panier {
      text-align: center;
-     border: #fff;
      border : solid #fff;
      border-radius: 10px 10px 10px 10px;
-     padding: 40px 40px 40px 40px;
+     padding: 10px 10px 10px 10px;
      background-color: #edddc6;
      box-shadow: 0 0 0.5em #000;   
      width: 400px;
      margin: 0 auto;
      left: 50%;
      position: absolute;
-     top: 45%;
+     bottom: 0%;
      transform: translate(-50%, -55%);
 }
 
@@ -419,7 +420,7 @@ input:checked + .slider:before {
           margin: 0 auto;
           left: 50%;
           position: absolute;
-          top: 45%;
+          top: 50%;
           transform: translate(-50%, -55%);
 }
 
@@ -578,8 +579,9 @@ input:checked + .slider:before {
  border:1px solid #fff;
  background-color: #fff;
  color: #000;
-}
 
+
+}
 .lien:hover {
      color:cornsilk;
 }

@@ -91,3 +91,24 @@
             $('.header').height($(window).height());
         });
     </script>
+
+     <div class="overlay">
+
+            <div class="ChoixUtilisateur">
+                <form action="login.php" method="post">
+                    <table border="2">
+                        <h2>Merci pour votre achat!</h2>                       
+                    </table>
+                </form>
+                <div class="retourbouton">
+                     <a href="Accueil.php"><button class="btn btn-outline-secondary btn-lg">Accueil</button>
+        </a>
+                </div>
+         </div>
+</header>
+
+</body>
+
+</html>
+
+<?php require 'Footer.php'; ?>

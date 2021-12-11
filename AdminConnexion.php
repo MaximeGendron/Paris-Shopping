@@ -86,7 +86,7 @@
             </ul>
         </div>
     </nav>
-    <header class="page-header header container-fluid">
+<header class="page-header header container-fluid" style="height: 1000px;">
 
     <script type="text/javascript">$(document).ready(function()
     { 
@@ -115,6 +115,7 @@
          </div>
         
   
-    
+    </header>
     </body>
 </html>
+<?php require 'Footer.php'; ?>

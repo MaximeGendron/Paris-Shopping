@@ -93,9 +93,8 @@
             </ul>
         </div>
     </nav>
+    <header class="page-header header container-fluid" style="height: 1300px;">
 
-                    <header class="page-header header container-fluid">
-                        <script type="text/javascript">$(document).ready(function(){ $('.header').height($(window).height());});</script>
 
         <div class="overlay">
             
