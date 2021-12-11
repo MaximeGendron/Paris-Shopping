@@ -40,10 +40,6 @@ $panier = new panier($DB);
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
                     echo ""."<li class='nav-item'><a class='nav-link' href='Panier.php'>". "<img src='Image/panier.png'  width='30'>" ."</a></li>";
-                   
-                    
-
-
                 }
 
                 else if(isset($_SESSION['Email'])) ///Connecté en vendeur
@@ -142,7 +138,7 @@ $panier = new panier($DB);
 
                         while ($data = mysqli_fetch_assoc($result)) {
                             $id=$data['ID'];
-                            echo "<strong>". $data['Nom'] . "</strong><br>"; 
+                            echo "<strong><a href='Article.php?id=$id'>" . $data['Nom'] . "</a></strong><br>"; 
                             $image = $data['Image'];
                             echo "<img src='$image' height='120' width='100'>" . "<br>"; 
                             echo $data['Description'] . "<br>";
