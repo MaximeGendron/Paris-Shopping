@@ -98,22 +98,6 @@ $_SESSION["statutPaiement"] = "void";
             </ul>
         </div>
     </nav>
-    <script type="text/javascript">
-        function gestionDiv(element){
-        var  maDiv = document.getElementById(element);
-        var  leBouton = document.getElementById('leBouton');
-        if(maDiv.style.display == "none"){
-            maDiv.style.display = "block";
-            leBouton.value ="Masquer";
-        }
-        else{
-            maDiv.style.display = "none";
-            leBouton.value ="Voir";
-        }
-    }
-
-
-    </script>
     
     <br>
     <br>

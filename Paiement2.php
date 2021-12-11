@@ -1,3 +1,12 @@
+<?php  
+require 'CreateDB.php';
+require 'CreatePanierDB.php';
+$DB = new DB();
+$panier = new panier($DB);
+if(isset($_GET['del'])) {
+    $panier->del($_GET['del']);
+}
+?>
 <?php require 'login.php'; ?>
 <!DOCTYPE html>
 <html>
