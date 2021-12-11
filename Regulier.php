@@ -4,7 +4,6 @@ require 'CreateDB.php';
 require 'CreatePanierDB.php';
 $DB = new DB();
 $panier = new panier($DB);
-
 ?>
 
 
@@ -17,6 +16,7 @@ $panier = new panier($DB);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="click.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -39,6 +39,9 @@ $panier = new panier($DB);
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
                     echo ""."<li class='nav-item'><a class='nav-link' href='Panier.php'>". "<img src='Image/panier.png'  width='30'>" ."</a></li>";
+                   
+                    
+
 
                 }
 
@@ -144,6 +147,7 @@ $panier = new panier($DB);
                             echo $data['Prix'] . " € <br>";
                             echo $data['Categorie'] . "<br>";
                             echo $data['Proprio'] . "<br><br>";
+
                         }
 
                     }else{
@@ -172,6 +176,7 @@ $panier = new panier($DB);
                    <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
                    <p><?= $article->Prix ?> € </p>
+                    <p><?= $article->Proprio ?> € </p>
                    </div>
 
                    <div class="aAjoutPanier">

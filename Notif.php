@@ -9,6 +9,8 @@
  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="click.js"></script>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -25,14 +27,19 @@
                 <li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
-                <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle ="dropdown" aria-haspopup ="true" aria-expanded ="false">Notifications</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item count" href="#"></a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="Panier.php"><img src="Image/panier.png" alt="Panier" width="30 px"></a></li>
+
                 <?php
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
                     echo ""."<li class='nav-item'><a class='nav-link' href='Panier.php'>". "<img src='Image/panier.png'  width='30'>" ."</a></li>";
                    
-                    
-
+                
 
                 }
 
@@ -53,6 +60,7 @@
                      
                 }
 			    ?>
+
                 <?php 
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
@@ -66,6 +74,7 @@
                 {
                     echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'>".$_SESSION['Pseudo']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
+
 
 
                 }
@@ -92,18 +101,55 @@
  $('.header').height($(window).height());
  });
 </script>
-    
- <div class="overlay">
- <div class="Notifications">
-     <form role="search">
- <div>
-    <input type="search" id="maRecherche" name="q"
-     placeholder="Rechercher sur le site…"
-     aria-label="Rechercher parmi le contenu du site">
-    <button>Rechercher</button>
- </div>
-</form>
-<br>
+<div class="overlay">
+<div class="Notifications">
+<div class ="container">
+    <div class="row">
+        <div class="col-sm-0 col-md-2 col-lg-3"></div>
+        <div class="col-sm-12 col-md-8 col-lg-6">
+
+
+            <h4 style="text-align: center">Barre de recherche</h4>
+            <div class="form-group">
+                 <input class="form-control" type="text" id="search-user" value="" placeholder="Rechercher un ou plusieurs articles"/>
+            </div>
+            <div style="margin-top: 20px">
+                <div id="result-search"></div>
+            </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+    $('#search-user').keyup(function(){
+        $('#result-search').html('');
+
+        var utilisateur = $(this).val();
+
+        if(utilisateur != ""){
+        $.ajax({
+          type: 'GET',
+          url: 'recherche_article.php',
+          data: 'user=' + encodeURIComponent(utilisateur),
+          success: function(data){
+            if(data != ""){
+              $('#result-search').append(data);
+            }else{
+              document.getElementById('result-search').innerHTML = "<div style='font-size: 20px; text-align: center; margin-top: 10px'>Aucun article</div>"
+            }
+          }
+        });
+      }
+
+
+
+    });
+});
+      
+  </script>
+
+ 
         <h3> Activez les alertes :<h3>
         <label class="switch">
         <input type="checkbox">

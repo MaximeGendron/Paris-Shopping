@@ -17,6 +17,7 @@
     <?php
     if(isset($_SESSION['email']))
     {
+        
         //echo "Vous êtes connecté en tant que :" . $_SESSION['email'];
         ?>
                 <?php
@@ -40,7 +41,6 @@
                 <li class="nav-item"><a class="nav-link" href="Accueil.php">Accueil</a></li>
                 <li class="nav-item"><a class="nav-link" href="ToutParcourir.php">Tout Parcourir</a></li>
                 <li class="nav-item"><a class="nav-link" href="Achat.php">Achat</a></li>
-
                 <li class="nav-item"><a class="nav-link" href="Notif.php">Notifications</a></li>
                 <?php
                 if(isset($_SESSION['email'])) //Connecté en client
@@ -82,6 +82,7 @@
                 {
                     echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'>".$_SESSION['Pseudo']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
+                    
 
 
                 }
