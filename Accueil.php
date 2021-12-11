@@ -64,12 +64,12 @@
         </div>
     </nav>
 
-                    <header class="page-header header container-fluid">
-                        <script type="text/javascript">
-                    $(document).ready(function(){
-                    $('.header').height($(window).height());
-                    });
-                    </script>
+    <header class="page-header header container-fluid">
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.header').height($(window).height());
+            });
+        </script>
 
         <div class="overlay"></div>
         <div class="description">
@@ -89,7 +89,7 @@
         </p>
         <a href="VotreCompte.php"><button class="btn btn-outline-secondary btn-lg">Devenir membre !</button>
         </a>
-</div>
+    </div>
 </header>
 
 </body>

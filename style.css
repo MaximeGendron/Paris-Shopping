@@ -22,9 +22,9 @@ body {
 }
 .header {
  background-image: url('Image/fond.jpg');
- background-size:auto;
- background-position: unset;
  position: relative;
+ height: 750px;
+
 }
 .overlay {
  position: absolute;
@@ -206,6 +206,7 @@ text-align: center;
  margin-left: 80px;
 }
 
+
  .Titre {
  text-align: center;
  background-color : #edddc6;
@@ -369,7 +370,7 @@ input:checked + .slider:before {
 }
 :required
 {
-    background-color: red;
+    background-color: white;
 }
 .InfoLivraison .form-control,
 .features input {
@@ -410,17 +411,13 @@ input:checked + .slider:before {
           padding: 40px 40px 40px 40px;
           background-color: #edddc6;
           box-shadow: 0 0 0.5em #000;   
-         width: 520px;
+          width: 400px;
           margin: 0 auto;
           left: 50%;
           position: absolute;
-          top: 53%;
+          top: 45%;
           transform: translate(-50%, -55%);
-           
 }
-input::placeholder {
-     color: white;
-   }
 
 .ChoixUtilisateur h2,h1,h3
 {
@@ -474,19 +471,7 @@ input::placeholder {
      margin-left: auto;
      float: left;
 }
-.suivantbouton button
-{
-     text-align: center;
-     background-color : #936a4f;
-     width: 70px;
-     font-size: 0.9rem;
-     position:relative;
-     right:70%;
-      
-      
-      
-      
-}
+
 
 .article2 {
      background-color: #f2f6e9;
@@ -561,30 +546,6 @@ input::placeholder {
  border: 1px solid #333;
 }
 
-.PhotoProfil{
-     margin: 0 auto;  
-     width: 120px;
-     height: 120px;
-     
-
-}
-
-
-
-.Banniere {
-     width: auto;
-}
-
-.TitreCompte {
-     text-align: center;
-     color: #936a4f;
-}
-
-.lien{
-
-     color: #936a4f;
-     font-weight: bold;
-}
 
 .description3 {
      left: 50%;
@@ -613,6 +574,4 @@ input::placeholder {
  border:1px solid #fff;
  background-color: #fff;
  color: #000;
-.lien:hover {
-     color:cornsilk;
 }
