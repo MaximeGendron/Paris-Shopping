@@ -116,7 +116,7 @@
  
                 
                 ?> 
-                <?php header('Location: http://localhost/Paris-Shopping/Accueil.php'); exit(); ?>  
+                <?php header('Location: http://localhost/Paris-Shopping/Remerciement.php'); exit(); ?>  
                 <?php
         }
         else

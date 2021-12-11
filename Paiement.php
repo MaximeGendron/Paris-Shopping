@@ -138,7 +138,7 @@
    </p>
   
    <input type="submit" name="creationlivraison" value="Envoyer">
-<a class="nav-link" href="Paiement2.php">Suivant</a>
+ 
 </div>
 
     </form>
@@ -154,4 +154,3 @@
 </html>
 
 <?php require 'Footer.php'; ?>
-
