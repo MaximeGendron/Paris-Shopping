@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : sam. 11 déc. 2021 à 14:50
+
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -49,7 +49,7 @@ INSERT INTO `admin` (`pseudo`, `mdp`) VALUES
 
 DROP TABLE IF EXISTS `article`;
 CREATE TABLE IF NOT EXISTS `article` (
-  `ID` int(10) NOT NULL AUTO_INCREMENT,
+  `ID` int(100) NOT NULL AUTO_INCREMENT,
   `Nom` varchar(255) NOT NULL,
   `Description` varchar(255) NOT NULL,
   `Prix` float NOT NULL,
@@ -58,29 +58,32 @@ CREATE TABLE IF NOT EXISTS `article` (
   `Image` varchar(255) NOT NULL,
   `Proprio` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=819602 DEFAULT CHARSET=latin1;
+
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+
 
 --
 -- Déchargement des données de la table `article`
 --
 
 INSERT INTO `article` (`ID`, `Nom`, `Description`, `Prix`, `Categorie`, `TypeVente`, `Image`, `Proprio`) VALUES
-(8, 'Manteau Prada', 'Manteau de luxe en fausse fourrure, taille en 36, couleur noire, logo prada blanc. ', 4800, 'Luxe', 'Enchere', 'Image/8.png', ''),
-(11, 'Robe Versace', 'Robe zipee Versace, couleur noire, taille 40, fermeture doree', 2200, 'Luxe', 'Enchere', 'Image/11.png', ''),
-(13, 'Sac Chanel ', 'Classique sac a main Chanel, en cuir matelasse blanc, garniture en metal dore, anse-chaine en metal dore entrelacee de cuir blanc permettant un porte main ou epaule. Doublure interieure en cuir blanc, double. ', 4980, 'Luxe', 'Enchere', 'Image/13.png', ''),
-(14, 'Sac Lady Dior', 'Sac porte a la main. Matiere : cuir noir, coutures cannage, texture matelassee, charms en metal dore pale, fine bandouliere amovible en cuir. ', 3900, 'Luxe', 'Vente immediate', 'Image/14.png', ''),
-(9, 'OPYUM Sandales Yves-Saint-Laurent', 'Talon en metal dore, 100% en cuir, hauteur de 11 cm, semelle en cuir, made in Italy. ', 975, 'Luxe', 'Transaction Vendeur-Client', 'Image/9.png', ''),
-(3, 'Bonnet noir ', 'Bonnet noir en cachemire. Tient chaud', 20, 'Regulier', 'Vente immediate', 'Image/3.png', ''),
-(1, '3 paires de chaussettes', '6 chaussettes en coton noires. Taille 37', 15, 'Regulier', 'Transaction Vendeur-Client', 'Image/1.png', ''),
-(5, 'Echarpe a carreau', 'Echarpe a carreaux bleu blanche et grise en laine. Parfait pour l\'hiver', 24, 'Regulier', 'Transaction Vendeur-Client', 'Image/5.png', ''),
-(12, 'Sac a dos noir ', 'Sac a dos en tissu noir EastPak. Taille unique regular', 37.5, 'Regulier', 'Transaction Vendeur-Client', 'Image/12.png', ''),
-(15, 'Sweat a capuche ', 'Sweat a capuche gris. Taille 40. En coton. Avec capuche et col reglable. Tres confortable', 23, 'Regulier', 'Vente immediate', 'Image/15.png', ''),
-(10, 'Pull Adidas ', 'Pull Adidas Vintage, blanc, sans capuche, d\'occasion, ancien logo \"adidas originals\". ', 59.95, 'Friperie', 'Transaction Vendeur-Client', 'Image/10.png', ''),
-(2, 'Basket New Balance ', 'Basket en cuir et en plastique, taille 42, blanche, d\'occasion, en tres bon etat. ', 85, 'Friperie', 'Transaction Vendeur-Client', 'Image/2.png', ''),
-(4, 'Chapeau noir', 'Chapeau noir, hiver, avec noeud papillon. ', 32, 'Friperie', 'Vente immediate', 'Image/4.png', ''),
-(6, 'Jean droit', 'Jean Levi\'s, droit, taille haute, bleu clair, taille 38, vintage, tres bon etat, de 1991. ', 79.9, 'Friperie', 'Transaction Vendeur-Client', 'Image/6.png', ''),
-(7, 'Lunette de soleil', 'Lunettes de soleil, ronde, teintees bleu, en or, Ray-Ban, 2001', 139.95, 'Friperie', 'Vente immediate', 'Image/7.png', ''),
-(819601, 'top ', 'clou a baver dessus', 1000000000, 'Regulier', 'Vente immediate', 'yo', 'bitch');
+(1, 'Manteau Prada', 'Manteau de luxe en fausse fourrure, taille en 36, couleur noire, logo prada blanc. ', 4800, 'Luxe', 'Enchere', 'Image/8.png', ''),
+(2, 'Robe Versace', 'Robe zipee Versace, couleur noire, taille 40, fermeture doree', 2200, 'Luxe', 'Enchere', 'Image/11.png', ''),
+(3, 'Sac Chanel ', 'Classique sac a main Chanel, en cuir matelasse blanc, garniture en metal dore, anse-chaine en metal dore entrelacee de cuir blanc permettant un porte main ou epaule. Doublure interieure en cuir blanc, double. ', 4980, 'Luxe', 'Enchere', 'Image/13.png', ''),
+(4, 'Sac Lady Dior', 'Sac porte a la main. Matiere : cuir noir, coutures cannage, texture matelassee, charms en metal dore pale, fine bandouliere amovible en cuir. ', 3900, 'Luxe', 'Vente immediate', 'Image/14.png', ''),
+(5, 'OPYUM Sandales Yves-Saint-Laurent', 'Talon en metal dore, 100% en cuir, hauteur de 11 cm, semelle en cuir, made in Italy. ', 975, 'Luxe', 'Transaction Vendeur-Client', 'Image/9.png', ''),
+(6, 'Bonnet noir ', 'Bonnet noir en cachemire. Tient chaud', 20, 'Regulier', 'Vente immediate', 'Image/3.png', ''),
+(7, '3 paires de chaussettes', '6 chaussettes en coton noires. Taille 37', 15, 'Regulier', 'Transaction Vendeur-Client', 'Image/1.png', ''),
+(8, 'Echarpe a carreau', 'Echarpe a carreaux bleu blanche et grise en laine. Parfait pour l\'hiver', 24, 'Regulier', 'Transaction Vendeur-Client', 'Image/5.png', ''),
+(9, 'Sac a dos noir ', 'Sac a dos en tissu noir EastPak. Taille unique regular', 37.5, 'Regulier', 'Transaction Vendeur-Client', 'Image/12.png', ''),
+(10, 'Sweat a capuche ', 'Sweat a capuche gris. Taille 40. En coton. Avec capuche et col reglable. Tres confortable', 23, 'Regulier', 'Vente immediate', 'Image/15.png', ''),
+(11, 'Pull Adidas ', 'Pull Adidas Vintage, blanc, sans capuche, d\'occasion, ancien logo \"adidas originals\". ', 59.95, 'Friperie', 'Transaction Vendeur-Client', 'Image/10.png', ''),
+(12, 'Basket New Balance ', 'Basket en cuir et en plastique, taille 42, blanche, d\'occasion, en tres bon etat. ', 85, 'Friperie', 'Transaction Vendeur-Client', 'Image/2.png', ''),
+(13, 'Chapeau noir', 'Chapeau noir, hiver, avec noeud papillon. ', 32, 'Friperie', 'Vente immediate', 'Image/4.png', ''),
+(14, 'Jean droit', 'Jean Levi\'s, droit, taille haute, bleu clair, taille 38, vintage, tres bon etat, de 1991. ', 79.9, 'Friperie', 'Transaction Vendeur-Client', 'Image/6.png', ''),
+(15, 'Lunette de soleil', 'Lunettes de soleil, ronde, teintees bleu, en or, Ray-Ban, 2001', 139.95, 'Friperie', 'Vente immediate', 'Image/7.png', ''),
+(16, 'Doudoune', 'Belle', 50, 'Friperie', 'Transaction Vendeur-Client', 'Image/16.png', 'aze');
+
 
 -- --------------------------------------------------------
 
@@ -110,7 +113,10 @@ INSERT INTO `client` (`nom`, `prenom`, `adresse`, `email`, `mdp`, `pp`, `bannier
 ('a', 'aa', 'a', 'a', 'a', 'Image/echarpe.png', 'aaa'),
 ('Gendron', 'Maxime', '5 bis avenue', 'maximegendron16@hotmail.com', 'brunomars16', 'Image/chapeau.png', 'Image/panier.png'),
 ('Hina', 'Manolo', '5', 'hina.manolo', 'bonjour', '', ''),
-('Rousselot', 'Maud', '24 rue des Etats-Generaux', 'maudrousselot@icloud.com', 'bitch', '', '');
+('Rousselot', 'Maud', '24 rue des Etats-Generaux', 'maudrousselot@icloud.com', 'bitch', '', ''),
+('yo', 'yo', 'yo', 'yo', 'yo', 'yo', 'yo'),
+('client', 'client', 'client', 'client', 'client', 'client', 'client');
+
 
 -- --------------------------------------------------------
 
@@ -134,6 +140,20 @@ CREATE TABLE IF NOT EXISTS `livraison` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `notification`
+--
+
+DROP TABLE IF EXISTS `notification`;
+CREATE TABLE IF NOT EXISTS `notification` (
+  `Categorie` varchar(255) NOT NULL,
+  `TypeVente` varchar(255) NOT NULL,
+  `Couleur` varchar(255) NOT NULL,
+  `Prix` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `paiement`
 --
 
@@ -145,6 +165,18 @@ CREATE TABLE IF NOT EXISTS `paiement` (
   `DateExp` date NOT NULL,
   `Code` int(11) NOT NULL,
   PRIMARY KEY (`Numero`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `transaction`
+--
+
+DROP TABLE IF EXISTS `transaction`;
+CREATE TABLE IF NOT EXISTS `transaction` (
+  `Pseudoacheteur` varchar(255) NOT NULL,
+  `Nouveauprix` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -175,7 +207,9 @@ INSERT INTO `vendeur` (`Pseudo`, `Email`, `MDP`) VALUES
 ('plop', 'plop', 'plop'),
 ('yop', 'yop', 'yop'),
 ('Maxou', 'max', 'jack'),
-('hello', 'hello', 'hello');
+('hello', 'hello', 'hello'),
+('aze', 'aze', 'aze'),
+('vendeur', 'vendeur', 'venduer');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
