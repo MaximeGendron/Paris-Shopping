@@ -176,7 +176,7 @@ $panier = new panier($DB);
                    <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
                    <p><?= $article->Prix ?> € </p>
-                    <p><?= $article->Proprio ?> € </p>
+                    <p><?= $article->Proprio ?>  </p>
                    </div>
 
                    <div class="aAjoutPanier">
