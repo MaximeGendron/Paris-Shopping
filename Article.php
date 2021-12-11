@@ -142,9 +142,6 @@ $_SESSION["statutPaiement"] = "void";
                 </div>
             </div>
 
-            
-            
-            
              <?php 
              if(isset($_SESSION['email']))
              {
