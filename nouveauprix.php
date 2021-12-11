@@ -79,13 +79,12 @@
                              }
                          }
 
-                $sql = "UPDATE article SET Prix ='$NewPrix' WHERE Nom='$NomArticle' AND Proprio='$NomVendeur'";
-                $result =mysqli_query($db_handle, $sql);
+                 
 
-                while ($data = mysqli_fetch_assoc($result)) {
-                    $newprix = $data['NouveauPrix'];
-                    }  
-                $sql = "DELETE FROM transaction WHERE NouveauPrix ='$newPrix'";
+               
+                $sql = "DELETE FROM transaction WHERE NouveauPrix";
+                $result =mysqli_query($db_handle, $sql);
+                $sql = "UPDATE article SET Prix ='$NewPrix' WHERE Nom='$NomArticle' AND Proprio='$NomVendeur'";
                 $result =mysqli_query($db_handle, $sql);
                 
                  
@@ -106,22 +105,8 @@
     if (isset($_POST["refuserprix"])) {
         if ($db_found) {
      
-            $sql = "SELECT * FROM article "; 
-            if ($NewPrix != "") {
-                $sql .= " WHERE Prix LIKE '%$NewPrix%'";                   
-                        if ($NomArticle!= "") {
-                            $sql .= " AND Nom LIKE '%$$NomArticle%'";
-                            if ($NomVendeur!= "") {
-                                $sql .= " AND Proprio LIKE '%$$NomVendeur%'";
-                                }
-                             }
-                         }
-
-
-                while ($data = mysqli_fetch_assoc($result)) {
-                    $newprix = $data['NouveauPrix'];
-                    }  
-                $sql = "DELETE FROM transaction WHERE NouveauPrix ='$newPrix'";
+           
+                $sql = "DELETE FROM transaction WHERE Nouveauprix  ";
                 $result =mysqli_query($db_handle, $sql);
                 
                  

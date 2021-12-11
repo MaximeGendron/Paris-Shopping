@@ -244,7 +244,7 @@ $_SESSION["statutPaiement"] = "void";
                            echo '</div>';
                            echo  '<form action="nouveauprix.php" method="post">';
 
-                           echo"<td> Etes vous ok avec ce que propose le client ? <br><br></td>";
+                           echo"<td><h4> Etes vous ok avec ce que propose le client ? <br><br></h4></td>";
 
                            echo'<td>Nouveau prix:<br></td>';
                            echo'<td><input type="number" step="0.01"  name="newprix"></td>';
@@ -256,8 +256,9 @@ $_SESSION["statutPaiement"] = "void";
                             ?>
                             <p><h6> <label>Vendeur</label><br><h6>
                             <select name="nomvendeur">
-                            <option value="<?php echo"".$_SESSION['Pseudo'].""; ?>"> <?php echo"".$_SESSION['Pseudo'].""; ?></option>"  
-                            <br>
+                            <option value="<?php echo"".$_SESSION['Pseudo']."";?>">
+                            <?php echo"".$_SESSION['Pseudo'].""; ?></option></select></p>  
+                            
                             <?php
                            echo '  <div class="Accès"> <br>';  
                            echo '<input type="submit" name="accepterprix" value="Accepter le prix" size="30"> <br><br> ';         
