@@ -104,7 +104,7 @@
  <input type="email" class="form-control" placeholder="Courriel:" name="email">
  </div>
  <div class="form-group">
- <textarea class="form-control" rows="4">Vos commentaires</textarea>
+ <textarea class="form-control" rows="4" placeholder="Vos commentaires"></textarea>
  </div>
  <input type="submit" class="btn btn-secondary btn-block" value="Envoyer" name="">
  </div>
