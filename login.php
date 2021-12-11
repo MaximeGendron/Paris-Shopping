@@ -1,9 +1,6 @@
-
 <?php
 
     session_start();
-    $fichierCSS = "style.css";
-    echo "<link rel='stylesheet' type='text/css' href='$fichierCSS'>";
 
     $EmailClient = isset($_POST["email"])? $_POST["email"] : "";
     $mdp = isset($_POST["mdp"])? $_POST["mdp"] : "";

@@ -1,8 +1,9 @@
 body {
  padding: 0px;
  margin: 0px;
- background: #f2f6e9;
+ background: #f2f6e9 no-repeat;
 }
+
 /*--- navigation bar ---*/
 .navbar {
  background:#936a4f;
@@ -21,11 +22,11 @@ body {
  justify-content: flex-end;
 }
 .header {
- background-image: url('Image/fond.jpg');
+ background: url('Image/fond.jpg') no-repeat;
  position: relative;
- height: 750px;
-
+  background-size:cover;
 }
+
 .overlay {
  position: absolute;
  min-height: 100%;
@@ -237,7 +238,7 @@ text-align: center;
  line-height: 1.5;
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 1024{
  .description {
  left: 0;
  padding: 0 15px;
@@ -576,9 +577,8 @@ input:checked + .slider:before {
  border:1px solid #fff;
  background-color: #fff;
  color: #000;
-
-
 }
+
 .lien:hover {
      color:cornsilk;
 }
