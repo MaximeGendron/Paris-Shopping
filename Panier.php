@@ -1,25 +1,7 @@
-<!--<?php require 'login.php'; 
-
-if(isset($_SESSION['email']))
-{
-    $panier=($_SESSION['email']);
-}
-else if(isset($_SESSION['Email']))
-{
-    $panier=($_SESSION['Email']);
-
-}
-else if(isset($_SESSION['pseudo']))
-{
-    $panier=($_SESSION['pseudo']);
-}
-else
-{
-    $panier=NULL;
-}
-?>*/-->
+ 
 
 <?php  
+require 'login.php';
 require 'CreateDB.php';
 require 'CreatePanierDB.php';
 $DB = new DB();
