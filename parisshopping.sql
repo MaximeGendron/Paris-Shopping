@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 10 déc. 2021 à 10:40
+-- Généré le : ven. 10 déc. 2021 à 15:24
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -49,7 +49,7 @@ INSERT INTO `admin` (`pseudo`, `mdp`) VALUES
 
 DROP TABLE IF EXISTS `article`;
 CREATE TABLE IF NOT EXISTS `article` (
-  `ID` int(10) NOT NULL,
+  `ID` int(10) NOT NULL AUTO_INCREMENT,
   `Nom` varchar(255) NOT NULL,
   `Description` varchar(255) NOT NULL,
   `Prix` float NOT NULL,
@@ -57,8 +57,8 @@ CREATE TABLE IF NOT EXISTS `article` (
   `TypeVente` varchar(255) NOT NULL,
   `Image` varchar(255) NOT NULL,
   `Proprio` varchar(255) NOT NULL,
-  PRIMARY KEY (`Nom`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM AUTO_INCREMENT=819601 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `article`
@@ -71,18 +71,31 @@ INSERT INTO `article` (`ID`, `Nom`, `Description`, `Prix`, `Categorie`, `TypeVen
 (14, 'Sac Lady Dior', 'Sac porte a la main. Matiere : cuir noir, coutures cannage, texture matelassee, charms en metal dore pale, fine bandouliere amovible en cuir. ', 3900, 'Luxe', 'Vente immediate', 'Image/sacdior.png', ''),
 (9, 'OPYUM Sandales Yves-Saint-Laurent', 'Talon en metal dore, 100% en cuir, hauteur de 11 cm, semelle en cuir, made in Italy. ', 975, 'Luxe', 'Transaction Vendeur-Client', 'Image/talon.png', ''),
 (3, 'Bonnet noir ', 'Bonnet noir en cachemire. Tient chaud', 20, 'Regulier', 'Vente immediate', 'Image/bonnet.png', ''),
-(1, '3 paires de chaussettes', '6 chaussettes en coton noires. Taille 37', 15, 'Regulier', 'Transaction Vendeur-Client', 'Image/chaussette.png', ''),
+(1000, '3 paires de chaussettes', '6 chaussettes en coton noires. Taille 37', 15, 'Regulier', 'Transaction Vendeur-Client', 'Image/chaussette.png', ''),
 (5, 'Echarpe a carreau', 'Echarpe a carreaux bleu blanche et grise en laine. Parfait pour l\'hiver', 24, 'Regulier', 'Transaction Vendeur-Client', 'Image/echarpe.png', ''),
 (12, 'Sac a dos noir ', 'Sac a dos en tissu noir EastPak. Taille unique regular', 37.5, 'Regulier', 'Transaction Vendeur-Client', 'Image/sac.jpg', ''),
-(15, 'Sweat a capuche ', 'Sweat a capuche gris. Taille 40. En coton. Avec capuche et col reglable. Tres confortable', 23, 'Regulier', 'Vente immediate', 'Image/sweet.png', ''),
+(1500, 'Sweat a capuche ', 'Sweat a capuche gris. Taille 40. En coton. Avec capuche et col reglable. Tres confortable', 23, 'Regulier', 'Vente immediate', 'Image/sweet.png', ''),
 (10, 'Pull Adidas ', 'Pull Adidas Vintage, blanc, sans capuche, d\'occasion, ancien logo \"adidas originals\". ', 59.95, 'Friperie', 'Transaction Vendeur-Client', 'Image/adidas.png', ''),
 (2, 'Basket New Balance ', 'Basket en cuir et en plastique, taille 42, blanche, d\'occasion, en tres bon etat. ', 85, 'Friperie', 'Transaction Vendeur-Client', 'Image/basket.png', ''),
 (4, 'Chapeau noir', 'Chapeau noir, hiver, avec noeud papillon. ', 32, 'Friperie', 'Vente immediate', 'Image/chapeau.png', ''),
 (6, 'Jean droit', 'Jean Levi\'s, droit, taille haute, bleu clair, taille 38, vintage, tres bon état, de 1991. ', 79.9, 'Friperie', 'Transaction Vendeur-Client', 'Image/jean.png', ''),
 (7, 'Lunette de soleil', 'Lunettes de soleil, ronde, teintees bleu, en or, Ray-Ban, 2001', 139.95, 'Friperie', 'Vente immediate', 'Image/lunettes.png', ''),
-(1, 'truc', '', 15, 'Luxe', 'Achat-Immediat', 'efoipoijfe', 'vendeur'),
-(15, 'daz', 'Hello toi comment ca va', 186, 'Luxe', 'Achat-Immediat', 'dzadaz', 'vendeur'),
-(255, 'machin', 'truc symaps', 500.2, 'Friperie', 'Achat-Immediat', 'Image/8.png', 'vendeur');
+(819593, 'nommsasaaa', 'dzadz', 58, 'Luxe', 'Vente immediate', 'dzada', ''),
+(819599, 'trucsyulÃ©', 'fef', 1596580, 'Luxe', 'Vente immediate', 'efzfe', ''),
+(819588, 'd', 'dadz', 58959, 'Luxe', 'Vente immediate', 'dazd', ''),
+(7489, 'ezfz', 'fzefze', 654, 'Luxe', 'Vente immediate', 'ffze', 'vendeur'),
+(100, 'fezfze', 'zefzef', 84985000000, 'Luxe', 'Vente immediate', 'zzefz', 'admin'),
+(50500, 'fzef', 'zfezfz', 50500, 'Friperie', 'Vente immediate', 'Image/sacchanel.png', 'admin'),
+(819585, 'daaaaaaaaa', 'dzdzdz', 84984, 'Luxe', 'Vente immediate', 'dzdza', 'yop'),
+(819586, 'heya', 'fezf', 456, 'Regulier', 'Vente immediate', 'fezfz', 'hello'),
+(819587, 'bidulle', 'ctroooooooo', 45988, 'Friperie', 'Vente immediate', 'frezreg', 'admin'),
+(819589, 'dd', 'rzgrregzr', 98498, 'Luxe', 'Vente immediate', 'rgzreg', ''),
+(819590, 'ddd', 'dazdza', 895, 'Luxe', 'Transaction Vendeur-Client', 'dzaza', ''),
+(819591, 'kaka', 'zdadza', 456, 'Luxe', 'Vente immediate', 'fzee', ''),
+(819594, 'macijdazpodj', 'dzadza', 4864, 'Luxe', 'Vente immediate', 'dad', ''),
+(819595, 'Gendron', 'fzfz', 123, 'Luxe', 'Vente immediate', 'fzfe', ''),
+(819596, 'helloitoi', 'dsqqsd', 78985, 'Regulier', 'Transaction Vendeur-Client', 'dzadaz', ''),
+(819597, 'truc', 'dazda', 5454, 'Luxe', 'Vente immediate', 'dazdza', 'admin');
 
 -- --------------------------------------------------------
 
@@ -169,9 +182,14 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
 --
 
 INSERT INTO `vendeur` (`Pseudo`, `Email`, `MDP`) VALUES
-('vendeur', 'vendeur', 'vendeur'),
 ('dede', 'de', 'dedee'),
-('Maxlamenace', 'maximegendron16@hotmail.com', 'yo');
+('Maxlamenace', 'maximegendron16@hotmail.com', 'yo'),
+('Jack', 'jacky', 'yo'),
+('monpseudo', 'yo', 'yo'),
+('plop', 'plop', 'plop'),
+('yop', 'yop', 'yop'),
+('Maxou', 'max', 'jack'),
+('hello', 'hello', 'hello');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -17,6 +17,7 @@ $panier = new panier($DB);
  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="click.js"></script>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -124,6 +125,7 @@ $panier = new panier($DB);
                             echo $data['Prix'] . " € <br>";
                             echo $data['Categorie'] . "<br>";
                             echo $data['TypeVente'] . "<br><br>";
+                            echo $data['Proprio'] . "<br><br>";
                         }
 
                     }else{
@@ -160,6 +162,7 @@ $panier = new panier($DB);
                             echo $data['Prix'] . " € <br>";
                             echo $data['Categorie'] . "<br>";
                             echo $data['TypeVente'] . "<br><br>";
+                            echo $data['Proprio'] . "<br><br>";
                         }
 
                     }else{
@@ -196,6 +199,7 @@ $panier = new panier($DB);
                             echo $data['Prix'] . " € <br>";
                             echo $data['Categorie'] . "<br>";
                             echo $data['TypeVente'] . "<br><br>";
+                            echo $data['Proprio'] . "<br><br>";
                         }
 
                     }else{
