@@ -1,7 +1,12 @@
 <?php 
 require 'CreateDB.php';
 $DB = new DB();
+?>
 
+<?php
+// Set session variables (variables globales)
+$_SESSION["Email"] = "";
+$_SESSION["statutPaiement"] = "void";
 ?>
 
 <?php require 'login.php'; ?>
@@ -91,6 +96,22 @@ $DB = new DB();
             </ul>
         </div>
     </nav>
+    <script type="text/javascript">
+        function gestionDiv(element){
+        var  maDiv = document.getElementById(element);
+        var  leBouton = document.getElementById('leBouton');
+        if(maDiv.style.display == "none"){
+            maDiv.style.display = "block";
+            leBouton.value ="Masquer";
+        }
+        else{
+            maDiv.style.display = "none";
+            leBouton.value ="Voir";
+        }
+    }
+
+
+    </script>
     
     <br>
     <br>
@@ -126,11 +147,25 @@ $DB = new DB();
                 </div>
             </div>
 
-            
 
             <div class="col-lg-4 col-md-4 col-sm-12">
+                <p> Cet article se vend par Transaction Vendeur-Client. </p>
+                <form action="" method="post">
 
-    </div>
+                    <table>
+                        <tr>
+                            <td>Nouveau prix:</td>
+                            <td><input type="number" step="0.01" name="prix"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center"> 
+                                <input type="submit" name="button1" value="Soumettre">
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
 </div>
 
 
