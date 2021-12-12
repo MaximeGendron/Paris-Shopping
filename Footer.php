@@ -19,7 +19,7 @@
         </div>
           </div>
           <div class="carousel-item" data-interval="1000">
-            <img src="Image/2.png" alt="Carrousel slide 2" class="d-block w-100" >
+            <img src="Image/6.png" alt="Carrousel slide 2" class="d-block w-100" >
             <div class="carousel-caption d-none d-md-block text-dark">
             </div>
           </div>
@@ -72,7 +72,7 @@
           </div>
           <div class="carousel-item" data-interval="1000">
 
-            <img src="Image/14.png" alt="Carrousel slide 3" class="d-block w-100">
+            <img src="Image/12.png" alt="Carrousel slide 3" class="d-block w-100">
 
             
 
@@ -125,13 +125,13 @@
  <div class="col-lg-4 col-md-4 col-sm-12">
  <h6 class="text-uppercase font-weight-bold">Contact</h6>
  <p>
- 37, quai de Grenelle, 75015 Paris, France <br>
+ <img src="Image/maison.png" alt="Maison" width="25px"> : 37, quai de Grenelle, 75015 Paris, France <br>
  <a href="info@paris.shopping.com ">Contactez nous par email</a><br>
  <p>Si vous souhaitez nous appeler : </p>
- +33 01 02 03 04 05 <br>
- +33 01 03 02 05 04
+ <img src="Image/tel.png" alt="Tel" width="25px"> : +33 01 02 03 04 05 <br>
+ <img src="Image/tel.png" alt="Tel" width="25px"> : +33 01 03 02 05 04
  </p>
- <p>Venez nous voir : </p>
+ <p><img src="Image/lieu.png" alt="Lieu" width="25px"> Venez nous voir : </p>
  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.351678858248!2d2.2850437149928933!3d48.85150390914677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6700497ee3ec5%3A0xdd60f514adcdb346!2s37%20Quai%20de%20Grenelle%2C%2075015%20Paris!5e0!3m2!1sfr!2sfr!4v1638809188485!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
  </div>
  </div>

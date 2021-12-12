@@ -1,4 +1,3 @@
-
 <?php
 
     $NewPrix = isset($_POST["newprix"])? $_POST["newprix"] : "";

@@ -1,5 +1,7 @@
 <?php
-
+ 
+require 'CreateDB.php';
+$DB = new DB();
 
 $user = isset($_POST['user']) ? $_POST['user'] : '';
  

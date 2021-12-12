@@ -6,19 +6,19 @@ $DB = new DB();
 $panier = new panier($DB);
 ?>
 
+
 <!DOCTYPE html>
 <html>
-
 <head>
-<title>Achat immediat</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
-<script type="text/javascript" src="click.js"></script>
-<link rel="stylesheet" type="text/css" href="styles.css">
-<link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Promotions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> 
+    <script type="text/javascript" src="click.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -40,7 +40,10 @@ $panier = new panier($DB);
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
                     echo ""."<li class='nav-item'><a class='nav-link' href='Panier.php'>". "<img src='Image/panier.png'  width='30'>" ."</a></li>";
-                
+                   
+                    
+
+
                 }
 
                 else if(isset($_SESSION['Email'])) ///Connecté en vendeur
@@ -59,8 +62,7 @@ $panier = new panier($DB);
                 {
                      
                 }
-			    ?>
-                <?php 
+			    ?>               <?php 
                 if(isset($_SESSION['email'])) //Connecté en client
                 {
                     echo ""."<li class='nav-item'><a class='nav-link' href='MonProfilClient.php'>". $_SESSION['prenom']."</a></li>";
@@ -73,7 +75,6 @@ $panier = new panier($DB);
                 {
                     echo "<li class='nav-item'><a class='nav-link' href='MonProfilVendeur.php'>".$_SESSION['Pseudo']."</a></li>";
                     echo "<li class='nav-item'><a class='nav-link' href='DeconnexionAcheteur.php'> Déconnexion</a></li>";
-                    
 
 
                 }
@@ -89,36 +90,37 @@ $panier = new panier($DB);
                     echo "<li class='nav-item'><a class='nav-link' href='VotreCompte.php'> Se connecter</a></li>";
 
                 }
-			    ?>         
+			    ?>
             </ul>
         </div>
     </nav>
 
-    <header class="page-header header container-fluid">
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $('.header').height($(window).height());
-            });
-        </script>
+    <!--Rend la page dynamique, et le fond en plein encran<-->
 
-        <div class="overlay"></div>
+    <div class="Promo">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.Promo').height($(window).height());
+        });
+    </script>
+
+    <br><br>
+
+    <div class="overlay"></div>
+    <div class="Titre">
+    <h2>Promotions</h2></div>
+
+    <div class="description2">
+        
+        <p><strong>Sur cette page, retrouvez les meilleurs promotions de notre site. <br><br>
+        Noël ? BlackFriday ? St Valentin ? Fête des mères ? Fête des pères ? Pas de panique, soyez celui qui offre les meilleurs cadeaux mais à petits prix bien sûr ! 
         <br><br>
-        <div class="Titre">
-            <h2>Achat Immédiat</h2>
-        </div>
-
-        <div class="description2">
-        <p><strong>
-            Bienvenue dans la section Vente immédiate. Vous trouverez ici les articles proposez par Paris-Shopping à acheter directement. <br><br>
-            
-            Si un produit vous intéresse, mettez le dans votre panier, et le prix indiqué sera inchangé. C'est un moyen rapide, pratique et sur d'obtenir vos articles préférés. <br><br>
-
-            Bon shopping !<br><br>
-        </strong></p> 
+        Bon shopping ! <br><br>
+    </strong></p> 
     </div>
-    </header>
+    </div>
 
-    <br>
+   <br>
 
     <div class="article2">
         <div class="row">
@@ -139,7 +141,7 @@ $panier = new panier($DB);
                    <div class="aInformations">
                    <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
-                   <p><?= $article->Prix ?> € </p>
+                   <p><img src="Image/promo.png" alt="Promo" width="30px"><s><?= $article->Prix ?> € </s> <br> <?= $article->Prix2 ?> € </p> 
                    <p><?= $article->Proprio ?>  </p>
 
                    <div class="aAjoutPanier">
@@ -172,7 +174,7 @@ $panier = new panier($DB);
                    <div class="aInformations">
                    <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
-                   <p><?= $article->Prix ?> € </p>
+                   <p><img src="Image/promo.png" alt="Promo" width="30px"><s><?= $article->Prix ?> € </s> <br> <?= $article->Prix2 ?> € </p>
                    <p><?= $article->Proprio ?>  </p>
 
                    </div>
@@ -204,7 +206,7 @@ $panier = new panier($DB);
                    <div class="aInformations">
                    <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
-                   <p><?= $article->Prix ?> € </p>
+                   <p><img src="Image/promo.png" alt="Promo" width="30px"><s><?= $article->Prix ?> € </s> <br> <?= $article->Prix2 ?> € </p>
                    <p><?= $article->Proprio ?>  </p>
 
                    </div>

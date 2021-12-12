@@ -28,8 +28,12 @@ body {
  background-size:cover;
 }
 
-
+.Promo {
+ background: url('Image/soldes.jpg') no-repeat;
+ position: relative;
+ background-size:cover;
 }
+
 .overlay {
  position: absolute;
  min-height: 100%;
