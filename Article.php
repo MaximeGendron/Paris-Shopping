@@ -180,14 +180,10 @@ $_SESSION["statutPaiement"] = "void";
 
               
 
-                echo '<div class="col-lg-4 col-md-4 col-sm-12">';
-                
-               
-
+                    echo '<div class="col-lg-4 col-md-4 col-sm-12">';
+     
                    echo ' <table>';
                    echo'<tr>';
-                   
-                    
 
                    $database = "parisshopping";
                    $db_handle = mysqli_connect('localhost', 'root', '');
