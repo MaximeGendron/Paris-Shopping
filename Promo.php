@@ -141,7 +141,7 @@ $panier = new panier($DB);
                    <div class="aInformations">
                    <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
-                   <p><img src="Image/promo.png" alt="Promo" width="30px"><s><?= $article->Prix ?> € </s> <br> <?= $article->Prix2 ?> € </p> 
+                   <p><img src="Image/promo.png" alt="Promo" width="30px"><s><?= $article->Prix ?> € </s> <br> <?= (($article->Prix)/2) ?> €</p> 
                    <p><?= $article->Proprio ?>  </p>
 
                    <div class="aAjoutPanier">
@@ -174,7 +174,7 @@ $panier = new panier($DB);
                    <div class="aInformations">
                    <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
-                   <p><img src="Image/promo.png" alt="Promo" width="30px"><s><?= $article->Prix ?> € </s> <br> <?= $article->Prix2 ?> € </p>
+                   <p><img src="Image/promo.png" alt="Promo" width="30px"><s><?= $article->Prix ?> € </s> <br> <?= (($article->Prix)/2) ?> € </p>
                    <p><?= $article->Proprio ?>  </p>
 
                    </div>
@@ -206,7 +206,7 @@ $panier = new panier($DB);
                    <div class="aInformations">
                    <h5><?= $article->Nom ?></a></h5>
                    <p><?= $article->Description ?></p>
-                   <p><img src="Image/promo.png" alt="Promo" width="30px"><s><?= $article->Prix ?> € </s> <br> <?= $article->Prix2 ?> € </p>
+                   <p><img src="Image/promo.png" alt="Promo" width="30px"><s><?= $article->Prix ?> € </s> <br> <?= (($article->Prix)/2) ?> € </p>
                    <p><?= $article->Proprio ?>  </p>
 
                    </div>
