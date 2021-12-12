@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   `Proprio` varchar(255) NOT NULL,
   PRIMARY KEY (`ID`)
 
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `article`
